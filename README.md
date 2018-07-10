@@ -1,4 +1,4 @@
-# client
+# Coindirect Java SDK
 
 Coindirect
 - API version: 1
