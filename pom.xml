@@ -6,12 +6,12 @@
     <packaging>jar</packaging>
     <name>client</name>
     <version>1.0.0</version>
-    <url>https://github.com/swagger-api/swagger-codegen</url>
-    <description>Swagger Java</description>
+    <url>https://github.com/coindirect/coindirect-sdk-java</url>
+    <description>Coindirect Java SDK</description>
     <scm>
-        <connection>scm:git:git@github.com:swagger-api/swagger-codegen.git</connection>
-        <developerConnection>scm:git:git@github.com:swagger-api/swagger-codegen.git</developerConnection>
-        <url>https://github.com/swagger-api/swagger-codegen</url>
+        <connection>scm:git:git@github.com:coindirect/coindirect-sdk-java.git</connection>
+        <developerConnection>scm:git:git@github.com:coindirect/coindirect-sdk-java.git</developerConnection>
+        <url>https://github.com/coindirect/coindirect-sdk-java</url>
     </scm>
 
     <licenses>
@@ -24,10 +24,10 @@
 
     <developers>
         <developer>
-            <name>Swagger</name>
-            <email>apiteam@swagger.io</email>
-            <organization>Swagger</organization>
-            <organizationUrl>http://swagger.io</organizationUrl>
+            <name>Donald Jackson</name>
+            <email>donald@ddj.co.za</email>
+            <organization>Coindirect</organization>
+            <organizationUrl>https://www.coindirect.com</organizationUrl>
         </developer>
     </developers>
 
@@ -212,6 +212,11 @@
             <groupId>io.gsonfire</groupId>
             <artifactId>gson-fire</artifactId>
             <version>${gson-fire-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.11</version>
         </dependency>
             <dependency>
                 <groupId>org.threeten</groupId>

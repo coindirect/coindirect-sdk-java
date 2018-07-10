@@ -1,7 +1,8 @@
-package org.coindirect.api.client.invoker;
+package org.coindirect.client.invoker;
 
 import com.squareup.okhttp.*;
 import org.apache.commons.codec.binary.Base64;
+import org.coindirect.client.invoker.ApiClient;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -13,9 +14,29 @@ import java.util.List;
 import java.util.UUID;
 
 public class ApiClientFactory {
+    public static final String API_URL = "https://api.coindirect.com";
+
+    /**
+     * For public calls without authorization requirements.
+     *
+     * @return
+     */
+    public static ApiClient newApiClient() {
+        ApiClient apiClient = new ApiClient();
+        apiClient.setBasePath(API_URL);
+        return apiClient;
+    }
+
+    /**
+     * For private and public calls
+     *
+     * @param apiKey
+     * @param apiSecret
+     * @return
+     */
     public static ApiClient newApiClient(final String apiKey, final String apiSecret) {
         ApiClient apiClient = new ApiClient();
-        apiClient.setBasePath("http://api.dev.node.limited");
+        apiClient.setBasePath(API_URL);
         OkHttpClient okHttpClient = apiClient.getHttpClient();
         List<Interceptor> interceptorList = okHttpClient.interceptors();
         interceptorList.add(new ApiClientInterceptor(apiKey, apiSecret));
