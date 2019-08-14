@@ -672,7 +672,7 @@ public class ApiClient {
     }
 
     Invocation.Builder invocationBuilder = target.request();
-    
+
     if (accept != null) {
     	invocationBuilder = invocationBuilder.accept(accept);
     }
@@ -793,6 +793,8 @@ public class ApiClient {
    * Update query and header parameters based on authentication settings.
    *
    * @param authNames The authentications to apply
+   * @param queryParams The query parameters
+   * @param headerParams The headers
    */
   protected void updateParamsForAuth(String[] authNames, List<Pair> queryParams, Map<String, String> headerParams) {
     for (String authName : authNames) {
