@@ -1,10 +1,10 @@
 # Coindirect Java SDK
 
 Coindirect
-- API version: 1
-  - Build date: 2018-07-10T11:44:48.559+02:00
+- API version: 1.0.1
+  - Build date: 2019-08-14
 
-The Coindirect API is offered to all users to make use of our P2P Marketplace, Exchange and Wallets.
+The Coindirect API is offered to all users to make use of our Payments, P2P Marketplace, Exchange and Wallets.
 
   For more information, please visit [https://help.coindirect.com](https://help.coindirect.com)
 
@@ -12,7 +12,7 @@ The Coindirect API is offered to all users to make use of our P2P Marketplace, E
 ## Requirements
 
 Building the API client library requires:
-1. Java 1.7+
+1. Java 1.8+
 2. Maven/Gradle
 
 ## Installation
@@ -38,8 +38,8 @@ Add this dependency to your project's POM:
 ```xml
 <dependency>
   <groupId>org.coindirect</groupId>
-  <artifactId>client</artifactId>
-  <version>1.0.0</version>
+  <artifactId>api</artifactId>
+  <version>1.0.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -49,7 +49,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.coindirect:client:1.0.0"
+compile "org.coindirect:api:1.0.1"
 ```
 
 ### Others
@@ -62,7 +62,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/client-1.0.0.jar`
+* `target/api-1.0.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -104,10 +104,6 @@ public class PlaceOrder {
 
 
 ```
-
-## Documentation for API Endpoints
-
-Please visit: https://coindirect.docs.stoplight.io/
 
 ## Recommendation
 

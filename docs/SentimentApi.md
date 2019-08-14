@@ -1,6 +1,6 @@
 # SentimentApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,20 +9,17 @@ Method | HTTP request | Description
 [**listSentimentAggregated**](SentimentApi.md#listSentimentAggregated) | **GET** /api/sentiment/aggregated | Read Aggregated Sentiment
 [**listSentimentLast**](SentimentApi.md#listSentimentLast) | **GET** /api/sentiment/last | Read Last Sentiment
 
-
 <a name="listExchangeRatesLast"></a>
 # **listExchangeRatesLast**
 > List&lt;ExchangeRate&gt; listExchangeRatesLast(currency)
 
 Read Last Exchange Rates
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.SentimentApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.SentimentApi;
 
 
 SentimentApi apiInstance = new SentimentApi();
@@ -52,7 +49,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listExchangeRatesRecent"></a>
@@ -61,13 +58,11 @@ No authorization required
 
 Read Exchange Rates
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.SentimentApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.SentimentApi;
 
 
 SentimentApi apiInstance = new SentimentApi();
@@ -99,7 +94,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listSentimentAggregated"></a>
@@ -108,13 +103,11 @@ No authorization required
 
 Read Aggregated Sentiment
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.SentimentApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.SentimentApi;
 
 
 SentimentApi apiInstance = new SentimentApi();
@@ -146,7 +139,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listSentimentLast"></a>
@@ -155,13 +148,11 @@ No authorization required
 
 Read Last Sentiment
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.SentimentApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.SentimentApi;
 
 
 SentimentApi apiInstance = new SentimentApi();
@@ -191,6 +182,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

@@ -1,4 +1,3 @@
-
 # OfferPaymentMethod
 
 ## Properties
@@ -9,6 +8,3 @@ Name | Type | Description | Notes
 **type** | **String** |  |  [optional]
 **category** | **String** |  |  [optional]
 **options** | **Map&lt;String, String&gt;** |  |  [optional]
-
-
-

@@ -1,4 +1,3 @@
-
 # PaymentMethod
 
 ## Properties
@@ -9,6 +8,3 @@ Name | Type | Description | Notes
 **options** | **Map&lt;String, Object&gt;** |  |  [optional]
 **type** | [**PaymentMethodType**](PaymentMethodType.md) |  |  [optional]
 **description** | **String** |  |  [optional]
-
-
-

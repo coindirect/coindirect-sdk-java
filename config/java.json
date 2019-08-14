@@ -1,0 +1,16 @@
+{
+    "library": "jersey2",
+    "artifactId": "api",
+    "groupId": "org.coindirect",
+    "modelPackage": "org.coindirect.api.model",
+    "apiPackage": "org.coindirect.api",
+    "invokerPackage": "org.coindirect.api.invoker",
+    "dateLibrary": "java8",
+    "artifactVersion": "1.0.1",
+    "scmUrl": "https://github.com/coindirect/coindirect-sdk-java",
+    "scmConnection": "scm:git:https://github.com/coindirect/coindirect-sdk-java",
+    "scmDeveloperConnection": "scm:git:https://github.com/coindirect/coindirect-sdk-java",
+    "developerName": "Coindirect",
+    "developerEmail": "support@coindirect.com",
+    "developerOrganizationUrl": "https://www.coindirect.com"
+}

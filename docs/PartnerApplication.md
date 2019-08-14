@@ -1,4 +1,3 @@
-
 # PartnerApplication
 
 ## Properties
@@ -9,6 +8,3 @@ Name | Type | Description | Notes
 **lastUpdated** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **status** | **Integer** |  |  [optional]
 **motivation** | **String** |  |  [optional]
-
-
-

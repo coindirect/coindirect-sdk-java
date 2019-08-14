@@ -1,4 +1,3 @@
-
 # CurrencySnapshot
 
 ## Properties
@@ -16,6 +15,3 @@ Name | Type | Description | Notes
 **rank** | **Long** |  |  [optional]
 **totalSupply** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **volumeUsd24h** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-
-
-

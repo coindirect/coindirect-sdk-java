@@ -1,4 +1,3 @@
-
 # ExchangeRate
 
 ## Properties
@@ -11,6 +10,3 @@ Name | Type | Description | Notes
 **lastTraded** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **lastAsk** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **lastBid** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-
-
-

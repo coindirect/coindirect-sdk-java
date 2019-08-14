@@ -1,4 +1,3 @@
-
 # AccountDocument
 
 ## Properties
@@ -10,6 +9,3 @@ Name | Type | Description | Notes
 **file** | [**EncodedFile**](EncodedFile.md) |  |  [optional]
 **status** | **Integer** |  |  [optional]
 **statusReason** | **String** |  |  [optional]
-
-
-

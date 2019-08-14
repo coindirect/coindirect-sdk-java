@@ -1,4 +1,3 @@
-
 # GenericOption
 
 ## Properties
@@ -10,6 +9,4 @@ Name | Type | Description | Notes
 **value** | **String** |  |  [optional]
 **options** | **Map&lt;String, String&gt;** |  |  [optional]
 **required** | **Boolean** |  |  [optional]
-
-
-
+**validator** | [**Validator**](Validator.md) |  |  [optional]

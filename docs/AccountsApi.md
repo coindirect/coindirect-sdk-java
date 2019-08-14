@@ -1,6 +1,6 @@
 # AccountsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,12 +9,13 @@ Method | HTTP request | Description
 [**getAccountProgress**](AccountsApi.md#getAccountProgress) | **GET** /api/account/progress | Check progress of account setup
 [**getAccountWebsocketChannel**](AccountsApi.md#getAccountWebsocketChannel) | **GET** /api/account/channel | Get WebSocket Channel
 [**getAffiliateCode**](AccountsApi.md#getAffiliateCode) | **GET** /api/account/affiliate/code | Get affiliate code
+[**getRunningCampaigns**](AccountsApi.md#getRunningCampaigns) | **GET** /api/account/affiliate/campaigns | Get running campaigns
 [**listAccountDocuments**](AccountsApi.md#listAccountDocuments) | **GET** /api/account/document | List uploaded documents for an account
 [**listAccountPreferences**](AccountsApi.md#listAccountPreferences) | **GET** /api/account/preference | List Account Preferences
 [**listAffiliateBalances**](AccountsApi.md#listAffiliateBalances) | **GET** /api/account/affiliate/balance | Get affiliate balances
+[**listAffiliateCodeTypes**](AccountsApi.md#listAffiliateCodeTypes) | **GET** /api/account/affiliate/code/types | Get affiliate code types
 [**listAffiliateTransactions**](AccountsApi.md#listAffiliateTransactions) | **GET** /api/account/affiliate/transaction | Get affiliate transactions
 [**updateAccountPreference**](AccountsApi.md#updateAccountPreference) | **PUT** /api/account/preference/{name} | Update Account Preference
-
 
 <a name="createAccountDocument"></a>
 # **createAccountDocument**
@@ -22,13 +23,11 @@ Method | HTTP request | Description
 
 Upload a document for an account
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.AccountsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -67,13 +66,11 @@ No authorization required
 
 Read Account Preference
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.AccountsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -103,7 +100,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/xml, application/json
 
 <a name="getAccountProgress"></a>
@@ -112,13 +109,11 @@ No authorization required
 
 Check progress of account setup
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.AccountsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -144,7 +139,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getAccountWebsocketChannel"></a>
@@ -153,13 +148,11 @@ No authorization required
 
 Get WebSocket Channel
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.AccountsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -185,27 +178,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getAffiliateCode"></a>
 # **getAffiliateCode**
-> WrappedPrimitive getAffiliateCode()
+> WrappedPrimitive getAffiliateCode(type)
 
 Get affiliate code
-
-
 
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.AccountsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
+String type = "type_example"; // String | 
 try {
-    WrappedPrimitive result = apiInstance.getAffiliateCode();
+    WrappedPrimitive result = apiInstance.getAffiliateCode(type);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#getAffiliateCode");
@@ -214,7 +206,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **type** | **String**|  | [optional]
 
 ### Return type
 
@@ -226,7 +221,50 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getRunningCampaigns"></a>
+# **getRunningCampaigns**
+> Campaign getRunningCampaigns(type)
+
+Get running campaigns
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.AccountsApi;
+
+
+AccountsApi apiInstance = new AccountsApi();
+String type = "type_example"; // String | 
+try {
+    Campaign result = apiInstance.getRunningCampaigns(type);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccountsApi#getRunningCampaigns");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **type** | **String**|  | [optional]
+
+### Return type
+
+[**Campaign**](Campaign.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listAccountDocuments"></a>
@@ -235,13 +273,11 @@ No authorization required
 
 List uploaded documents for an account
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.AccountsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -267,7 +303,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listAccountPreferences"></a>
@@ -281,13 +317,13 @@ This will return a key/value object of the preferences that have been stored for
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.AccountsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
-Integer offset = 0; // Integer | start offset
-Integer max = 10; // Integer | max results
+Integer offset = 56; // Integer | start offset
+Integer max = 56; // Integer | max results
 try {
     Map<String, Object> result = apiInstance.listAccountPreferences(offset, max);
     System.out.println(result);
@@ -301,8 +337,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **Integer**| start offset | [optional] [default to 0]
- **max** | **Integer**| max results | [optional] [default to 10]
+ **offset** | **Integer**| start offset | [optional]
+ **max** | **Integer**| max results | [optional]
 
 ### Return type
 
@@ -314,7 +350,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/xml, application/json
 
 <a name="listAffiliateBalances"></a>
@@ -323,13 +359,11 @@ No authorization required
 
 Get affiliate balances
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.AccountsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -355,7 +389,46 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="listAffiliateCodeTypes"></a>
+# **listAffiliateCodeTypes**
+> List&lt;String&gt; listAffiliateCodeTypes()
+
+Get affiliate code types
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.AccountsApi;
+
+
+AccountsApi apiInstance = new AccountsApi();
+try {
+    List<String> result = apiInstance.listAffiliateCodeTypes();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccountsApi#listAffiliateCodeTypes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**List&lt;String&gt;**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listAffiliateTransactions"></a>
@@ -364,18 +437,16 @@ No authorization required
 
 Get affiliate transactions
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.AccountsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
-Integer offset = 0; // Integer | start offset
-Integer max = 10; // Integer | max results
+Integer offset = 56; // Integer | start offset
+Integer max = 56; // Integer | max results
 try {
     List<AffiliateTransaction> result = apiInstance.listAffiliateTransactions(offset, max);
     System.out.println(result);
@@ -389,8 +460,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **Integer**| start offset | [optional] [default to 0]
- **max** | **Integer**| max results | [optional] [default to 10]
+ **offset** | **Integer**| start offset | [optional]
+ **max** | **Integer**| max results | [optional]
 
 ### Return type
 
@@ -402,7 +473,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateAccountPreference"></a>
@@ -411,13 +482,11 @@ No authorization required
 
 Update Account Preference
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.AccountsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();

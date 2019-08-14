@@ -1,4 +1,3 @@
-
 # OrderRequest
 
 ## Properties
@@ -13,6 +12,3 @@ Name | Type | Description | Notes
 **paymentMethod** | [**PaymentMethod**](PaymentMethod.md) |  |  [optional]
 **wallet** | [**Wallet**](Wallet.md) |  |  [optional]
 **convertToCurrency** | [**Currency**](Currency.md) |  |  [optional]
-
-
-

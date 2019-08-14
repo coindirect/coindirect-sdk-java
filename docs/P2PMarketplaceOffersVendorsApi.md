@@ -1,6 +1,6 @@
 # P2PMarketplaceOffersVendorsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,20 +14,17 @@ Method | HTTP request | Description
 [**listP2PVariables**](P2PMarketplaceOffersVendorsApi.md#listP2PVariables) | **GET** /api/offer/variables | List Variables for Equations
 [**updateP2POffer**](P2PMarketplaceOffersVendorsApi.md#updateP2POffer) | **PUT** /api/offer/{id} | Update Offer
 
-
 <a name="createP2PBuyOffer"></a>
 # **createP2PBuyOffer**
 > Offer createP2PBuyOffer(body)
 
 Create Offer to Buy
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PMarketplaceOffersVendorsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PMarketplaceOffersVendorsApi;
 
 
 P2PMarketplaceOffersVendorsApi apiInstance = new P2PMarketplaceOffersVendorsApi();
@@ -66,13 +63,11 @@ No authorization required
 
 Create Offer to Sell
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PMarketplaceOffersVendorsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PMarketplaceOffersVendorsApi;
 
 
 P2PMarketplaceOffersVendorsApi apiInstance = new P2PMarketplaceOffersVendorsApi();
@@ -111,13 +106,11 @@ No authorization required
 
 Delete Offer
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PMarketplaceOffersVendorsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PMarketplaceOffersVendorsApi;
 
 
 P2PMarketplaceOffersVendorsApi apiInstance = new P2PMarketplaceOffersVendorsApi();
@@ -146,8 +139,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="evaluateP2PEquation"></a>
 # **evaluateP2PEquation**
@@ -155,13 +148,11 @@ No authorization required
 
 Execution Equation
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PMarketplaceOffersVendorsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PMarketplaceOffersVendorsApi;
 
 
 P2PMarketplaceOffersVendorsApi apiInstance = new P2PMarketplaceOffersVendorsApi();
@@ -200,13 +191,11 @@ No authorization required
 
 Read an Offer
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PMarketplaceOffersVendorsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PMarketplaceOffersVendorsApi;
 
 
 P2PMarketplaceOffersVendorsApi apiInstance = new P2PMarketplaceOffersVendorsApi();
@@ -236,7 +225,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listP2PExchanges"></a>
@@ -245,13 +234,11 @@ No authorization required
 
 List Exchanges for Equations
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PMarketplaceOffersVendorsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PMarketplaceOffersVendorsApi;
 
 
 P2PMarketplaceOffersVendorsApi apiInstance = new P2PMarketplaceOffersVendorsApi();
@@ -277,7 +264,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listP2POffers"></a>
@@ -286,18 +273,16 @@ No authorization required
 
 List Offers
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PMarketplaceOffersVendorsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PMarketplaceOffersVendorsApi;
 
 
 P2PMarketplaceOffersVendorsApi apiInstance = new P2PMarketplaceOffersVendorsApi();
-Integer offset = 0; // Integer | start offset
-Integer max = 10; // Integer | max results
+Integer offset = 56; // Integer | start offset
+Integer max = 56; // Integer | max results
 try {
     List<Offer> result = apiInstance.listP2POffers(offset, max);
     System.out.println(result);
@@ -311,8 +296,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **Integer**| start offset | [optional] [default to 0]
- **max** | **Integer**| max results | [optional] [default to 10]
+ **offset** | **Integer**| start offset | [optional]
+ **max** | **Integer**| max results | [optional]
 
 ### Return type
 
@@ -324,7 +309,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listP2PVariables"></a>
@@ -333,13 +318,11 @@ No authorization required
 
 List Variables for Equations
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PMarketplaceOffersVendorsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PMarketplaceOffersVendorsApi;
 
 
 P2PMarketplaceOffersVendorsApi apiInstance = new P2PMarketplaceOffersVendorsApi();
@@ -365,7 +348,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateP2POffer"></a>
@@ -374,13 +357,11 @@ No authorization required
 
 Update Offer
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PMarketplaceOffersVendorsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PMarketplaceOffersVendorsApi;
 
 
 P2PMarketplaceOffersVendorsApi apiInstance = new P2PMarketplaceOffersVendorsApi();

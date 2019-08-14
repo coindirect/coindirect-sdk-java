@@ -1,4 +1,3 @@
-
 # User
 
 ## Properties
@@ -16,6 +15,3 @@ Name | Type | Description | Notes
 **emailAddress** | **String** |  |  [optional]
 **options** | **Map&lt;String, String&gt;** |  |  [optional]
 **twoFactorEnabled** | **Boolean** |  |  [optional]
-
-
-

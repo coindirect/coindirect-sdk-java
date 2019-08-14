@@ -1,6 +1,6 @@
 # P2PMarketplaceOrdersChatsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,20 +8,17 @@ Method | HTTP request | Description
 [**getP2POrderMessages**](P2PMarketplaceOrdersChatsApi.md#getP2POrderMessages) | **GET** /api/order/chat/{id} | Read messages for Order
 [**sendP2POrderMessage**](P2PMarketplaceOrdersChatsApi.md#sendP2POrderMessage) | **POST** /api/order/chat/{id} | Send message for order
 
-
 <a name="getP2POrderMessageAttachmentURL"></a>
 # **getP2POrderMessageAttachmentURL**
 > WrappedPrimitive getP2POrderMessageAttachmentURL(id, fileId)
 
 Retrieve URL for message attachment
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PMarketplaceOrdersChatsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PMarketplaceOrdersChatsApi;
 
 
 P2PMarketplaceOrdersChatsApi apiInstance = new P2PMarketplaceOrdersChatsApi();
@@ -53,7 +50,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getP2POrderMessages"></a>
@@ -62,13 +59,11 @@ No authorization required
 
 Read messages for Order
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PMarketplaceOrdersChatsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PMarketplaceOrdersChatsApi;
 
 
 P2PMarketplaceOrdersChatsApi apiInstance = new P2PMarketplaceOrdersChatsApi();
@@ -100,7 +95,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="sendP2POrderMessage"></a>
@@ -109,13 +104,11 @@ No authorization required
 
 Send message for order
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PMarketplaceOrdersChatsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PMarketplaceOrdersChatsApi;
 
 
 P2PMarketplaceOrdersChatsApi apiInstance = new P2PMarketplaceOrdersChatsApi();
@@ -147,5 +140,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 

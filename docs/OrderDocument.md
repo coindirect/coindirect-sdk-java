@@ -1,4 +1,3 @@
-
 # OrderDocument
 
 ## Properties
@@ -8,6 +7,3 @@ Name | Type | Description | Notes
 **description** | **String** |  |  [optional]
 **file** | [**EncodedFile**](EncodedFile.md) |  |  [optional]
 **publicUrl** | **String** |  |  [optional]
-
-
-

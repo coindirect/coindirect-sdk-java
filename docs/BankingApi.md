@@ -1,6 +1,6 @@
 # BankingApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,20 +8,17 @@ Method | HTTP request | Description
 [**getBank**](BankingApi.md#getBank) | **GET** /api/bank/read/{id} | Read Bank
 [**listBanksByCountry**](BankingApi.md#listBanksByCountry) | **GET** /api/bank/{countryCode} | List Banks by Country
 
-
 <a name="createBank"></a>
 # **createBank**
 > Bank createBank(body)
 
 Create Bank
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.BankingApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.BankingApi;
 
 
 BankingApi apiInstance = new BankingApi();
@@ -60,13 +57,11 @@ No authorization required
 
 Read Bank
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.BankingApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.BankingApi;
 
 
 BankingApi apiInstance = new BankingApi();
@@ -96,7 +91,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listBanksByCountry"></a>
@@ -105,19 +100,17 @@ No authorization required
 
 List Banks by Country
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.BankingApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.BankingApi;
 
 
 BankingApi apiInstance = new BankingApi();
 String countryCode = "countryCode_example"; // String | 
-Integer offset = 0; // Integer | start offset
-Integer max = 10; // Integer | max results
+Integer offset = 56; // Integer | start offset
+Integer max = 56; // Integer | max results
 try {
     List<Bank> result = apiInstance.listBanksByCountry(countryCode, offset, max);
     System.out.println(result);
@@ -132,8 +125,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **countryCode** | **String**|  |
- **offset** | **Integer**| start offset | [optional] [default to 0]
- **max** | **Integer**| max results | [optional] [default to 10]
+ **offset** | **Integer**| start offset | [optional]
+ **max** | **Integer**| max results | [optional]
 
 ### Return type
 
@@ -145,6 +138,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

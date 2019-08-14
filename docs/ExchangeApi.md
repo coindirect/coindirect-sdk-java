@@ -1,12 +1,11 @@
 # ExchangeApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getExchangeOrderBook**](ExchangeApi.md#getExchangeOrderBook) | **GET** /api/v1/exchange/market/book | Get Order Book For Market
 [**listExchangeMarkets**](ExchangeApi.md#listExchangeMarkets) | **GET** /api/v1/exchange/market | List Markets
-
 
 <a name="getExchangeOrderBook"></a>
 # **getExchangeOrderBook**
@@ -14,13 +13,11 @@ Method | HTTP request | Description
 
 Get Order Book For Market
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.ExchangeApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.ExchangeApi;
 
 
 ExchangeApi apiInstance = new ExchangeApi();
@@ -50,7 +47,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listExchangeMarkets"></a>
@@ -59,18 +56,16 @@ No authorization required
 
 List Markets
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.ExchangeApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.ExchangeApi;
 
 
 ExchangeApi apiInstance = new ExchangeApi();
-Integer offset = 0; // Integer | start offset
-Integer max = 10; // Integer | max results
+Integer offset = 56; // Integer | start offset
+Integer max = 56; // Integer | max results
 try {
     List<Market> result = apiInstance.listExchangeMarkets(offset, max);
     System.out.println(result);
@@ -84,8 +79,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **Integer**| start offset | [optional] [default to 0]
- **max** | **Integer**| max results | [optional] [default to 10]
+ **offset** | **Integer**| start offset | [optional]
+ **max** | **Integer**| max results | [optional]
 
 ### Return type
 
@@ -97,6 +92,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

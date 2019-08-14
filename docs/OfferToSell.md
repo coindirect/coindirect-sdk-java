@@ -1,4 +1,3 @@
-
 # OfferToSell
 
 ## Properties
@@ -19,7 +18,5 @@ Name | Type | Description | Notes
 **notes** | **String** |  |  [optional]
 **directTransfer** | **Boolean** |  |  [optional]
 **features** | **List&lt;String&gt;** |  |  [optional]
+**type** | **String** |  |  [optional]
 **acceptedPaymentMethods** | [**List&lt;OfferPaymentMethod&gt;**](OfferPaymentMethod.md) |  |  [optional]
-
-
-

@@ -1,4 +1,3 @@
-
 # AccountProgress
 
 ## Properties
@@ -15,6 +14,5 @@ Name | Type | Description | Notes
 **name** | **String** |  |  [optional]
 **affiliateCode** | **String** |  |  [optional]
 **documents** | [**List&lt;AccountDocument&gt;**](AccountDocument.md) |  |  [optional]
-
-
-
+**passwordPending** | **Boolean** |  |  [optional]
+**withdrawalReviewRequired** | **Boolean** |  |  [optional]

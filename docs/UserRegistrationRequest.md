@@ -1,4 +1,3 @@
-
 # UserRegistrationRequest
 
 ## Properties
@@ -11,6 +10,3 @@ Name | Type | Description | Notes
 **language** | **String** |  |  [optional]
 **countryCode** | **String** |  |  [optional]
 **confirmationUrl** | **String** |  |  [optional]
-
-
-

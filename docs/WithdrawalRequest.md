@@ -1,4 +1,3 @@
-
 # WithdrawalRequest
 
 ## Properties
@@ -16,6 +15,3 @@ Name | Type | Description | Notes
 **hash** | **String** |  |  [optional]
 **amount** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **message** | **String** |  |  [optional]
-
-
-

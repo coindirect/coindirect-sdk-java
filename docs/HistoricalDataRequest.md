@@ -1,4 +1,3 @@
-
 # HistoricalDataRequest
 
 ## Properties
@@ -8,6 +7,4 @@ Name | Type | Description | Notes
 **history** | **String** |  |  [optional]
 **grouping** | **String** |  |  [optional]
 **limit** | **Long** |  |  [optional]
-
-
-
+**fill** | **String** |  |  [optional]

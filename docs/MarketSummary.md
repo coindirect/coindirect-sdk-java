@@ -1,4 +1,3 @@
-
 # MarketSummary
 
 ## Properties
@@ -8,6 +7,5 @@ Name | Type | Description | Notes
 **lastPrice** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **volume24h** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **change24h** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-
-
-
+**bestBid** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**bestAsk** | [**BigDecimal**](BigDecimal.md) |  |  [optional]

@@ -1,6 +1,6 @@
 # P2PVendorApplicationsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,20 +10,17 @@ Method | HTTP request | Description
 [**listP2PVendorApplications**](P2PVendorApplicationsApi.md#listP2PVendorApplications) | **GET** /api/partner/application | List Applications
 [**uploadP2PVendorApplicationDocument**](P2PVendorApplicationsApi.md#uploadP2PVendorApplicationDocument) | **POST** /api/partner/application/{applicationId}/upload | Upload an application document
 
-
 <a name="cancelP2PVendorApplication"></a>
 # **cancelP2PVendorApplication**
 > cancelP2PVendorApplication(id)
 
 Cancel Application
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PVendorApplicationsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PVendorApplicationsApi;
 
 
 P2PVendorApplicationsApi apiInstance = new P2PVendorApplicationsApi();
@@ -52,8 +49,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="createP2PVendorApplication"></a>
 # **createP2PVendorApplication**
@@ -61,13 +58,11 @@ No authorization required
 
 Apply to be a vendor
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PVendorApplicationsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PVendorApplicationsApi;
 
 
 P2PVendorApplicationsApi apiInstance = new P2PVendorApplicationsApi();
@@ -106,13 +101,11 @@ No authorization required
 
 Retrieve Application
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PVendorApplicationsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PVendorApplicationsApi;
 
 
 P2PVendorApplicationsApi apiInstance = new P2PVendorApplicationsApi();
@@ -142,7 +135,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listP2PVendorApplications"></a>
@@ -151,18 +144,16 @@ No authorization required
 
 List Applications
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PVendorApplicationsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PVendorApplicationsApi;
 
 
 P2PVendorApplicationsApi apiInstance = new P2PVendorApplicationsApi();
-Integer offset = 0; // Integer | start offset
-Integer max = 10; // Integer | max results
+Integer offset = 56; // Integer | start offset
+Integer max = 56; // Integer | max results
 try {
     List<PartnerApplication> result = apiInstance.listP2PVendorApplications(offset, max);
     System.out.println(result);
@@ -176,8 +167,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **Integer**| start offset | [optional] [default to 0]
- **max** | **Integer**| max results | [optional] [default to 10]
+ **offset** | **Integer**| start offset | [optional]
+ **max** | **Integer**| max results | [optional]
 
 ### Return type
 
@@ -189,7 +180,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="uploadP2PVendorApplicationDocument"></a>
@@ -198,13 +189,11 @@ No authorization required
 
 Upload an application document
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.P2PVendorApplicationsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PVendorApplicationsApi;
 
 
 P2PVendorApplicationsApi apiInstance = new P2PVendorApplicationsApi();

@@ -1,4 +1,3 @@
-
 # Wallet
 
 ## Properties
@@ -12,6 +11,3 @@ Name | Type | Description | Notes
 **address** | **String** |  |  [optional]
 **lookup** | **String** |  |  [optional]
 **balance** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-
-
-

@@ -1,6 +1,6 @@
 # TransactionsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,20 +10,17 @@ Method | HTTP request | Description
 [**listTransactions**](TransactionsApi.md#listTransactions) | **GET** /api/transaction | List Transactions
 [**listTransactionsForWallet**](TransactionsApi.md#listTransactionsForWallet) | **GET** /api/transaction/{id} | List Transactions for Wallet
 
-
 <a name="getResource"></a>
 # **getResource**
 > TransactionType getResource(id)
 
 Read Transaction Type
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.TransactionsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.TransactionsApi;
 
 
 TransactionsApi apiInstance = new TransactionsApi();
@@ -53,7 +50,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getTransaction"></a>
@@ -62,13 +59,11 @@ No authorization required
 
 Get Transaction
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.TransactionsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.TransactionsApi;
 
 
 TransactionsApi apiInstance = new TransactionsApi();
@@ -98,7 +93,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listTransactionTypes"></a>
@@ -107,18 +102,16 @@ No authorization required
 
 List Transaction Types
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.TransactionsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.TransactionsApi;
 
 
 TransactionsApi apiInstance = new TransactionsApi();
-Integer offset = 0; // Integer | start offset
-Integer max = 10; // Integer | max results
+Integer offset = 56; // Integer | start offset
+Integer max = 56; // Integer | max results
 try {
     List<TransactionType> result = apiInstance.listTransactionTypes(offset, max);
     System.out.println(result);
@@ -132,8 +125,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **Integer**| start offset | [optional] [default to 0]
- **max** | **Integer**| max results | [optional] [default to 10]
+ **offset** | **Integer**| start offset | [optional]
+ **max** | **Integer**| max results | [optional]
 
 ### Return type
 
@@ -145,7 +138,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listTransactions"></a>
@@ -154,18 +147,16 @@ No authorization required
 
 List Transactions
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.TransactionsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.TransactionsApi;
 
 
 TransactionsApi apiInstance = new TransactionsApi();
-Integer offset = 0; // Integer | start offset
-Integer max = 10; // Integer | max results
+Integer offset = 56; // Integer | start offset
+Integer max = 56; // Integer | max results
 try {
     List<Transaction> result = apiInstance.listTransactions(offset, max);
     System.out.println(result);
@@ -179,8 +170,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **Integer**| start offset | [optional] [default to 0]
- **max** | **Integer**| max results | [optional] [default to 10]
+ **offset** | **Integer**| start offset | [optional]
+ **max** | **Integer**| max results | [optional]
 
 ### Return type
 
@@ -192,30 +183,29 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listTransactionsForWallet"></a>
 # **listTransactionsForWallet**
-> List&lt;Transaction&gt; listTransactionsForWallet(id, offset, max)
+> List&lt;Transaction&gt; listTransactionsForWallet(id, type, offset, max)
 
 List Transactions for Wallet
-
-
 
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.TransactionsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.TransactionsApi;
 
 
 TransactionsApi apiInstance = new TransactionsApi();
 Long id = 789L; // Long | 
-Integer offset = 0; // Integer | start offset
-Integer max = 10; // Integer | max results
+String type = "type_example"; // String | 
+Integer offset = 56; // Integer | start offset
+Integer max = 56; // Integer | max results
 try {
-    List<Transaction> result = apiInstance.listTransactionsForWallet(id, offset, max);
+    List<Transaction> result = apiInstance.listTransactionsForWallet(id, type, offset, max);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TransactionsApi#listTransactionsForWallet");
@@ -228,8 +218,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Long**|  |
- **offset** | **Integer**| start offset | [optional] [default to 0]
- **max** | **Integer**| max results | [optional] [default to 10]
+ **type** | **String**|  | [optional]
+ **offset** | **Integer**| start offset | [optional]
+ **max** | **Integer**| max results | [optional]
 
 ### Return type
 
@@ -241,6 +232,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

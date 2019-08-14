@@ -1,4 +1,3 @@
-
 # Transaction
 
 ## Properties
@@ -12,6 +11,3 @@ Name | Type | Description | Notes
 **type** | **String** |  |  [optional]
 **wallet** | [**Wallet**](Wallet.md) |  |  [optional]
 **context** | **Map&lt;String, Object&gt;** |  |  [optional]
-
-
-

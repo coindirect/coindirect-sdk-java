@@ -1,6 +1,6 @@
 # PaymentTypesAndCategoriesApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,20 +9,17 @@ Method | HTTP request | Description
 [**listPaymentMethodTypes**](PaymentTypesAndCategoriesApi.md#listPaymentMethodTypes) | **GET** /api/public/payment/types | List Payment Method Types
 [**listPaymentMethodTypesByCategory**](PaymentTypesAndCategoriesApi.md#listPaymentMethodTypesByCategory) | **GET** /api/public/payment/types/{id} | List Payment Method Types for Category
 
-
 <a name="listOptionsForPaymentMethodType"></a>
 # **listOptionsForPaymentMethodType**
 > List&lt;GenericOption&gt; listOptionsForPaymentMethodType(id)
 
 List option for Payment Method Type
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.PaymentTypesAndCategoriesApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.PaymentTypesAndCategoriesApi;
 
 
 PaymentTypesAndCategoriesApi apiInstance = new PaymentTypesAndCategoriesApi();
@@ -52,7 +49,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listPaymentMethodCategories"></a>
@@ -61,13 +58,11 @@ No authorization required
 
 List Payment Method Categories
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.PaymentTypesAndCategoriesApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.PaymentTypesAndCategoriesApi;
 
 
 PaymentTypesAndCategoriesApi apiInstance = new PaymentTypesAndCategoriesApi();
@@ -93,7 +88,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listPaymentMethodTypes"></a>
@@ -102,13 +97,11 @@ No authorization required
 
 List Payment Method Types
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.PaymentTypesAndCategoriesApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.PaymentTypesAndCategoriesApi;
 
 
 PaymentTypesAndCategoriesApi apiInstance = new PaymentTypesAndCategoriesApi();
@@ -138,7 +131,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listPaymentMethodTypesByCategory"></a>
@@ -147,13 +140,11 @@ No authorization required
 
 List Payment Method Types for Category
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.PaymentTypesAndCategoriesApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.PaymentTypesAndCategoriesApi;
 
 
 PaymentTypesAndCategoriesApi apiInstance = new PaymentTypesAndCategoriesApi();
@@ -185,6 +176,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

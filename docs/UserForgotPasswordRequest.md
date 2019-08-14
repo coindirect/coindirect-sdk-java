@@ -1,4 +1,3 @@
-
 # UserForgotPasswordRequest
 
 ## Properties
@@ -8,6 +7,3 @@ Name | Type | Description | Notes
 **confirmationUrl** | **String** |  |  [optional]
 **newPassword** | **String** |  |  [optional]
 **token** | **String** |  |  [optional]
-
-
-

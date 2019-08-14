@@ -1,13 +1,14 @@
 # CountriesApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**detectCountryByIp**](CountriesApi.md#detectCountryByIp) | **GET** /api/country/detect | Detect Country by IP
 [**getCountry**](CountriesApi.md#getCountry) | **GET** /api/country/{id} | Read Country
+[**getCountryByCode**](CountriesApi.md#getCountryByCode) | **GET** /api/country/codes/{code} | Read Country by Code
 [**listCountries**](CountriesApi.md#listCountries) | **GET** /api/country | List Countries
-
+[**listCountryCodes**](CountriesApi.md#listCountryCodes) | **GET** /api/country/codes | List Country Codes
 
 <a name="detectCountryByIp"></a>
 # **detectCountryByIp**
@@ -15,13 +16,11 @@ Method | HTTP request | Description
 
 Detect Country by IP
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.CountriesApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.CountriesApi;
 
 
 CountriesApi apiInstance = new CountriesApi();
@@ -47,7 +46,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCountry"></a>
@@ -56,13 +55,11 @@ No authorization required
 
 Read Country
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.CountriesApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.CountriesApi;
 
 
 CountriesApi apiInstance = new CountriesApi();
@@ -92,7 +89,50 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getCountryByCode"></a>
+# **getCountryByCode**
+> Country getCountryByCode(code)
+
+Read Country by Code
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.CountriesApi;
+
+
+CountriesApi apiInstance = new CountriesApi();
+String code = "code_example"; // String | 
+try {
+    Country result = apiInstance.getCountryByCode(code);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CountriesApi#getCountryByCode");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **code** | **String**|  |
+
+### Return type
+
+[**Country**](Country.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listCountries"></a>
@@ -101,19 +141,17 @@ No authorization required
 
 List Countries
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.CountriesApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.CountriesApi;
 
 
 CountriesApi apiInstance = new CountriesApi();
 Boolean enabled = true; // Boolean | 
-Integer offset = 0; // Integer | start offset
-Integer max = 10; // Integer | max results
+Integer offset = 56; // Integer | start offset
+Integer max = 56; // Integer | max results
 try {
     List<Country> result = apiInstance.listCountries(enabled, offset, max);
     System.out.println(result);
@@ -128,8 +166,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **enabled** | **Boolean**|  | [optional]
- **offset** | **Integer**| start offset | [optional] [default to 0]
- **max** | **Integer**| max results | [optional] [default to 10]
+ **offset** | **Integer**| start offset | [optional]
+ **max** | **Integer**| max results | [optional]
 
 ### Return type
 
@@ -141,6 +179,53 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="listCountryCodes"></a>
+# **listCountryCodes**
+> List&lt;String&gt; listCountryCodes(enabled, offset, max)
+
+List Country Codes
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.CountriesApi;
+
+
+CountriesApi apiInstance = new CountriesApi();
+Boolean enabled = true; // Boolean | 
+Integer offset = 56; // Integer | start offset
+Integer max = 56; // Integer | max results
+try {
+    List<String> result = apiInstance.listCountryCodes(enabled, offset, max);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CountriesApi#listCountryCodes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enabled** | **Boolean**|  | [optional]
+ **offset** | **Integer**| start offset | [optional]
+ **max** | **Integer**| max results | [optional]
+
+### Return type
+
+**List&lt;String&gt;**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

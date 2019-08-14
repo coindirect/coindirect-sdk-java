@@ -1,6 +1,6 @@
 # WalletsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,11 +13,12 @@ Method | HTTP request | Description
 [**getWalletDepositAddress**](WalletsApi.md#getWalletDepositAddress) | **POST** /api/wallet/deposit/{id} | Get Deposit Address
 [**getWalletFundingOptions**](WalletsApi.md#getWalletFundingOptions) | **GET** /api/wallet/funding/{id} | Get Funding Options
 [**getWithdrawalRequest**](WalletsApi.md#getWithdrawalRequest) | **GET** /api/wallet/withdrawal/request/{id} | Read Withdrawal Request
+[**listAllBalances**](WalletsApi.md#listAllBalances) | **GET** /api/wallet/balances | List All Wallet Balances
 [**listTransferRequests**](WalletsApi.md#listTransferRequests) | **GET** /api/wallet/transfer | List Transfer Requests
 [**listWallets**](WalletsApi.md#listWallets) | **GET** /api/wallet | List Wallets
 [**listWithdrawalRequests**](WalletsApi.md#listWithdrawalRequests) | **GET** /api/wallet/withdrawal/request | List Withdrawal Requests
 [**withdrawFromWallet**](WalletsApi.md#withdrawFromWallet) | **POST** /api/wallet/withdraw/{id} | Withdraw from Wallet
-
+[**withdrawValidate**](WalletsApi.md#withdrawValidate) | **POST** /api/wallet/withdraw/validate/{id} | Pre-validate Withdrawal
 
 <a name="createTransferRequest"></a>
 # **createTransferRequest**
@@ -25,13 +26,11 @@ Method | HTTP request | Description
 
 Create Transfer Request
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.WalletsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.WalletsApi;
 
 
 WalletsApi apiInstance = new WalletsApi();
@@ -70,17 +69,15 @@ No authorization required
 
 Create Wallet
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.WalletsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.WalletsApi;
 
 
 WalletsApi apiInstance = new WalletsApi();
-Wallet body = new Wallet(); // Wallet | 
+WalletWallet body = new WalletWallet(); // WalletWallet | 
 try {
     Wallet result = apiInstance.createWallet(body);
     System.out.println(result);
@@ -94,7 +91,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Wallet**](Wallet.md)|  | [optional]
+ **body** | [**WalletWallet**](WalletWallet.md)|  | [optional]
 
 ### Return type
 
@@ -115,13 +112,11 @@ No authorization required
 
 Get convertible currencies
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.WalletsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.WalletsApi;
 
 
 WalletsApi apiInstance = new WalletsApi();
@@ -151,7 +146,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getTransferRequestOutputEstimate"></a>
@@ -160,13 +155,11 @@ No authorization required
 
 Estimate Transfer Request Output
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.WalletsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.WalletsApi;
 
 
 WalletsApi apiInstance = new WalletsApi();
@@ -205,13 +198,11 @@ No authorization required
 
 Get transferable currencies
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.WalletsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.WalletsApi;
 
 
 WalletsApi apiInstance = new WalletsApi();
@@ -241,7 +232,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getWallet"></a>
@@ -250,13 +241,11 @@ No authorization required
 
 Read Wallet
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.WalletsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.WalletsApi;
 
 
 WalletsApi apiInstance = new WalletsApi();
@@ -286,7 +275,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getWalletDepositAddress"></a>
@@ -295,13 +284,11 @@ No authorization required
 
 Get Deposit Address
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.WalletsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.WalletsApi;
 
 
 WalletsApi apiInstance = new WalletsApi();
@@ -330,7 +317,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getWalletFundingOptions"></a>
@@ -339,13 +326,11 @@ No authorization required
 
 Get Funding Options
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.WalletsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.WalletsApi;
 
 
 WalletsApi apiInstance = new WalletsApi();
@@ -375,7 +360,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getWithdrawalRequest"></a>
@@ -384,13 +369,11 @@ No authorization required
 
 Read Withdrawal Request
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.WalletsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.WalletsApi;
 
 
 WalletsApi apiInstance = new WalletsApi();
@@ -420,7 +403,46 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="listAllBalances"></a>
+# **listAllBalances**
+> List&lt;Wallet&gt; listAllBalances()
+
+List All Wallet Balances
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.WalletsApi;
+
+
+WalletsApi apiInstance = new WalletsApi();
+try {
+    List<Wallet> result = apiInstance.listAllBalances();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WalletsApi#listAllBalances");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;Wallet&gt;**](Wallet.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listTransferRequests"></a>
@@ -429,18 +451,16 @@ No authorization required
 
 List Transfer Requests
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.WalletsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.WalletsApi;
 
 
 WalletsApi apiInstance = new WalletsApi();
-Integer offset = 0; // Integer | start offset
-Integer max = 10; // Integer | max results
+Integer offset = 56; // Integer | start offset
+Integer max = 56; // Integer | max results
 try {
     List<TransferRequest> result = apiInstance.listTransferRequests(offset, max);
     System.out.println(result);
@@ -454,8 +474,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **Integer**| start offset | [optional] [default to 0]
- **max** | **Integer**| max results | [optional] [default to 10]
+ **offset** | **Integer**| start offset | [optional]
+ **max** | **Integer**| max results | [optional]
 
 ### Return type
 
@@ -467,7 +487,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listWallets"></a>
@@ -476,18 +496,16 @@ No authorization required
 
 List Wallets
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.WalletsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.WalletsApi;
 
 
 WalletsApi apiInstance = new WalletsApi();
-Integer offset = 0; // Integer | start offset
-Integer max = 10; // Integer | max results
+Integer offset = 56; // Integer | start offset
+Integer max = 56; // Integer | max results
 try {
     List<Wallet> result = apiInstance.listWallets(offset, max);
     System.out.println(result);
@@ -501,8 +519,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **Integer**| start offset | [optional] [default to 0]
- **max** | **Integer**| max results | [optional] [default to 10]
+ **offset** | **Integer**| start offset | [optional]
+ **max** | **Integer**| max results | [optional]
 
 ### Return type
 
@@ -514,7 +532,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listWithdrawalRequests"></a>
@@ -523,18 +541,16 @@ No authorization required
 
 List Withdrawal Requests
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.WalletsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.WalletsApi;
 
 
 WalletsApi apiInstance = new WalletsApi();
-Integer offset = 0; // Integer | start offset
-Integer max = 10; // Integer | max results
+Integer offset = 56; // Integer | start offset
+Integer max = 56; // Integer | max results
 try {
     List<WithdrawalRequest> result = apiInstance.listWithdrawalRequests(offset, max);
     System.out.println(result);
@@ -548,8 +564,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **Integer**| start offset | [optional] [default to 0]
- **max** | **Integer**| max results | [optional] [default to 10]
+ **offset** | **Integer**| start offset | [optional]
+ **max** | **Integer**| max results | [optional]
 
 ### Return type
 
@@ -561,7 +577,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="withdrawFromWallet"></a>
@@ -570,13 +586,11 @@ No authorization required
 
 Withdraw from Wallet
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.WalletsApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.WalletsApi;
 
 
 WalletsApi apiInstance = new WalletsApi();
@@ -601,6 +615,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**WithdrawalRequest**](WithdrawalRequest.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="withdrawValidate"></a>
+# **withdrawValidate**
+> Errors withdrawValidate(id, body)
+
+Pre-validate Withdrawal
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.WalletsApi;
+
+
+WalletsApi apiInstance = new WalletsApi();
+Long id = 789L; // Long | 
+Withdrawal body = new Withdrawal(); // Withdrawal | 
+try {
+    Errors result = apiInstance.withdrawValidate(id, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WalletsApi#withdrawValidate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Long**|  |
+ **body** | [**Withdrawal**](Withdrawal.md)|  | [optional]
+
+### Return type
+
+[**Errors**](Errors.md)
 
 ### Authorization
 

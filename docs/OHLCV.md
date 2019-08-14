@@ -1,4 +1,3 @@
-
 # OHLCV
 
 ## Properties
@@ -10,6 +9,3 @@ Name | Type | Description | Notes
 **low** | **Double** |  |  [optional]
 **close** | **Double** |  |  [optional]
 **volume** | **Double** |  |  [optional]
-
-
-

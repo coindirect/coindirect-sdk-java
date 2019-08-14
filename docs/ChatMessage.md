@@ -1,4 +1,3 @@
-
 # ChatMessage
 
 ## Properties
@@ -10,6 +9,3 @@ Name | Type | Description | Notes
 **message** | **String** |  |  [optional]
 **file** | [**EncodedFile**](EncodedFile.md) |  |  [optional]
 **dateCreated** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
-
-
-

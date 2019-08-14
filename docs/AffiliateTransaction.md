@@ -1,4 +1,3 @@
-
 # AffiliateTransaction
 
 ## Properties
@@ -10,6 +9,3 @@ Name | Type | Description | Notes
 **currency** | [**Currency**](Currency.md) |  |  [optional]
 **type** | **String** |  |  [optional]
 **reference** | **String** |  |  [optional]
-
-
-

@@ -1,4 +1,3 @@
-
 # OrderDispute
 
 ## Properties
@@ -14,6 +13,3 @@ Name | Type | Description | Notes
 **resolution** | **String** |  |  [optional]
 **otherReason** | **String** |  |  [optional]
 **message** | **String** |  |  [optional]
-
-
-

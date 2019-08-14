@@ -1,6 +1,6 @@
 # ExchangeOrdersApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,20 +10,17 @@ Method | HTTP request | Description
 [**listExchangeOrders**](ExchangeOrdersApi.md#listExchangeOrders) | **GET** /api/v1/exchange/order | List Orders
 [**placeExchangeOrder**](ExchangeOrdersApi.md#placeExchangeOrder) | **POST** /api/v1/exchange/order | Place Order
 
-
 <a name="cancelExchangeOrder"></a>
 # **cancelExchangeOrder**
 > ExchangeOrder cancelExchangeOrder(uuid)
 
 Cancel Order
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.ExchangeOrdersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.ExchangeOrdersApi;
 
 
 ExchangeOrdersApi apiInstance = new ExchangeOrdersApi();
@@ -53,7 +50,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getExchangeOrder"></a>
@@ -62,13 +59,11 @@ No authorization required
 
 Get Order
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.ExchangeOrdersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.ExchangeOrdersApi;
 
 
 ExchangeOrdersApi apiInstance = new ExchangeOrdersApi();
@@ -98,7 +93,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getMarketAccess"></a>
@@ -107,13 +102,11 @@ No authorization required
 
 Check access to market
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.ExchangeOrdersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.ExchangeOrdersApi;
 
 
 ExchangeOrdersApi apiInstance = new ExchangeOrdersApi();
@@ -143,7 +136,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listExchangeOrders"></a>
@@ -152,20 +145,18 @@ No authorization required
 
 List Orders
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.ExchangeOrdersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.ExchangeOrdersApi;
 
 
 ExchangeOrdersApi apiInstance = new ExchangeOrdersApi();
 String symbol = "symbol_example"; // String | 
 Boolean completed = true; // Boolean | 
-Integer offset = 0; // Integer | start offset
-Integer max = 10; // Integer | max results
+Integer offset = 56; // Integer | start offset
+Integer max = 56; // Integer | max results
 try {
     List<ExchangeOrder> result = apiInstance.listExchangeOrders(symbol, completed, offset, max);
     System.out.println(result);
@@ -181,8 +172,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**|  | [optional]
  **completed** | **Boolean**|  | [optional]
- **offset** | **Integer**| start offset | [optional] [default to 0]
- **max** | **Integer**| max results | [optional] [default to 10]
+ **offset** | **Integer**| start offset | [optional]
+ **max** | **Integer**| max results | [optional]
 
 ### Return type
 
@@ -194,7 +185,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="placeExchangeOrder"></a>
@@ -208,8 +199,8 @@ Place an Order on the Exchange
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.ExchangeOrdersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.ExchangeOrdersApi;
 
 
 ExchangeOrdersApi apiInstance = new ExchangeOrdersApi();

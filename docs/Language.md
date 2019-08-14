@@ -1,4 +1,3 @@
-
 # Language
 
 ## Properties
@@ -10,6 +9,3 @@ Name | Type | Description | Notes
 **isDefault** | **Boolean** |  |  [optional]
 **lcid** | **String** |  |  [optional]
 **name** | **String** |  |  [optional]
-
-
-

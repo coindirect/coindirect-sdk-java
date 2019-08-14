@@ -1,4 +1,3 @@
-
 # ExchangeOrder
 
 ## Properties
@@ -14,6 +13,4 @@ Name | Type | Description | Notes
 **side** | **String** |  |  [optional]
 **dateCreated** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **type** | **String** |  |  [optional]
-
-
-
+**executedFees** | [**BigDecimal**](BigDecimal.md) |  |  [optional]

@@ -1,4 +1,3 @@
-
 # UserProfile
 
 ## Properties
@@ -13,6 +12,3 @@ Name | Type | Description | Notes
 **language** | **String** |  |  [optional]
 **emailAddress** | **String** |  |  [optional]
 **countryCode** | **String** |  |  [optional]
-
-
-

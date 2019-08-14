@@ -1,6 +1,6 @@
 # UsersApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,20 +24,17 @@ Method | HTTP request | Description
 [**updateProfile_0**](UsersApi.md#updateProfile_0) | **PUT** /api/user/profile | Update current user profile
 [**uploadIdVerificationDocument**](UsersApi.md#uploadIdVerificationDocument) | **POST** /api/user/document | Upload ID verification document
 
-
 <a name="beginForgotPassword"></a>
 # **beginForgotPassword**
 > beginForgotPassword(body)
 
 Forgot Password Request
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -67,7 +64,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="beginTwoFactorSetup"></a>
 # **beginTwoFactorSetup**
@@ -75,13 +72,11 @@ No authorization required
 
 Begin Two Factor Setup
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -120,13 +115,11 @@ No authorization required
 
 Forgot Password Confirm Reset
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -156,7 +149,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="confirmNewUser"></a>
 # **confirmNewUser**
@@ -164,13 +157,11 @@ No authorization required
 
 Confirm new user registration
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -200,7 +191,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="confirmTwoFactorSetup"></a>
 # **confirmTwoFactorSetup**
@@ -208,13 +199,11 @@ No authorization required
 
 Confirm Two Factor Code
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -244,7 +233,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="createApiKey"></a>
 # **createApiKey**
@@ -252,13 +241,11 @@ No authorization required
 
 Create API Key
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -288,7 +275,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="deleteApiKey"></a>
 # **deleteApiKey**
@@ -296,13 +283,11 @@ No authorization required
 
 Delete/Revoke API Key
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -331,8 +316,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="getProfile"></a>
 # **getProfile**
@@ -340,13 +325,11 @@ No authorization required
 
 Get current user profile
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -372,7 +355,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getTwoFactorStatus"></a>
@@ -381,13 +364,11 @@ No authorization required
 
 Check Two Factor Status
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -413,7 +394,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserWebsocketChannel"></a>
@@ -422,13 +403,11 @@ No authorization required
 
 Get WebSocket Channel
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -454,7 +433,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listApiKeys"></a>
@@ -463,13 +442,11 @@ No authorization required
 
 List API Keys
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -495,7 +472,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="registerNewUser"></a>
@@ -504,13 +481,11 @@ No authorization required
 
 Register a new user
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -540,7 +515,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="reissueApiToken"></a>
 # **reissueApiToken**
@@ -548,13 +523,11 @@ No authorization required
 
 Reissue Temporary Token
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -579,8 +552,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 <a name="resendVerificationEmail"></a>
 # **resendVerificationEmail**
@@ -588,13 +561,11 @@ No authorization required
 
 Resend verification email
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -624,7 +595,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="updatePassword"></a>
 # **updatePassword**
@@ -632,13 +603,11 @@ No authorization required
 
 Update user password
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -676,13 +645,11 @@ No authorization required
 
 Update User Profile
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -721,13 +688,11 @@ No authorization required
 
 Update profile image
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -757,7 +722,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="updateProfile_0"></a>
 # **updateProfile_0**
@@ -765,13 +730,11 @@ No authorization required
 
 Update current user profile
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -810,13 +773,11 @@ No authorization required
 
 Upload ID verification document
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.UsersApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.UsersApi;
 
 
 UsersApi apiInstance = new UsersApi();
@@ -846,5 +807,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 

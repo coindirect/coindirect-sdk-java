@@ -1,4 +1,3 @@
-
 # Order
 
 ## Properties
@@ -37,6 +36,3 @@ Name | Type | Description | Notes
 **exchangeRequired** | **Boolean** |  |  [optional]
 **offer** | [**PublicOffer**](PublicOffer.md) |  |  [optional]
 **convertToCurrency** | [**Currency**](Currency.md) |  |  [optional]
-
-
-

@@ -1,4 +1,3 @@
-
 # Withdrawal
 
 ## Properties
@@ -8,6 +7,3 @@ Name | Type | Description | Notes
 **amount** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **address** | **String** |  |  [optional]
 **authorization** | [**Authorization**](Authorization.md) |  |  [optional]
-
-
-

@@ -1,4 +1,3 @@
-
 # Currency
 
 ## Properties
@@ -13,6 +12,5 @@ Name | Type | Description | Notes
 **options** | **Map&lt;String, Object&gt;** |  |  [optional]
 **withdrawalFee** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **depositFee** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-
-
-
+**supportsDeposits** | **Boolean** |  |  [optional]
+**supportsWithdrawals** | **Boolean** |  |  [optional]

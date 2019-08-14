@@ -1,4 +1,3 @@
-
 # Offer
 
 ## Properties
@@ -27,6 +26,3 @@ Name | Type | Description | Notes
 **features** | **List&lt;String&gt;** |  |  [optional]
 **latestPrice** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **countries** | [**List&lt;Country&gt;**](Country.md) |  |  [optional]
-
-
-

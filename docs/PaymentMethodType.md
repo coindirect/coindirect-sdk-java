@@ -1,4 +1,3 @@
-
 # PaymentMethodType
 
 ## Properties
@@ -10,6 +9,3 @@ Name | Type | Description | Notes
 **name** | **String** |  |  [optional]
 **options** | **Map&lt;String, Object&gt;** |  |  [optional]
 **countryOptions** | **Map&lt;String, Object&gt;** |  |  [optional]
-
-
-

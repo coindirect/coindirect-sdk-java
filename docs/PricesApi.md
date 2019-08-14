@@ -1,11 +1,10 @@
 # PricesApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**listCurrencySnapshots**](PricesApi.md#listCurrencySnapshots) | **GET** /api/currency/snapshot | List Latest Prices
-
 
 <a name="listCurrencySnapshots"></a>
 # **listCurrencySnapshots**
@@ -13,20 +12,18 @@ Method | HTTP request | Description
 
 List Latest Prices
 
-
-
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.client.invoker.ApiException;
-//import org.coindirect.client.api.PricesApi;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.PricesApi;
 
 
 PricesApi apiInstance = new PricesApi();
 String baseCurrency = "baseCurrency_example"; // String | 
 String countryCode = "countryCode_example"; // String | 
-Integer offset = 0; // Integer | start offset
-Integer max = 10; // Integer | max results
+Integer offset = 56; // Integer | start offset
+Integer max = 56; // Integer | max results
 try {
     List<CurrencySnapshot> result = apiInstance.listCurrencySnapshots(baseCurrency, countryCode, offset, max);
     System.out.println(result);
@@ -42,8 +39,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **baseCurrency** | **String**|  | [optional]
  **countryCode** | **String**|  | [optional]
- **offset** | **Integer**| start offset | [optional] [default to 0]
- **max** | **Integer**| max results | [optional] [default to 10]
+ **offset** | **Integer**| start offset | [optional]
+ **max** | **Integer**| max results | [optional]
 
 ### Return type
 
@@ -55,6 +52,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

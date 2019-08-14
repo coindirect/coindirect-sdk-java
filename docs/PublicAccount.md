@@ -1,4 +1,3 @@
-
 # PublicAccount
 
 ## Properties
@@ -9,6 +8,3 @@ Name | Type | Description | Notes
 **country** | **String** |  |  [optional]
 **city** | **String** |  |  [optional]
 **rating** | [**RatingSummary**](RatingSummary.md) |  |  [optional]
-
-
-

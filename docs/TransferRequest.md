@@ -1,4 +1,3 @@
-
 # TransferRequest
 
 ## Properties
@@ -12,6 +11,3 @@ Name | Type | Description | Notes
 **status** | **Integer** |  |  [optional]
 **toWallet** | [**Wallet**](Wallet.md) |  |  [optional]
 **toCurrency** | [**Currency**](Currency.md) |  |  [optional]
-
-
-
