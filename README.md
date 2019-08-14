@@ -67,43 +67,11 @@ Then manually install the following JARs:
 
 ## Getting Started
 
-Please follow the [installation](#installation) instruction and execute the following Java code:
+Please follow the [installation](#installation) instructions.
 
-```java
-
-import org.coindirect.client.api.ExchangeApi;
-import org.coindirect.client.api.ExchangeOrdersApi;
-import org.coindirect.client.invoker.ApiClient;
-import org.coindirect.client.invoker.ApiClientFactory;
-import org.coindirect.client.model.ExchangeOrder;
-import org.coindirect.client.model.ExchangeOrderRequest;
-import org.coindirect.client.model.Market;
-
-import java.math.BigDecimal;
-import java.util.List;
-
-public class PlaceOrder {
-    public static void main(String[] args) {
-        ApiClient apiClient = ApiClientFactory.newApiClient("YOUR-KEY", "YOUR-SECRET");
-        ExchangeOrdersApi exchangeOrdersApi = new ExchangeOrdersApi(apiClient);
-        try {
-            ExchangeOrderRequest exchangeOrderRequest = new ExchangeOrderRequest();
-            exchangeOrderRequest.setSide(ExchangeOrderRequest.SideEnum.BUY);
-            exchangeOrderRequest.setType(ExchangeOrderRequest.TypeEnum.LIMIT);
-            exchangeOrderRequest.setAmount(new BigDecimal("1.0"));
-            exchangeOrderRequest.setPrice(new BigDecimal("0.1"));
-            exchangeOrderRequest.setSymbol("ETH-BTC");
-
-            ExchangeOrder exchangeOrder = exchangeOrdersApi.placeExchangeOrder(exchangeOrderRequest);
-            System.out.println("Received exchangeOrder "+exchangeOrder);
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }
-}
+You can then refer to example projects located at https://github.com/coindirect/examples-java
 
 
-```
 
 ## Recommendation
 
