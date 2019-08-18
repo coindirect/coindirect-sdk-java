@@ -1,4 +1,10 @@
+cache:
+  paths:
+    - .m2/repository
+
 ossrh-staging:
-  image: maven:3-jdk-8-slim
+  image: maven:3-jdk-8
   script:
-    - mvn clean install -Prelease
+    - apt-get update && apt-get install -qy xmlstarlet libxml2-utils
+    - echo "${GPG_KEY_SECRET}" | gpg --allow-secret-key-import --import
+    - mvn clean install -Prelease -s settings.xml
