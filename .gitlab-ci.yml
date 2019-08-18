@@ -6,5 +6,5 @@ ossrh-staging:
   image: maven:3-jdk-8
   script:
     - apt-get update && apt-get install -qy xmlstarlet libxml2-utils
-    - echo "${GPG_KEY_SECRET}" | gpg --allow-secret-key-import --import
+    - echo -e "$GPG_KEY_SECRET" | gpg --import
     - mvn clean install -Prelease -s settings.xml
