@@ -16,6 +16,7 @@
           <activeByDefault>true</activeByDefault>
         </activation>
         <properties>
+          <gpg.keyname>14B992B553F34F991C36F58D0D28DAB5925D399E</gpg.keyname>
           <gpg.useagent>true</gpg.useagent>
           <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
         </properties>
