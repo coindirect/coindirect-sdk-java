@@ -1,8 +1,8 @@
 # Coindirect Java SDK
 
 Coindirect
-- API version: 1.0.1
-  - Build date: 2019-08-14
+- API version: 1.0.2
+  - Build date: 2019-08-19
 
 The Coindirect API is offered to all users to make use of our Payments, P2P Marketplace, Exchange and Wallets.
 
@@ -17,21 +17,7 @@ Building the API client library requires:
 
 ## Installation
 
-To install the API client library to your local Maven repository, simply execute:
-
-```shell
-mvn clean install
-```
-
-To deploy it to a remote Maven repository instead, configure the settings of the repository and execute:
-
-```shell
-mvn clean deploy
-```
-
-Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) for more information.
-
-### Maven users (not in maven public, use a local or private repository)
+### Maven users 
 
 Add this dependency to your project's POM:
 
@@ -39,17 +25,17 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>org.coindirect</groupId>
   <artifactId>api</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <scope>compile</scope>
 </dependency>
 ```
 
-### Gradle users (not in maven public, use a local or private repository)
+### Gradle users 
 
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.coindirect:api:1.0.1"
+compile "org.coindirect:api:1.0.2"
 ```
 
 ### Others
@@ -62,7 +48,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/api-1.0.1.jar`
+* `target/api-1.0.2.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -75,7 +61,7 @@ You can then refer to example projects located at https://github.com/coindirect/
 
 ## Recommendation
 
-It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
+It's recommended to create an instance of `CoindirectApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
 
