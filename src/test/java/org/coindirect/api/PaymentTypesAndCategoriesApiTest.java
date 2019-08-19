@@ -33,21 +33,6 @@ public class PaymentTypesAndCategoriesApiTest {
     private final PaymentTypesAndCategoriesApi api = new PaymentTypesAndCategoriesApi();
 
     /**
-     * List option for Payment Method Type
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listOptionsForPaymentMethodTypeTest() throws ApiException {
-        Long id = null;
-        List<GenericOption> response = api.listOptionsForPaymentMethodType(id);
-
-        // TODO: test validations
-    }
-    /**
      * List Payment Method Categories
      *
      * 
@@ -56,8 +41,23 @@ public class PaymentTypesAndCategoriesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listPaymentMethodCategoriesTest() throws ApiException {
-        List<PaymentMethodCategory> response = api.listPaymentMethodCategories();
+    public void paymentMethodCategoryListTest() throws ApiException {
+        List<PaymentMethodCategory> response = api.paymentMethodCategoryList();
+
+        // TODO: test validations
+    }
+    /**
+     * List Option for Payment Method Type
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void paymentMethodTypeListOptionTest() throws ApiException {
+        Long id = null;
+        List<GenericOption> response = api.paymentMethodTypeListOption(id);
 
         // TODO: test validations
     }
@@ -70,9 +70,9 @@ public class PaymentTypesAndCategoriesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listPaymentMethodTypesTest() throws ApiException {
+    public void paymentMethodTypeListTest() throws ApiException {
         String countryCode = null;
-        List<PaymentMethodType> response = api.listPaymentMethodTypes(countryCode);
+        List<PaymentMethodType> response = api.paymentMethodTypeList(countryCode);
 
         // TODO: test validations
     }
@@ -85,10 +85,10 @@ public class PaymentTypesAndCategoriesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listPaymentMethodTypesByCategoryTest() throws ApiException {
+    public void paymentMethodTypeListByCategoryTest() throws ApiException {
         Long id = null;
         String countryCode = null;
-        List<PaymentMethodType> response = api.listPaymentMethodTypesByCategory(id, countryCode);
+        List<PaymentMethodType> response = api.paymentMethodTypeListByCategory(id, countryCode);
 
         // TODO: test validations
     }

@@ -4,256 +4,54 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**beginForgotPassword**](UsersApi.md#beginForgotPassword) | **POST** /api/user/forgot/request | Forgot Password Request
-[**beginTwoFactorSetup**](UsersApi.md#beginTwoFactorSetup) | **POST** /api/user/twofactor/request | Begin Two Factor Setup
-[**confirmForgotPassword**](UsersApi.md#confirmForgotPassword) | **POST** /api/user/forgot/confirm | Forgot Password Confirm Reset
-[**confirmNewUser**](UsersApi.md#confirmNewUser) | **POST** /api/user/register/confirm | Confirm new user registration
-[**confirmTwoFactorSetup**](UsersApi.md#confirmTwoFactorSetup) | **POST** /api/user/twofactor/confirm | Confirm Two Factor Code
-[**createApiKey**](UsersApi.md#createApiKey) | **POST** /api/token | Create API Key
-[**deleteApiKey**](UsersApi.md#deleteApiKey) | **DELETE** /api/token | Delete/Revoke API Key
-[**getProfile**](UsersApi.md#getProfile) | **GET** /api/user/profile | Get current user profile
-[**getTwoFactorStatus**](UsersApi.md#getTwoFactorStatus) | **GET** /api/user/twofactor/state | Check Two Factor Status
-[**getUserWebsocketChannel**](UsersApi.md#getUserWebsocketChannel) | **GET** /api/user/channel | Get WebSocket Channel
-[**listApiKeys**](UsersApi.md#listApiKeys) | **GET** /api/token | List API Keys
-[**registerNewUser**](UsersApi.md#registerNewUser) | **POST** /api/user/register | Register a new user
-[**reissueApiToken**](UsersApi.md#reissueApiToken) | **POST** /api/login/reissue | Reissue Temporary Token
-[**resendVerificationEmail**](UsersApi.md#resendVerificationEmail) | **POST** /api/user/register/resend | Resend verification email
-[**updatePassword**](UsersApi.md#updatePassword) | **PUT** /api/user/password | Update user password
-[**updateProfile**](UsersApi.md#updateProfile) | **PUT** /api/user | Update User Profile
-[**updateProfileImage**](UsersApi.md#updateProfileImage) | **PUT** /api/user/image | Update profile image
-[**updateProfile_0**](UsersApi.md#updateProfile_0) | **PUT** /api/user/profile | Update current user profile
-[**uploadIdVerificationDocument**](UsersApi.md#uploadIdVerificationDocument) | **POST** /api/user/document | Upload ID verification document
-
-<a name="beginForgotPassword"></a>
-# **beginForgotPassword**
-> beginForgotPassword(body)
-
-Forgot Password Request
-
-### Example
-```java
-// Import classes:
-//import org.coindirect.api.invoker.ApiException;
-//import org.coindirect.api.UsersApi;
-
-
-UsersApi apiInstance = new UsersApi();
-UserForgotPasswordRequest body = new UserForgotPasswordRequest(); // UserForgotPasswordRequest | 
-try {
-    apiInstance.beginForgotPassword(body);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#beginForgotPassword");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**UserForgotPasswordRequest**](UserForgotPasswordRequest.md)|  | [optional]
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-<a name="beginTwoFactorSetup"></a>
-# **beginTwoFactorSetup**
-> WrappedString beginTwoFactorSetup(body)
-
-Begin Two Factor Setup
-
-### Example
-```java
-// Import classes:
-//import org.coindirect.api.invoker.ApiException;
-//import org.coindirect.api.UsersApi;
-
-
-UsersApi apiInstance = new UsersApi();
-WrappedString body = new WrappedString(); // WrappedString | 
-try {
-    WrappedString result = apiInstance.beginTwoFactorSetup(body);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#beginTwoFactorSetup");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**WrappedString**](WrappedString.md)|  | [optional]
-
-### Return type
-
-[**WrappedString**](WrappedString.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="confirmForgotPassword"></a>
-# **confirmForgotPassword**
-> confirmForgotPassword(body)
-
-Forgot Password Confirm Reset
-
-### Example
-```java
-// Import classes:
-//import org.coindirect.api.invoker.ApiException;
-//import org.coindirect.api.UsersApi;
-
-
-UsersApi apiInstance = new UsersApi();
-UserForgotPasswordRequest body = new UserForgotPasswordRequest(); // UserForgotPasswordRequest | 
-try {
-    apiInstance.confirmForgotPassword(body);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#confirmForgotPassword");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**UserForgotPasswordRequest**](UserForgotPasswordRequest.md)|  | [optional]
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-<a name="confirmNewUser"></a>
-# **confirmNewUser**
-> confirmNewUser(body)
-
-Confirm new user registration
-
-### Example
-```java
-// Import classes:
-//import org.coindirect.api.invoker.ApiException;
-//import org.coindirect.api.UsersApi;
-
-
-UsersApi apiInstance = new UsersApi();
-WrappedString body = new WrappedString(); // WrappedString | 
-try {
-    apiInstance.confirmNewUser(body);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#confirmNewUser");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**WrappedString**](WrappedString.md)|  | [optional]
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-<a name="confirmTwoFactorSetup"></a>
-# **confirmTwoFactorSetup**
-> confirmTwoFactorSetup(body)
-
-Confirm Two Factor Code
-
-### Example
-```java
-// Import classes:
-//import org.coindirect.api.invoker.ApiException;
-//import org.coindirect.api.UsersApi;
-
-
-UsersApi apiInstance = new UsersApi();
-WrappedString body = new WrappedString(); // WrappedString | 
-try {
-    apiInstance.confirmTwoFactorSetup(body);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#confirmTwoFactorSetup");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**WrappedString**](WrappedString.md)|  | [optional]
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-<a name="createApiKey"></a>
-# **createApiKey**
-> createApiKey(body)
+[**apiKeyCreate**](UsersApi.md#apiKeyCreate) | **POST** /api/token | Create API Key
+[**createIdVerificationDocument**](UsersApi.md#createIdVerificationDocument) | **POST** /api/user/document | Create ID Verification Document
+[**forgotPasswordConfirm**](UsersApi.md#forgotPasswordConfirm) | **POST** /api/user/forgot/confirm | Forgot Password Confirm
+[**forgotPasswordRequest**](UsersApi.md#forgotPasswordRequest) | **POST** /api/user/forgot/request | Forgot Password Request
+[**registerNewUser**](UsersApi.md#registerNewUser) | **POST** /api/user/register | Register New User
+[**confirmNewUser**](UsersApi.md#confirmNewUser) | **POST** /api/user/register/confirm | Confirm New User
+[**resendVerificationEmail**](UsersApi.md#resendVerificationEmail) | **POST** /api/user/register/resend | Resend Verification
+[**twoFactorConfirm**](UsersApi.md#twoFactorConfirm) | **POST** /api/user/twofactor/confirm | Confirm Two Factor Code
+[**twoFactorStart**](UsersApi.md#twoFactorStart) | **POST** /api/user/twofactor/request | Start Two Factor Setup
+[**apiKeyList**](UsersApi.md#apiKeyList) | **GET** /api/token | List API Keys
+[**apiKeyRevoke**](UsersApi.md#apiKeyRevoke) | **DELETE** /api/token | Revoke API Key
+[**updateUserProfile**](UsersApi.md#updateUserProfile) | **PUT** /api/user | Update User Profile
+[**readUserWebsocketChannel**](UsersApi.md#readUserWebsocketChannel) | **GET** /api/user/channel | Read WebSocket Channel
+[**updateUserProfileImage**](UsersApi.md#updateUserProfileImage) | **PUT** /api/user/image | Update User Profile Image
+[**updateUserPassword**](UsersApi.md#updateUserPassword) | **PUT** /api/user/password | Update User Password
+[**readUserProfile**](UsersApi.md#readUserProfile) | **GET** /api/user/profile | Read User Profile
+[**updateUserProfile_0**](UsersApi.md#updateUserProfile_0) | **PUT** /api/user/profile | Update User Profile
+[**twoFactorStatusRead**](UsersApi.md#twoFactorStatusRead) | **GET** /api/user/twofactor/state | Read Two Factor Status
+
+<a name="apiKeyCreate"></a>
+# **apiKeyCreate**
+> apiKeyCreate(body)
 
 Create API Key
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.UsersApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 UsersApi apiInstance = new UsersApi();
 AuthenticationTokenRequest body = new AuthenticationTokenRequest(); // AuthenticationTokenRequest | 
 try {
-    apiInstance.createApiKey(body);
+    apiInstance.apiKeyCreate(body);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#createApiKey");
+    System.err.println("Exception when calling UsersApi#apiKeyCreate");
     e.printStackTrace();
 }
 ```
@@ -270,32 +68,42 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
 
-<a name="deleteApiKey"></a>
-# **deleteApiKey**
-> deleteApiKey(token)
+<a name="createIdVerificationDocument"></a>
+# **createIdVerificationDocument**
+> createIdVerificationDocument(body)
 
-Delete/Revoke API Key
+Create ID Verification Document
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.UsersApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 UsersApi apiInstance = new UsersApi();
-String token = "token_example"; // String | 
+EncodedFile body = new EncodedFile(); // EncodedFile | 
 try {
-    apiInstance.deleteApiKey(token);
+    apiInstance.createIdVerificationDocument(body);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#deleteApiKey");
+    System.err.println("Exception when calling UsersApi#createIdVerificationDocument");
     e.printStackTrace();
 }
 ```
@@ -304,7 +112,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token** | **String**|  | [optional]
+ **body** | [**EncodedFile**](EncodedFile.md)|  | [optional]
 
 ### Return type
 
@@ -312,181 +120,139 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
-<a name="getProfile"></a>
-# **getProfile**
-> UserProfile getProfile()
+<a name="forgotPasswordConfirm"></a>
+# **forgotPasswordConfirm**
+> forgotPasswordConfirm(body)
 
-Get current user profile
+Forgot Password Confirm
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.UsersApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 UsersApi apiInstance = new UsersApi();
+UserForgotPasswordRequest body = new UserForgotPasswordRequest(); // UserForgotPasswordRequest | 
 try {
-    UserProfile result = apiInstance.getProfile();
-    System.out.println(result);
+    apiInstance.forgotPasswordConfirm(body);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#getProfile");
+    System.err.println("Exception when calling UsersApi#forgotPasswordConfirm");
     e.printStackTrace();
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UserForgotPasswordRequest**](UserForgotPasswordRequest.md)|  | [optional]
 
 ### Return type
 
-[**UserProfile**](UserProfile.md)
+null (empty response body)
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
-<a name="getTwoFactorStatus"></a>
-# **getTwoFactorStatus**
-> Boolean getTwoFactorStatus()
+<a name="forgotPasswordRequest"></a>
+# **forgotPasswordRequest**
+> forgotPasswordRequest(body)
 
-Check Two Factor Status
+Forgot Password Request
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.UsersApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 UsersApi apiInstance = new UsersApi();
+UserForgotPasswordRequest body = new UserForgotPasswordRequest(); // UserForgotPasswordRequest | 
 try {
-    Boolean result = apiInstance.getTwoFactorStatus();
-    System.out.println(result);
+    apiInstance.forgotPasswordRequest(body);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#getTwoFactorStatus");
+    System.err.println("Exception when calling UsersApi#forgotPasswordRequest");
     e.printStackTrace();
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UserForgotPasswordRequest**](UserForgotPasswordRequest.md)|  | [optional]
 
 ### Return type
 
-**Boolean**
+null (empty response body)
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getUserWebsocketChannel"></a>
-# **getUserWebsocketChannel**
-> WrappedPrimitive getUserWebsocketChannel()
-
-Get WebSocket Channel
-
-### Example
-```java
-// Import classes:
-//import org.coindirect.api.invoker.ApiException;
-//import org.coindirect.api.UsersApi;
-
-
-UsersApi apiInstance = new UsersApi();
-try {
-    WrappedPrimitive result = apiInstance.getUserWebsocketChannel();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#getUserWebsocketChannel");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**WrappedPrimitive**](WrappedPrimitive.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="listApiKeys"></a>
-# **listApiKeys**
-> List&lt;AuthenticationToken&gt; listApiKeys()
-
-List API Keys
-
-### Example
-```java
-// Import classes:
-//import org.coindirect.api.invoker.ApiException;
-//import org.coindirect.api.UsersApi;
-
-
-UsersApi apiInstance = new UsersApi();
-try {
-    List<AuthenticationToken> result = apiInstance.listApiKeys();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#listApiKeys");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List&lt;AuthenticationToken&gt;**](AuthenticationToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 <a name="registerNewUser"></a>
 # **registerNewUser**
 > registerNewUser(body)
 
-Register a new user
+Register New User
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.UsersApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 UsersApi apiInstance = new UsersApi();
 UserRegistrationRequest body = new UserRegistrationRequest(); // UserRegistrationRequest | 
@@ -510,37 +276,51 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
 
-<a name="reissueApiToken"></a>
-# **reissueApiToken**
-> reissueApiToken()
+<a name="confirmNewUser"></a>
+# **confirmNewUser**
+> confirmNewUser(body)
 
-Reissue Temporary Token
+Confirm New User
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.UsersApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 UsersApi apiInstance = new UsersApi();
+WrappedString body = new WrappedString(); // WrappedString | 
 try {
-    apiInstance.reissueApiToken();
+    apiInstance.confirmNewUser(body);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#reissueApiToken");
+    System.err.println("Exception when calling UsersApi#confirmNewUser");
     e.printStackTrace();
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**WrappedString**](WrappedString.md)|  | [optional]
 
 ### Return type
 
@@ -548,25 +328,35 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 <a name="resendVerificationEmail"></a>
 # **resendVerificationEmail**
 > resendVerificationEmail(body)
 
-Resend verification email
+Resend Verification
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.UsersApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 UsersApi apiInstance = new UsersApi();
 UserRegistrationRequest body = new UserRegistrationRequest(); // UserRegistrationRequest | 
@@ -590,32 +380,42 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
 
-<a name="updatePassword"></a>
-# **updatePassword**
-> updatePassword(body)
+<a name="twoFactorConfirm"></a>
+# **twoFactorConfirm**
+> twoFactorConfirm(body)
 
-Update user password
+Confirm Two Factor Code
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.UsersApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 UsersApi apiInstance = new UsersApi();
-UserPasswordChangeRequest body = new UserPasswordChangeRequest(); // UserPasswordChangeRequest | 
+WrappedString body = new WrappedString(); // WrappedString | 
 try {
-    apiInstance.updatePassword(body);
+    apiInstance.twoFactorConfirm(body);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#updatePassword");
+    System.err.println("Exception when calling UsersApi#twoFactorConfirm");
     e.printStackTrace();
 }
 ```
@@ -624,7 +424,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserPasswordChangeRequest**](UserPasswordChangeRequest.md)|  | [optional]
+ **body** | [**WrappedString**](WrappedString.md)|  | [optional]
 
 ### Return type
 
@@ -632,33 +432,197 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+<a name="twoFactorStart"></a>
+# **twoFactorStart**
+> WrappedString twoFactorStart(body)
+
+Start Two Factor Setup
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiClient;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
+//import org.coindirect.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
+
+UsersApi apiInstance = new UsersApi();
+WrappedString body = new WrappedString(); // WrappedString | 
+try {
+    WrappedString result = apiInstance.twoFactorStart(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#twoFactorStart");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**WrappedString**](WrappedString.md)|  | [optional]
+
+### Return type
+
+[**WrappedString**](WrappedString.md)
+
+### Authorization
+
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="updateProfile"></a>
-# **updateProfile**
-> User updateProfile(body)
+<a name="apiKeyList"></a>
+# **apiKeyList**
+> List&lt;AuthenticationToken&gt; apiKeyList()
+
+List API Keys
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiClient;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
+//import org.coindirect.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
+
+UsersApi apiInstance = new UsersApi();
+try {
+    List<AuthenticationToken> result = apiInstance.apiKeyList();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#apiKeyList");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;AuthenticationToken&gt;**](AuthenticationToken.md)
+
+### Authorization
+
+[Hawk](../README.md#Hawk)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="apiKeyRevoke"></a>
+# **apiKeyRevoke**
+> apiKeyRevoke(token)
+
+Revoke API Key
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiClient;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
+//import org.coindirect.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
+
+UsersApi apiInstance = new UsersApi();
+String token = "token_example"; // String | 
+try {
+    apiInstance.apiKeyRevoke(token);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#apiKeyRevoke");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **String**|  | [optional]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Hawk](../README.md#Hawk)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="updateUserProfile"></a>
+# **updateUserProfile**
+> User updateUserProfile(body)
 
 Update User Profile
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.UsersApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 UsersApi apiInstance = new UsersApi();
 User body = new User(); // User | 
 try {
-    User result = apiInstance.updateProfile(body);
+    User result = apiInstance.updateUserProfile(body);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#updateProfile");
+    System.err.println("Exception when calling UsersApi#updateUserProfile");
     e.printStackTrace();
 }
 ```
@@ -675,32 +639,91 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="updateProfileImage"></a>
-# **updateProfileImage**
-> updateProfileImage(body)
+<a name="readUserWebsocketChannel"></a>
+# **readUserWebsocketChannel**
+> WrappedPrimitive readUserWebsocketChannel()
 
-Update profile image
+Read WebSocket Channel
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.UsersApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
+
+UsersApi apiInstance = new UsersApi();
+try {
+    WrappedPrimitive result = apiInstance.readUserWebsocketChannel();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#readUserWebsocketChannel");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**WrappedPrimitive**](WrappedPrimitive.md)
+
+### Authorization
+
+[Hawk](../README.md#Hawk)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="updateUserProfileImage"></a>
+# **updateUserProfileImage**
+> updateUserProfileImage(body)
+
+Update User Profile Image
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiClient;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
+//import org.coindirect.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 UsersApi apiInstance = new UsersApi();
 EncodedFile body = new EncodedFile(); // EncodedFile | 
 try {
-    apiInstance.updateProfileImage(body);
+    apiInstance.updateUserProfileImage(body);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#updateProfileImage");
+    System.err.println("Exception when calling UsersApi#updateUserProfileImage");
     e.printStackTrace();
 }
 ```
@@ -717,33 +740,144 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
 
-<a name="updateProfile_0"></a>
-# **updateProfile_0**
-> UserProfile updateProfile_0(body)
+<a name="updateUserPassword"></a>
+# **updateUserPassword**
+> updateUserPassword(body)
 
-Update current user profile
+Update User Password
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.UsersApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
+
+UsersApi apiInstance = new UsersApi();
+UserPasswordChangeRequest body = new UserPasswordChangeRequest(); // UserPasswordChangeRequest | 
+try {
+    apiInstance.updateUserPassword(body);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#updateUserPassword");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**UserPasswordChangeRequest**](UserPasswordChangeRequest.md)|  | [optional]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Hawk](../README.md#Hawk)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="readUserProfile"></a>
+# **readUserProfile**
+> UserProfile readUserProfile()
+
+Read User Profile
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiClient;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
+//import org.coindirect.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
+
+UsersApi apiInstance = new UsersApi();
+try {
+    UserProfile result = apiInstance.readUserProfile();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#readUserProfile");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UserProfile**](UserProfile.md)
+
+### Authorization
+
+[Hawk](../README.md#Hawk)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="updateUserProfile_0"></a>
+# **updateUserProfile_0**
+> UserProfile updateUserProfile_0(body)
+
+Update User Profile
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiClient;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
+//import org.coindirect.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 UsersApi apiInstance = new UsersApi();
 UserProfile body = new UserProfile(); // UserProfile | 
 try {
-    UserProfile result = apiInstance.updateProfile_0(body);
+    UserProfile result = apiInstance.updateUserProfile_0(body);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#updateProfile_0");
+    System.err.println("Exception when calling UsersApi#updateUserProfile_0");
     e.printStackTrace();
 }
 ```
@@ -760,52 +894,59 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="uploadIdVerificationDocument"></a>
-# **uploadIdVerificationDocument**
-> uploadIdVerificationDocument(body)
+<a name="twoFactorStatusRead"></a>
+# **twoFactorStatusRead**
+> Boolean twoFactorStatusRead()
 
-Upload ID verification document
+Read Two Factor Status
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.UsersApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 UsersApi apiInstance = new UsersApi();
-EncodedFile body = new EncodedFile(); // EncodedFile | 
 try {
-    apiInstance.uploadIdVerificationDocument(body);
+    Boolean result = apiInstance.twoFactorStatusRead();
+    System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UsersApi#uploadIdVerificationDocument");
+    System.err.println("Exception when calling UsersApi#twoFactorStatusRead");
     e.printStackTrace();
 }
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**EncodedFile**](EncodedFile.md)|  | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
-null (empty response body)
+**Boolean**
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

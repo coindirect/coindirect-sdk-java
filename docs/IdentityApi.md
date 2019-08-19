@@ -4,28 +4,38 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**identityVerificationRequest**](IdentityApi.md#identityVerificationRequest) | **POST** /api/v1/identity | Request Identity Verification
-[**identityVerificationStarted**](IdentityApi.md#identityVerificationStarted) | **PUT** /api/v1/identity | Notify of completion
+[**identityVerificationStart**](IdentityApi.md#identityVerificationStart) | **POST** /api/v1/identity | Start Identity Verification
+[**identityVerificationStarted**](IdentityApi.md#identityVerificationStarted) | **PUT** /api/v1/identity | Notify of Start
 
-<a name="identityVerificationRequest"></a>
-# **identityVerificationRequest**
-> AmlCheckResponse identityVerificationRequest()
+<a name="identityVerificationStart"></a>
+# **identityVerificationStart**
+> AmlCheckResponse identityVerificationStart()
 
-Request Identity Verification
+Start Identity Verification
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.IdentityApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 IdentityApi apiInstance = new IdentityApi();
 try {
-    AmlCheckResponse result = apiInstance.identityVerificationRequest();
+    AmlCheckResponse result = apiInstance.identityVerificationStart();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling IdentityApi#identityVerificationRequest");
+    System.err.println("Exception when calling IdentityApi#identityVerificationStart");
     e.printStackTrace();
 }
 ```
@@ -39,7 +49,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
@@ -50,14 +60,24 @@ No authorization required
 # **identityVerificationStarted**
 > identityVerificationStarted()
 
-Notify of completion
+Notify of Start
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.IdentityApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 IdentityApi apiInstance = new IdentityApi();
 try {
@@ -77,7 +97,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 

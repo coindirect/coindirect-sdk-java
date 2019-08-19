@@ -36,7 +36,7 @@ public class QuotesApiTest {
     private final QuotesApi api = new QuotesApi();
 
     /**
-     * Accept a quote
+     * Create Quote
      *
      * 
      *
@@ -44,15 +44,16 @@ public class QuotesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void acceptQuoteTest() throws ApiException {
-        String uuid = null;
-        PaymentMetadata body = null;
-        AcceptedQuote response = api.acceptQuote(uuid, body);
+    public void quoteCreateTest() throws ApiException {
+        QuoteRequest body = null;
+        Boolean estimate = null;
+        String direction = null;
+        Quote response = api.quoteCreate(body, estimate, direction);
 
         // TODO: test validations
     }
     /**
-     * List quotes
+     * Read Transaction Limits
      *
      * 
      *
@@ -60,47 +61,17 @@ public class QuotesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listQuotesTest() throws ApiException {
-        String merchantId = null;
-        Quote response = api.listQuotes(merchantId);
-
-        // TODO: test validations
-    }
-    /**
-     * Read a quote
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void readQuoteTest() throws ApiException {
-        String uuid = null;
-        AcceptedQuote response = api.readQuote(uuid);
-
-        // TODO: test validations
-    }
-    /**
-     * Get transaction limits
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void readTransactionLimitsTest() throws ApiException {
+    public void transactionLimitReadTest() throws ApiException {
         String country = null;
         String currency = null;
         String direction = null;
         String method = null;
-        Limits response = api.readTransactionLimits(country, currency, direction, method);
+        Limits response = api.transactionLimitRead(country, currency, direction, method);
 
         // TODO: test validations
     }
     /**
-     * Request new payment instructions
+     * List Quotes
      *
      * 
      *
@@ -108,15 +79,30 @@ public class QuotesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void requestNewQuotePaymentInstructionsTest() throws ApiException {
+    public void quoteListTest() throws ApiException {
+        String merchantId = null;
+        Quote response = api.quoteList(merchantId);
+
+        // TODO: test validations
+    }
+    /**
+     * Accept Quote
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void quoteAcceptTest() throws ApiException {
         String uuid = null;
         PaymentMetadata body = null;
-        AcceptedQuote response = api.requestNewQuotePaymentInstructions(uuid, body);
+        AcceptedQuote response = api.quoteAccept(uuid, body);
 
         // TODO: test validations
     }
     /**
-     * Request a quote
+     * Create New Payment Instruction
      *
      * 
      *
@@ -124,11 +110,25 @@ public class QuotesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void requestQuoteTest() throws ApiException {
-        QuoteRequest body = null;
-        Boolean estimate = null;
-        String direction = null;
-        Quote response = api.requestQuote(body, estimate, direction);
+    public void quoteCreateNewPaymentInstructionTest() throws ApiException {
+        String uuid = null;
+        PaymentMetadata body = null;
+        AcceptedQuote response = api.quoteCreateNewPaymentInstruction(uuid, body);
+
+        // TODO: test validations
+    }
+    /**
+     * Read Quote
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void quoteReadTest() throws ApiException {
+        String uuid = null;
+        AcceptedQuote response = api.quoteRead(uuid);
 
         // TODO: test validations
     }

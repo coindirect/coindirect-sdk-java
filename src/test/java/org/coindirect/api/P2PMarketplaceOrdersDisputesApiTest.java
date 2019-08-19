@@ -33,21 +33,6 @@ public class P2PMarketplaceOrdersDisputesApiTest {
     private final P2PMarketplaceOrdersDisputesApi api = new P2PMarketplaceOrdersDisputesApi();
 
     /**
-     * Cancel Dispute
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cancelP2POrderDisputeTest() throws ApiException {
-        Long id = null;
-        api.cancelP2POrderDispute(id);
-
-        // TODO: test validations
-    }
-    /**
      * Create Dispute
      *
      * 
@@ -59,21 +44,6 @@ public class P2PMarketplaceOrdersDisputesApiTest {
     public void createP2POrderDisputeTest() throws ApiException {
         OrderDispute body = null;
         OrderDispute response = api.createP2POrderDispute(body);
-
-        // TODO: test validations
-    }
-    /**
-     * Retrieve Dispute
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getP2POrderDisputeTest() throws ApiException {
-        Long id = null;
-        OrderDispute response = api.getP2POrderDispute(id);
 
         // TODO: test validations
     }
@@ -106,6 +76,36 @@ public class P2PMarketplaceOrdersDisputesApiTest {
         Integer offset = null;
         Integer max = null;
         List<OrderDisputeReason> response = api.listP2PSellerDisputeReasons(offset, max);
+
+        // TODO: test validations
+    }
+    /**
+     * Retrieve Dispute
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getP2POrderDisputeTest() throws ApiException {
+        Long id = null;
+        OrderDispute response = api.getP2POrderDispute(id);
+
+        // TODO: test validations
+    }
+    /**
+     * Cancel Dispute
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cancelP2POrderDisputeTest() throws ApiException {
+        Long id = null;
+        api.cancelP2POrderDispute(id);
 
         // TODO: test validations
     }

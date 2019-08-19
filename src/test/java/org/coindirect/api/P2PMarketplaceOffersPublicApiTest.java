@@ -33,21 +33,6 @@ public class P2PMarketplaceOffersPublicApiTest {
     private final P2PMarketplaceOffersPublicApi api = new P2PMarketplaceOffersPublicApi();
 
     /**
-     * Get offer information
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getP2POfferTest() throws ApiException {
-        Long id = null;
-        OfferToSell response = api.getP2POffer(id);
-
-        // TODO: test validations
-    }
-    /**
      * Find buy offers
      *
      * 
@@ -93,6 +78,21 @@ public class P2PMarketplaceOffersPublicApiTest {
         Integer offset = null;
         Integer max = null;
         List<OfferToSell> response = api.listP2PSellOffers(currencyForSale, currencyAccepted, category, type, search, affiliateCode, minimumAvailable, countryCode, vendorId, offset, max);
+
+        // TODO: test validations
+    }
+    /**
+     * Get offer information
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getP2POfferTest() throws ApiException {
+        Long id = null;
+        OfferToSell response = api.getP2POffer(id);
 
         // TODO: test validations
     }

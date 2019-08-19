@@ -35,27 +35,27 @@ public class TransactionsApi {
   }
 
   /**
-   * Read Transaction Type
+   * List Transactions
    * 
-   * @param id  (required)
-   * @return TransactionType
+   * @param offset start offset (optional)
+   * @param max max results (optional)
+   * @return List&lt;Transaction&gt;
    * @throws ApiException if fails to make API call
+   * @deprecated
    */
-  public TransactionType getResource(Long id) throws ApiException {
+  @Deprecated
+  public List<Transaction> listTransactions(Integer offset, Integer max) throws ApiException {
     Object localVarPostBody = null;
-    // verify the required parameter 'id' is set
-    if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling getResource");
-    }
     // create path and map variables
-    String localVarPath = "/api/transaction/type/{id}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+    String localVarPath = "/api/transaction";
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "max", max));
 
 
 
@@ -69,9 +69,9 @@ public class TransactionsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "Hawk" };
 
-    GenericType<TransactionType> localVarReturnType = new GenericType<TransactionType>() {};
+    GenericType<List<Transaction>> localVarReturnType = new GenericType<List<Transaction>>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
@@ -109,7 +109,7 @@ public class TransactionsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "Hawk" };
 
     GenericType<Transaction> localVarReturnType = new GenericType<Transaction>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -147,33 +147,33 @@ public class TransactionsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "Hawk" };
 
     GenericType<List<TransactionType>> localVarReturnType = new GenericType<List<TransactionType>>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
-   * List Transactions
+   * Read Transaction Type
    * 
-   * @param offset start offset (optional)
-   * @param max max results (optional)
-   * @return List&lt;Transaction&gt;
+   * @param id  (required)
+   * @return TransactionType
    * @throws ApiException if fails to make API call
-   * @deprecated
    */
-  @Deprecated
-  public List<Transaction> listTransactions(Integer offset, Integer max) throws ApiException {
+  public TransactionType getResource(Long id) throws ApiException {
     Object localVarPostBody = null;
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling getResource");
+    }
     // create path and map variables
-    String localVarPath = "/api/transaction";
+    String localVarPath = "/api/transaction/type/{id}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "max", max));
 
 
 
@@ -187,9 +187,9 @@ public class TransactionsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "Hawk" };
 
-    GenericType<List<Transaction>> localVarReturnType = new GenericType<List<Transaction>>() {};
+    GenericType<TransactionType> localVarReturnType = new GenericType<TransactionType>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
@@ -233,7 +233,7 @@ public class TransactionsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "Hawk" };
 
     GenericType<List<Transaction>> localVarReturnType = new GenericType<List<Transaction>>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);

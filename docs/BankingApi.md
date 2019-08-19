@@ -17,9 +17,19 @@ Create Bank
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.BankingApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 BankingApi apiInstance = new BankingApi();
 Bank body = new Bank(); // Bank | 
@@ -44,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
@@ -60,9 +70,19 @@ Read Bank
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.BankingApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 BankingApi apiInstance = new BankingApi();
 Long id = 789L; // Long | 
@@ -87,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
@@ -103,9 +123,19 @@ List Banks by Country
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.BankingApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 BankingApi apiInstance = new BankingApi();
 String countryCode = "countryCode_example"; // String | 
@@ -134,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 

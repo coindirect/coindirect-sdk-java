@@ -7,22 +7,22 @@ import org.coindirect.api.invoker.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import org.coindirect.api.model.ChatMessage;
-import org.coindirect.api.model.WrappedPrimitive;
+import org.coindirect.api.model.PayRequest;
+import org.coindirect.api.model.Payment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class P2PMarketplaceOrdersChatsApi {
+public class PaymentsMerchantApi {
   private ApiClient apiClient;
 
-  public P2PMarketplaceOrdersChatsApi() {
+  public PaymentsMerchantApi() {
     this(Configuration.getDefaultApiClient());
   }
 
-  public P2PMarketplaceOrdersChatsApi(ApiClient apiClient) {
+  public PaymentsMerchantApi(ApiClient apiClient) {
     this.apiClient = apiClient;
   }
 
@@ -35,21 +35,16 @@ public class P2PMarketplaceOrdersChatsApi {
   }
 
   /**
-   * Send message for order
+   * Create Payment
    * 
-   * @param id  (required)
    * @param body  (optional)
+   * @return Payment
    * @throws ApiException if fails to make API call
    */
-  public void sendP2POrderMessage(Long id, ChatMessage body) throws ApiException {
+  public Payment paymentCreate(PayRequest body) throws ApiException {
     Object localVarPostBody = body;
-    // verify the required parameter 'id' is set
-    if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling sendP2POrderMessage");
-    }
     // create path and map variables
-    String localVarPath = "/api/order/chat/{id}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+    String localVarPath = "/api/v1/pay";
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -60,7 +55,7 @@ public class P2PMarketplaceOrdersChatsApi {
 
 
     final String[] localVarAccepts = {
-      
+      "application/json"
     };
     final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
@@ -71,32 +66,27 @@ public class P2PMarketplaceOrdersChatsApi {
 
     String[] localVarAuthNames = new String[] { "Hawk" };
 
-    apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
+    GenericType<Payment> localVarReturnType = new GenericType<Payment>() {};
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
-   * Read messages for Order
+   * List Payments
    * 
-   * @param id  (required)
-   * @param start  (optional)
-   * @return List&lt;ChatMessage&gt;
+   * @param merchantId  (optional)
+   * @return List&lt;Payment&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<ChatMessage> getP2POrderMessages(Long id, Long start) throws ApiException {
+  public List<Payment> paymentList(String merchantId) throws ApiException {
     Object localVarPostBody = null;
-    // verify the required parameter 'id' is set
-    if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling getP2POrderMessages");
-    }
     // create path and map variables
-    String localVarPath = "/api/order/chat/{id}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+    String localVarPath = "/api/v1/pay";
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "start", start));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "merchantId", merchantId));
 
 
 
@@ -112,37 +102,33 @@ public class P2PMarketplaceOrdersChatsApi {
 
     String[] localVarAuthNames = new String[] { "Hawk" };
 
-    GenericType<List<ChatMessage>> localVarReturnType = new GenericType<List<ChatMessage>>() {};
+    GenericType<List<Payment>> localVarReturnType = new GenericType<List<Payment>>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
-   * Retrieve URL for message attachment
+   * Read Payment
    * 
-   * @param id  (required)
-   * @param fileId  (required)
-   * @return WrappedPrimitive
+   * @param uuid  (required)
+   * @param reference  (optional)
+   * @return Payment
    * @throws ApiException if fails to make API call
    */
-  public WrappedPrimitive getP2POrderMessageAttachmentURL(Long id, Long fileId) throws ApiException {
+  public Payment paymentRead(String uuid, String reference) throws ApiException {
     Object localVarPostBody = null;
-    // verify the required parameter 'id' is set
-    if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling getP2POrderMessageAttachmentURL");
-    }
-    // verify the required parameter 'fileId' is set
-    if (fileId == null) {
-      throw new ApiException(400, "Missing the required parameter 'fileId' when calling getP2POrderMessageAttachmentURL");
+    // verify the required parameter 'uuid' is set
+    if (uuid == null) {
+      throw new ApiException(400, "Missing the required parameter 'uuid' when calling paymentRead");
     }
     // create path and map variables
-    String localVarPath = "/api/order/chat/{id}/{fileId}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()))
-      .replaceAll("\\{" + "fileId" + "\\}", apiClient.escapeString(fileId.toString()));
+    String localVarPath = "/api/v1/pay/{uuid}"
+      .replaceAll("\\{" + "uuid" + "\\}", apiClient.escapeString(uuid.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "reference", reference));
 
 
 
@@ -156,9 +142,47 @@ public class P2PMarketplaceOrdersChatsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<Payment> localVarReturnType = new GenericType<Payment>() {};
+    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+  }
+  /**
+   * Cancel Payment
+   * 
+   * @param uuid  (required)
+   * @throws ApiException if fails to make API call
+   */
+  public void paymentCancel(String uuid) throws ApiException {
+    Object localVarPostBody = null;
+    // verify the required parameter 'uuid' is set
+    if (uuid == null) {
+      throw new ApiException(400, "Missing the required parameter 'uuid' when calling paymentCancel");
+    }
+    // create path and map variables
+    String localVarPath = "/api/v1/pay/{uuid}"
+      .replaceAll("\\{" + "uuid" + "\\}", apiClient.escapeString(uuid.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+
+
+    final String[] localVarAccepts = {
+      
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
     String[] localVarAuthNames = new String[] { "Hawk" };
 
-    GenericType<WrappedPrimitive> localVarReturnType = new GenericType<WrappedPrimitive>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
   }
 }

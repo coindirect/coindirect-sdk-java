@@ -37,21 +37,16 @@ public class ExchangeOrdersApi {
   }
 
   /**
-   * Cancel Order
-   * 
-   * @param uuid  (required)
+   * Place Order
+   * Place an Order on the Exchange
+   * @param body  (optional)
    * @return ExchangeOrder
    * @throws ApiException if fails to make API call
    */
-  public ExchangeOrder cancelExchangeOrder(String uuid) throws ApiException {
-    Object localVarPostBody = null;
-    // verify the required parameter 'uuid' is set
-    if (uuid == null) {
-      throw new ApiException(400, "Missing the required parameter 'uuid' when calling cancelExchangeOrder");
-    }
+  public ExchangeOrder placeExchangeOrder(ExchangeOrderRequest body) throws ApiException {
+    Object localVarPostBody = body;
     // create path and map variables
-    String localVarPath = "/api/v1/exchange/order/{uuid}"
-      .replaceAll("\\{" + "uuid" + "\\}", apiClient.escapeString(uuid.toString()));
+    String localVarPath = "/api/v1/exchange/order";
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -67,94 +62,14 @@ public class ExchangeOrdersApi {
     final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
     final String[] localVarContentTypes = {
-      
+      "application/json"
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "Hawk" };
 
     GenericType<ExchangeOrder> localVarReturnType = new GenericType<ExchangeOrder>() {};
-    return apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-  }
-  /**
-   * Get Order
-   * 
-   * @param uuid  (required)
-   * @return ExchangeOrder
-   * @throws ApiException if fails to make API call
-   */
-  public ExchangeOrder getExchangeOrder(String uuid) throws ApiException {
-    Object localVarPostBody = null;
-    // verify the required parameter 'uuid' is set
-    if (uuid == null) {
-      throw new ApiException(400, "Missing the required parameter 'uuid' when calling getExchangeOrder");
-    }
-    // create path and map variables
-    String localVarPath = "/api/v1/exchange/order/read/{uuid}"
-      .replaceAll("\\{" + "uuid" + "\\}", apiClient.escapeString(uuid.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-
-
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<ExchangeOrder> localVarReturnType = new GenericType<ExchangeOrder>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-  }
-  /**
-   * Check access to market
-   * 
-   * @param symbol  (required)
-   * @return Reasons
-   * @throws ApiException if fails to make API call
-   */
-  public Reasons getMarketAccess(String symbol) throws ApiException {
-    Object localVarPostBody = null;
-    // verify the required parameter 'symbol' is set
-    if (symbol == null) {
-      throw new ApiException(400, "Missing the required parameter 'symbol' when calling getMarketAccess");
-    }
-    // create path and map variables
-    String localVarPath = "/api/v1/exchange/order/access/{symbol}"
-      .replaceAll("\\{" + "symbol" + "\\}", apiClient.escapeString(symbol.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-
-
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<Reasons> localVarReturnType = new GenericType<Reasons>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
    * List Orders
@@ -193,22 +108,27 @@ public class ExchangeOrdersApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "Hawk" };
 
     GenericType<List<ExchangeOrder>> localVarReturnType = new GenericType<List<ExchangeOrder>>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
-   * Place Order
-   * Place an Order on the Exchange
-   * @param body  (optional)
-   * @return ExchangeOrder
+   * Check access to market
+   * 
+   * @param symbol  (required)
+   * @return Reasons
    * @throws ApiException if fails to make API call
    */
-  public ExchangeOrder placeExchangeOrder(ExchangeOrderRequest body) throws ApiException {
-    Object localVarPostBody = body;
+  public Reasons getMarketAccess(String symbol) throws ApiException {
+    Object localVarPostBody = null;
+    // verify the required parameter 'symbol' is set
+    if (symbol == null) {
+      throw new ApiException(400, "Missing the required parameter 'symbol' when calling getMarketAccess");
+    }
     // create path and map variables
-    String localVarPath = "/api/v1/exchange/order";
+    String localVarPath = "/api/v1/exchange/order/access/{symbol}"
+      .replaceAll("\\{" + "symbol" + "\\}", apiClient.escapeString(symbol.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -224,13 +144,93 @@ public class ExchangeOrdersApi {
     final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
     final String[] localVarContentTypes = {
-      "application/json"
+      
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "Hawk" };
+
+    GenericType<Reasons> localVarReturnType = new GenericType<Reasons>() {};
+    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+  }
+  /**
+   * Get Order
+   * 
+   * @param uuid  (required)
+   * @return ExchangeOrder
+   * @throws ApiException if fails to make API call
+   */
+  public ExchangeOrder getExchangeOrder(String uuid) throws ApiException {
+    Object localVarPostBody = null;
+    // verify the required parameter 'uuid' is set
+    if (uuid == null) {
+      throw new ApiException(400, "Missing the required parameter 'uuid' when calling getExchangeOrder");
+    }
+    // create path and map variables
+    String localVarPath = "/api/v1/exchange/order/read/{uuid}"
+      .replaceAll("\\{" + "uuid" + "\\}", apiClient.escapeString(uuid.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "Hawk" };
 
     GenericType<ExchangeOrder> localVarReturnType = new GenericType<ExchangeOrder>() {};
-    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+  }
+  /**
+   * Cancel Order
+   * 
+   * @param uuid  (required)
+   * @return ExchangeOrder
+   * @throws ApiException if fails to make API call
+   */
+  public ExchangeOrder cancelExchangeOrder(String uuid) throws ApiException {
+    Object localVarPostBody = null;
+    // verify the required parameter 'uuid' is set
+    if (uuid == null) {
+      throw new ApiException(400, "Missing the required parameter 'uuid' when calling cancelExchangeOrder");
+    }
+    // create path and map variables
+    String localVarPath = "/api/v1/exchange/order/{uuid}"
+      .replaceAll("\\{" + "uuid" + "\\}", apiClient.escapeString(uuid.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "Hawk" };
+
+    GenericType<ExchangeOrder> localVarReturnType = new GenericType<ExchangeOrder>() {};
+    return apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
 }

@@ -34,47 +34,17 @@ public class ExchangeOrdersApiTest {
     private final ExchangeOrdersApi api = new ExchangeOrdersApi();
 
     /**
-     * Cancel Order
+     * Place Order
      *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cancelExchangeOrderTest() throws ApiException {
-        String uuid = null;
-        ExchangeOrder response = api.cancelExchangeOrder(uuid);
-
-        // TODO: test validations
-    }
-    /**
-     * Get Order
-     *
-     * 
+     * Place an Order on the Exchange
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void getExchangeOrderTest() throws ApiException {
-        String uuid = null;
-        ExchangeOrder response = api.getExchangeOrder(uuid);
-
-        // TODO: test validations
-    }
-    /**
-     * Check access to market
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getMarketAccessTest() throws ApiException {
-        String symbol = null;
-        Reasons response = api.getMarketAccess(symbol);
+    public void placeExchangeOrderTest() throws ApiException {
+        ExchangeOrderRequest body = null;
+        ExchangeOrder response = api.placeExchangeOrder(body);
 
         // TODO: test validations
     }
@@ -97,17 +67,47 @@ public class ExchangeOrdersApiTest {
         // TODO: test validations
     }
     /**
-     * Place Order
+     * Check access to market
      *
-     * Place an Order on the Exchange
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void placeExchangeOrderTest() throws ApiException {
-        ExchangeOrderRequest body = null;
-        ExchangeOrder response = api.placeExchangeOrder(body);
+    public void getMarketAccessTest() throws ApiException {
+        String symbol = null;
+        Reasons response = api.getMarketAccess(symbol);
+
+        // TODO: test validations
+    }
+    /**
+     * Get Order
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getExchangeOrderTest() throws ApiException {
+        String uuid = null;
+        ExchangeOrder response = api.getExchangeOrder(uuid);
+
+        // TODO: test validations
+    }
+    /**
+     * Cancel Order
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cancelExchangeOrderTest() throws ApiException {
+        String uuid = null;
+        ExchangeOrder response = api.cancelExchangeOrder(uuid);
 
         // TODO: test validations
     }

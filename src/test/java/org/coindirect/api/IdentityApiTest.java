@@ -31,7 +31,7 @@ public class IdentityApiTest {
     private final IdentityApi api = new IdentityApi();
 
     /**
-     * Request Identity Verification
+     * Start Identity Verification
      *
      * 
      *
@@ -39,13 +39,13 @@ public class IdentityApiTest {
      *          if the Api call fails
      */
     @Test
-    public void identityVerificationRequestTest() throws ApiException {
-        AmlCheckResponse response = api.identityVerificationRequest();
+    public void identityVerificationStartTest() throws ApiException {
+        AmlCheckResponse response = api.identityVerificationStart();
 
         // TODO: test validations
     }
     /**
-     * Notify of completion
+     * Notify of Start
      *
      * 
      *

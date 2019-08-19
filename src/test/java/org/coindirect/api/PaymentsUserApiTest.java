@@ -13,7 +13,10 @@
 package org.coindirect.api;
 
 import org.coindirect.api.invoker.ApiException;
-import org.coindirect.api.model.Country;
+import org.coindirect.api.model.PayDetailRequest;
+import org.coindirect.api.model.Payment;
+import org.coindirect.api.model.PaymentMetadata;
+import org.coindirect.api.model.Quote;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -23,15 +26,15 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for CountriesApi
+ * API tests for PaymentsUserApi
  */
 @Ignore
-public class CountriesApiTest {
+public class PaymentsUserApiTest {
 
-    private final CountriesApi api = new CountriesApi();
+    private final PaymentsUserApi api = new PaymentsUserApi();
 
     /**
-     * List Countries
+     * Read Payment
      *
      * 
      *
@@ -39,16 +42,15 @@ public class CountriesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listCountriesTest() throws ApiException {
-        Boolean enabled = null;
-        Integer offset = null;
-        Integer max = null;
-        List<Country> response = api.listCountries(enabled, offset, max);
+    public void paymentReadTest() throws ApiException {
+        String uuid = null;
+        String reference = null;
+        Payment response = api.paymentRead(uuid, reference);
 
         // TODO: test validations
     }
     /**
-     * List Country Codes
+     * Accept Payment
      *
      * 
      *
@@ -56,16 +58,15 @@ public class CountriesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listCountryCodesTest() throws ApiException {
-        Boolean enabled = null;
-        Integer offset = null;
-        Integer max = null;
-        List<String> response = api.listCountryCodes(enabled, offset, max);
+    public void paymentAcceptTest() throws ApiException {
+        String uuid = null;
+        PaymentMetadata body = null;
+        Payment response = api.paymentAccept(uuid, body);
 
         // TODO: test validations
     }
     /**
-     * Read Country by Code
+     * Lock Payment
      *
      * 
      *
@@ -73,14 +74,14 @@ public class CountriesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void readCountryByCodeTest() throws ApiException {
-        String code = null;
-        Country response = api.readCountryByCode(code);
+    public void paymentLockTest() throws ApiException {
+        String uuid = null;
+        Payment response = api.paymentLock(uuid);
 
         // TODO: test validations
     }
     /**
-     * Detect Country by IP
+     * Settle Payment
      *
      * 
      *
@@ -88,13 +89,15 @@ public class CountriesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void detectCountryByIpTest() throws ApiException {
-        Country response = api.detectCountryByIp();
+    public void paymentSettleTest() throws ApiException {
+        String uuid = null;
+        Quote body = null;
+        Payment response = api.paymentSettle(uuid, body);
 
         // TODO: test validations
     }
     /**
-     * Read Country
+     * Update Payment
      *
      * 
      *
@@ -102,9 +105,10 @@ public class CountriesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void readCountryTest() throws ApiException {
-        Long id = null;
-        Country response = api.readCountry(id);
+    public void paymentUpdateTest() throws ApiException {
+        String uuid = null;
+        PayDetailRequest body = null;
+        Payment response = api.paymentUpdate(uuid, body);
 
         // TODO: test validations
     }

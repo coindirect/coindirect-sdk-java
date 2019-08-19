@@ -7,28 +7,25 @@ import org.coindirect.api.invoker.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import org.coindirect.api.model.AccountDocument;
-import org.coindirect.api.model.AccountPreference;
-import org.coindirect.api.model.AccountProgress;
-import org.coindirect.api.model.AffiliateTransaction;
-import org.coindirect.api.model.Campaign;
 import org.coindirect.api.model.Errors;
-import org.coindirect.api.model.Wallet;
-import org.coindirect.api.model.WrappedPrimitive;
+import org.coindirect.api.model.GenericOption;
+import org.coindirect.api.model.PaymentMethod;
+import org.coindirect.api.model.PaymentMethodCategory;
+import org.coindirect.api.model.PaymentMethodType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AccountsApi {
+public class AccountPaymentMethodsApi {
   private ApiClient apiClient;
 
-  public AccountsApi() {
+  public AccountPaymentMethodsApi() {
     this(Configuration.getDefaultApiClient());
   }
 
-  public AccountsApi(ApiClient apiClient) {
+  public AccountPaymentMethodsApi(ApiClient apiClient) {
     this.apiClient = apiClient;
   }
 
@@ -41,16 +38,16 @@ public class AccountsApi {
   }
 
   /**
-   * Upload a document for an account
+   * Create Payment Method
    * 
    * @param body  (optional)
-   * @return AccountDocument
+   * @return PaymentMethod
    * @throws ApiException if fails to make API call
    */
-  public AccountDocument createAccountDocument(AccountDocument body) throws ApiException {
+  public PaymentMethod paymentMethodCreate(PaymentMethod body) throws ApiException {
     Object localVarPostBody = body;
     // create path and map variables
-    String localVarPath = "/api/account/document";
+    String localVarPath = "/api/payment-method";
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -72,25 +69,31 @@ public class AccountsApi {
 
     String[] localVarAuthNames = new String[] { "Hawk" };
 
-    GenericType<AccountDocument> localVarReturnType = new GenericType<AccountDocument>() {};
+    GenericType<PaymentMethod> localVarReturnType = new GenericType<PaymentMethod>() {};
     return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
-   * Get affiliate balances
+   * List Payment Methods
    * 
-   * @return List&lt;Wallet&gt;
+   * @param currencyCode  (optional)
+   * @param offset start offset (optional)
+   * @param max max results (optional)
+   * @return List&lt;PaymentMethod&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<Wallet> listAffiliateBalances() throws ApiException {
+  public List<PaymentMethod> paymentMethodList(String currencyCode, Integer offset, Integer max) throws ApiException {
     Object localVarPostBody = null;
     // create path and map variables
-    String localVarPath = "/api/account/affiliate/balance";
+    String localVarPath = "/api/payment-method";
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "currencyCode", currencyCode));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "max", max));
 
 
 
@@ -106,127 +109,21 @@ public class AccountsApi {
 
     String[] localVarAuthNames = new String[] { "Hawk" };
 
-    GenericType<List<Wallet>> localVarReturnType = new GenericType<List<Wallet>>() {};
+    GenericType<List<PaymentMethod>> localVarReturnType = new GenericType<List<PaymentMethod>>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
-   * Get running campaigns
-   * 
-   * @param type  (optional)
-   * @return Campaign
-   * @throws ApiException if fails to make API call
-   */
-  public Campaign getRunningCampaigns(String type) throws ApiException {
-    Object localVarPostBody = null;
-    // create path and map variables
-    String localVarPath = "/api/account/affiliate/campaigns";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "type", type));
-
-
-
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "Hawk" };
-
-    GenericType<Campaign> localVarReturnType = new GenericType<Campaign>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-  }
-  /**
-   * Get affiliate code
-   * 
-   * @param type  (optional)
-   * @return WrappedPrimitive
-   * @throws ApiException if fails to make API call
-   */
-  public WrappedPrimitive getAffiliateCode(String type) throws ApiException {
-    Object localVarPostBody = null;
-    // create path and map variables
-    String localVarPath = "/api/account/affiliate/code";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "type", type));
-
-
-
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "Hawk" };
-
-    GenericType<WrappedPrimitive> localVarReturnType = new GenericType<WrappedPrimitive>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-  }
-  /**
-   * Get affiliate code types
-   * 
-   * @return List&lt;String&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public List<String> listAffiliateCodeTypes() throws ApiException {
-    Object localVarPostBody = null;
-    // create path and map variables
-    String localVarPath = "/api/account/affiliate/code/types";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-
-
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "Hawk" };
-
-    GenericType<List<String>> localVarReturnType = new GenericType<List<String>>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-  }
-  /**
-   * Get affiliate transactions
+   * List Payment Method Types
    * 
    * @param offset start offset (optional)
    * @param max max results (optional)
-   * @return List&lt;AffiliateTransaction&gt;
+   * @return List&lt;PaymentMethodType&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<AffiliateTransaction> listAffiliateTransactions(Integer offset, Integer max) throws ApiException {
+  public List<PaymentMethodType> listPaymentMethodTypes(Integer offset, Integer max) throws ApiException {
     Object localVarPostBody = null;
     // create path and map variables
-    String localVarPath = "/api/account/affiliate/transaction";
+    String localVarPath = "/api/payment-method-type";
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -250,142 +147,44 @@ public class AccountsApi {
 
     String[] localVarAuthNames = new String[] { "Hawk" };
 
-    GenericType<List<AffiliateTransaction>> localVarReturnType = new GenericType<List<AffiliateTransaction>>() {};
+    GenericType<List<PaymentMethodType>> localVarReturnType = new GenericType<List<PaymentMethodType>>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
-   * Get WebSocket Channel
+   * List Dependant options for Payment Method Type on field
    * 
-   * @return WrappedPrimitive
+   * @param id  (required)
+   * @param code  (required)
+   * @param value  (optional)
+   * @return List&lt;GenericOption&gt;
    * @throws ApiException if fails to make API call
    */
-  public WrappedPrimitive getAccountWebsocketChannel() throws ApiException {
+  public List<GenericOption> listNestedOptionsForPaymentMethodType(Long id, String code, String value) throws ApiException {
     Object localVarPostBody = null;
-    // create path and map variables
-    String localVarPath = "/api/account/channel";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-
-
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "Hawk" };
-
-    GenericType<WrappedPrimitive> localVarReturnType = new GenericType<WrappedPrimitive>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-  }
-  /**
-   * List uploaded documents for an account
-   * 
-   * @return List&lt;AccountDocument&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public List<AccountDocument> listAccountDocuments() throws ApiException {
-    Object localVarPostBody = null;
-    // create path and map variables
-    String localVarPath = "/api/account/document";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-
-
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "Hawk" };
-
-    GenericType<List<AccountDocument>> localVarReturnType = new GenericType<List<AccountDocument>>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-  }
-  /**
-   * List Account Preferences
-   * This will return a key/value object of the preferences that have been stored for this account.
-   * @param offset start offset (optional)
-   * @param max max results (optional)
-   * @return Map&lt;String, Object&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public Map<String, Object> listAccountPreferences(Integer offset, Integer max) throws ApiException {
-    Object localVarPostBody = null;
-    // create path and map variables
-    String localVarPath = "/api/account/preference";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "max", max));
-
-
-
-    final String[] localVarAccepts = {
-      "application/xml", "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "Hawk" };
-
-    GenericType<Map<String, Object>> localVarReturnType = new GenericType<Map<String, Object>>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-  }
-  /**
-   * Read Account Preference
-   * 
-   * @param name  (required)
-   * @return AccountPreference
-   * @throws ApiException if fails to make API call
-   */
-  public AccountPreference getAccountPreference(String name) throws ApiException {
-    Object localVarPostBody = null;
-    // verify the required parameter 'name' is set
-    if (name == null) {
-      throw new ApiException(400, "Missing the required parameter 'name' when calling getAccountPreference");
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling listNestedOptionsForPaymentMethodType");
+    }
+    // verify the required parameter 'code' is set
+    if (code == null) {
+      throw new ApiException(400, "Missing the required parameter 'code' when calling listNestedOptionsForPaymentMethodType");
     }
     // create path and map variables
-    String localVarPath = "/api/account/preference/{name}"
-      .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()));
+    String localVarPath = "/api/payment-method-type/dynamic-options/{id}/{code}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()))
+      .replaceAll("\\{" + "code" + "\\}", apiClient.escapeString(code.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "value", value));
 
 
 
     final String[] localVarAccepts = {
-      "application/xml", "application/json"
+      "application/json"
     };
     final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
@@ -396,26 +195,186 @@ public class AccountsApi {
 
     String[] localVarAuthNames = new String[] { "Hawk" };
 
-    GenericType<AccountPreference> localVarReturnType = new GenericType<AccountPreference>() {};
+    GenericType<List<GenericOption>> localVarReturnType = new GenericType<List<GenericOption>>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
-   * Update Account Preference
+   * List Options for Payment Method Type
    * 
-   * @param name  (required)
+   * @param id  (required)
+   * @return List&lt;GenericOption&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<GenericOption> listOptionsForPaymentMethodType(Long id) throws ApiException {
+    Object localVarPostBody = null;
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling listOptionsForPaymentMethodType");
+    }
+    // create path and map variables
+    String localVarPath = "/api/payment-method-type/options/{id}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "Hawk" };
+
+    GenericType<List<GenericOption>> localVarReturnType = new GenericType<List<GenericOption>>() {};
+    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+  }
+  /**
+   * List Search options for Payment Method Type
+   * 
+   * @param id  (required)
+   * @return List&lt;GenericOption&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<GenericOption> listSearchOptionsForPaymentMethodType(Long id) throws ApiException {
+    Object localVarPostBody = null;
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling listSearchOptionsForPaymentMethodType");
+    }
+    // create path and map variables
+    String localVarPath = "/api/payment-method-type/search-options/{id}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "Hawk" };
+
+    GenericType<List<GenericOption>> localVarReturnType = new GenericType<List<GenericOption>>() {};
+    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+  }
+  /**
+   * Read Payment Method Type
+   * 
+   * @param id  (required)
+   * @return PaymentMethodType
+   * @throws ApiException if fails to make API call
+   */
+  public PaymentMethodType getPaymentMethodType(Long id) throws ApiException {
+    Object localVarPostBody = null;
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling getPaymentMethodType");
+    }
+    // create path and map variables
+    String localVarPath = "/api/payment-method-type/{id}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "Hawk" };
+
+    GenericType<PaymentMethodType> localVarReturnType = new GenericType<PaymentMethodType>() {};
+    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+  }
+  /**
+   * Read Payment Method
+   * 
+   * @param id  (required)
+   * @return PaymentMethod
+   * @throws ApiException if fails to make API call
+   */
+  public PaymentMethod paymentMethodRead(Long id) throws ApiException {
+    Object localVarPostBody = null;
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling paymentMethodRead");
+    }
+    // create path and map variables
+    String localVarPath = "/api/payment-method/{id}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "Hawk" };
+
+    GenericType<PaymentMethod> localVarReturnType = new GenericType<PaymentMethod>() {};
+    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+  }
+  /**
+   * Update Payment Method
+   * 
+   * @param id  (required)
    * @param body  (optional)
-   * @return AccountPreference
+   * @return PaymentMethod
    * @throws ApiException if fails to make API call
    */
-  public AccountPreference updateAccountPreference(String name, AccountPreference body) throws ApiException {
+  public PaymentMethod paymentMethodUpdate(Long id, PaymentMethod body) throws ApiException {
     Object localVarPostBody = body;
-    // verify the required parameter 'name' is set
-    if (name == null) {
-      throw new ApiException(400, "Missing the required parameter 'name' when calling updateAccountPreference");
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling paymentMethodUpdate");
     }
     // create path and map variables
-    String localVarPath = "/api/account/preference/{name}"
-      .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()));
+    String localVarPath = "/api/payment-method/{id}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -426,30 +385,112 @@ public class AccountsApi {
 
 
     final String[] localVarAccepts = {
-      "application/xml", "application/json"
+      "application/json"
     };
     final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
     final String[] localVarContentTypes = {
-      "application/xml", "application/json"
+      "application/json"
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
     String[] localVarAuthNames = new String[] { "Hawk" };
 
-    GenericType<AccountPreference> localVarReturnType = new GenericType<AccountPreference>() {};
+    GenericType<PaymentMethod> localVarReturnType = new GenericType<PaymentMethod>() {};
     return apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
-   * Check progress of account setup
+   * Delete Payment Method
    * 
-   * @return AccountProgress
+   * @param id  (required)
    * @throws ApiException if fails to make API call
    */
-  public AccountProgress getAccountProgress() throws ApiException {
+  public void paymentMethodDelete(Long id) throws ApiException {
+    Object localVarPostBody = null;
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling paymentMethodDelete");
+    }
+    // create path and map variables
+    String localVarPath = "/api/payment-method/{id}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+
+
+    final String[] localVarAccepts = {
+      
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "Hawk" };
+
+    apiClient.invokeAPI(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
+  }
+  /**
+   * List Payment Method Categories
+   * 
+   * @param offset start offset (optional)
+   * @param max max results (optional)
+   * @return List&lt;PaymentMethodCategory&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<PaymentMethodCategory> listPaymentMethodCategories(Integer offset, Integer max) throws ApiException {
     Object localVarPostBody = null;
     // create path and map variables
-    String localVarPath = "/api/account/progress";
+    String localVarPath = "/api/paymentMethodCategory";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "max", max));
+
+
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "Hawk" };
+
+    GenericType<List<PaymentMethodCategory>> localVarReturnType = new GenericType<List<PaymentMethodCategory>>() {};
+    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+  }
+  /**
+   * Read Payment Method Category
+   * 
+   * @param id  (required)
+   * @return PaymentMethodCategory
+   * @throws ApiException if fails to make API call
+   */
+  public PaymentMethodCategory getPaymentMethodCategory(Long id) throws ApiException {
+    Object localVarPostBody = null;
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling getPaymentMethodCategory");
+    }
+    // create path and map variables
+    String localVarPath = "/api/paymentMethodCategory/{id}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -471,7 +512,7 @@ public class AccountsApi {
 
     String[] localVarAuthNames = new String[] { "Hawk" };
 
-    GenericType<AccountProgress> localVarReturnType = new GenericType<AccountProgress>() {};
+    GenericType<PaymentMethodCategory> localVarReturnType = new GenericType<PaymentMethodCategory>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
 }

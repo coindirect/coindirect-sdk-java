@@ -19,7 +19,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
 import org.coindirect.api.model.AccountMethod;
 import org.coindirect.api.model.Fees;
 import org.coindirect.api.model.PayInInstruction;
@@ -141,13 +140,13 @@ public class Quote {
   private PaymentStatusEnum paymentStatus = null;
 
   @JsonProperty("acceptanceExpiryDate")
-  private OffsetDateTime acceptanceExpiryDate = null;
+  private Long acceptanceExpiryDate = null;
 
   @JsonProperty("paymentExpiryDate")
-  private OffsetDateTime paymentExpiryDate = null;
+  private Long paymentExpiryDate = null;
 
   @JsonProperty("paymentReceiptDate")
-  private OffsetDateTime paymentReceiptDate = null;
+  private Long paymentReceiptDate = null;
 
   @JsonProperty("payInMethod")
   private PayInMethod payInMethod = null;
@@ -226,10 +225,10 @@ public class Quote {
   private Fees fees = null;
 
   @JsonProperty("dateCreated")
-  private OffsetDateTime dateCreated = null;
+  private Long dateCreated = null;
 
   @JsonProperty("lastUpdated")
-  private OffsetDateTime lastUpdated = null;
+  private Long lastUpdated = null;
 
   public Quote id(Long id) {
     this.id = id;
@@ -375,7 +374,7 @@ public class Quote {
     this.paymentStatus = paymentStatus;
   }
 
-  public Quote acceptanceExpiryDate(OffsetDateTime acceptanceExpiryDate) {
+  public Quote acceptanceExpiryDate(Long acceptanceExpiryDate) {
     this.acceptanceExpiryDate = acceptanceExpiryDate;
     return this;
   }
@@ -384,16 +383,16 @@ public class Quote {
    * Get acceptanceExpiryDate
    * @return acceptanceExpiryDate
   **/
-  @Schema(description = "")
-  public OffsetDateTime getAcceptanceExpiryDate() {
+  @Schema(example = "1566198657000", description = "")
+  public Long getAcceptanceExpiryDate() {
     return acceptanceExpiryDate;
   }
 
-  public void setAcceptanceExpiryDate(OffsetDateTime acceptanceExpiryDate) {
+  public void setAcceptanceExpiryDate(Long acceptanceExpiryDate) {
     this.acceptanceExpiryDate = acceptanceExpiryDate;
   }
 
-  public Quote paymentExpiryDate(OffsetDateTime paymentExpiryDate) {
+  public Quote paymentExpiryDate(Long paymentExpiryDate) {
     this.paymentExpiryDate = paymentExpiryDate;
     return this;
   }
@@ -402,16 +401,16 @@ public class Quote {
    * Get paymentExpiryDate
    * @return paymentExpiryDate
   **/
-  @Schema(description = "")
-  public OffsetDateTime getPaymentExpiryDate() {
+  @Schema(example = "1566198657000", description = "")
+  public Long getPaymentExpiryDate() {
     return paymentExpiryDate;
   }
 
-  public void setPaymentExpiryDate(OffsetDateTime paymentExpiryDate) {
+  public void setPaymentExpiryDate(Long paymentExpiryDate) {
     this.paymentExpiryDate = paymentExpiryDate;
   }
 
-  public Quote paymentReceiptDate(OffsetDateTime paymentReceiptDate) {
+  public Quote paymentReceiptDate(Long paymentReceiptDate) {
     this.paymentReceiptDate = paymentReceiptDate;
     return this;
   }
@@ -420,12 +419,12 @@ public class Quote {
    * Get paymentReceiptDate
    * @return paymentReceiptDate
   **/
-  @Schema(description = "")
-  public OffsetDateTime getPaymentReceiptDate() {
+  @Schema(example = "1566198657000", description = "")
+  public Long getPaymentReceiptDate() {
     return paymentReceiptDate;
   }
 
-  public void setPaymentReceiptDate(OffsetDateTime paymentReceiptDate) {
+  public void setPaymentReceiptDate(Long paymentReceiptDate) {
     this.paymentReceiptDate = paymentReceiptDate;
   }
 
@@ -699,7 +698,7 @@ public class Quote {
     this.fees = fees;
   }
 
-  public Quote dateCreated(OffsetDateTime dateCreated) {
+  public Quote dateCreated(Long dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
@@ -708,16 +707,16 @@ public class Quote {
    * Get dateCreated
    * @return dateCreated
   **/
-  @Schema(description = "")
-  public OffsetDateTime getDateCreated() {
+  @Schema(example = "1566198657000", description = "")
+  public Long getDateCreated() {
     return dateCreated;
   }
 
-  public void setDateCreated(OffsetDateTime dateCreated) {
+  public void setDateCreated(Long dateCreated) {
     this.dateCreated = dateCreated;
   }
 
-  public Quote lastUpdated(OffsetDateTime lastUpdated) {
+  public Quote lastUpdated(Long lastUpdated) {
     this.lastUpdated = lastUpdated;
     return this;
   }
@@ -726,12 +725,12 @@ public class Quote {
    * Get lastUpdated
    * @return lastUpdated
   **/
-  @Schema(description = "")
-  public OffsetDateTime getLastUpdated() {
+  @Schema(example = "1566198657000", description = "")
+  public Long getLastUpdated() {
     return lastUpdated;
   }
 
-  public void setLastUpdated(OffsetDateTime lastUpdated) {
+  public void setLastUpdated(Long lastUpdated) {
     this.lastUpdated = lastUpdated;
   }
 

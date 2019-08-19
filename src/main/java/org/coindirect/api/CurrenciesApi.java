@@ -85,27 +85,29 @@ public class CurrenciesApi {
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
-   * Read Currency
+   * List Crypto Currencies
    * 
-   * @param id  (required)
-   * @return Currency
+   * @param allowDeposits  (optional)
+   * @param all  (optional)
+   * @param offset start offset (optional)
+   * @param max max results (optional)
+   * @return List&lt;Currency&gt;
    * @throws ApiException if fails to make API call
    */
-  public Currency getCurrency(Long id) throws ApiException {
+  public List<Currency> listCurrenciesCrypto(Boolean allowDeposits, Boolean all, Integer offset, Integer max) throws ApiException {
     Object localVarPostBody = null;
-    // verify the required parameter 'id' is set
-    if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling getCurrency");
-    }
     // create path and map variables
-    String localVarPath = "/api/currency/{id}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+    String localVarPath = "/api/currency/crypto";
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "allowDeposits", allowDeposits));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "all", all));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "max", max));
 
 
 
@@ -121,7 +123,49 @@ public class CurrenciesApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<Currency> localVarReturnType = new GenericType<Currency>() {};
+    GenericType<List<Currency>> localVarReturnType = new GenericType<List<Currency>>() {};
+    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+  }
+  /**
+   * List Fiat Currencies
+   * 
+   * @param usable  (optional)
+   * @param all  (optional)
+   * @param offset start offset (optional)
+   * @param max max results (optional)
+   * @return List&lt;Currency&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<Currency> listCurrenciesFiat(Boolean usable, Boolean all, Integer offset, Integer max) throws ApiException {
+    Object localVarPostBody = null;
+    // create path and map variables
+    String localVarPath = "/api/currency/fiat";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "usable", usable));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "all", all));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "max", max));
+
+
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<List<Currency>> localVarReturnType = new GenericType<List<Currency>>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
@@ -207,29 +251,27 @@ public class CurrenciesApi {
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
-   * List Crypto Currencies
+   * Read Currency
    * 
-   * @param allowDeposits  (optional)
-   * @param all  (optional)
-   * @param offset start offset (optional)
-   * @param max max results (optional)
-   * @return List&lt;Currency&gt;
+   * @param id  (required)
+   * @return Currency
    * @throws ApiException if fails to make API call
    */
-  public List<Currency> listCurrenciesCrypto(Boolean allowDeposits, Boolean all, Integer offset, Integer max) throws ApiException {
+  public Currency getCurrency(Long id) throws ApiException {
     Object localVarPostBody = null;
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling getCurrency");
+    }
     // create path and map variables
-    String localVarPath = "/api/currency/crypto";
+    String localVarPath = "/api/currency/{id}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
     // query params
     List<Pair> localVarQueryParams = new ArrayList<Pair>();
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "allowDeposits", allowDeposits));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "all", all));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "max", max));
 
 
 
@@ -245,49 +287,7 @@ public class CurrenciesApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<List<Currency>> localVarReturnType = new GenericType<List<Currency>>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-  }
-  /**
-   * List Fiat Currencies
-   * 
-   * @param usable  (optional)
-   * @param all  (optional)
-   * @param offset start offset (optional)
-   * @param max max results (optional)
-   * @return List&lt;Currency&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public List<Currency> listCurrenciesFiat(Boolean usable, Boolean all, Integer offset, Integer max) throws ApiException {
-    Object localVarPostBody = null;
-    // create path and map variables
-    String localVarPath = "/api/currency/fiat";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "usable", usable));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "all", all));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "max", max));
-
-
-
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<List<Currency>> localVarReturnType = new GenericType<List<Currency>>() {};
+    GenericType<Currency> localVarReturnType = new GenericType<Currency>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
 }

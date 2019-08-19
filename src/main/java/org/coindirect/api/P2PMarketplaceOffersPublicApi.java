@@ -36,46 +36,6 @@ public class P2PMarketplaceOffersPublicApi {
   }
 
   /**
-   * Get offer information
-   * 
-   * @param id  (required)
-   * @return OfferToSell
-   * @throws ApiException if fails to make API call
-   */
-  public OfferToSell getP2POffer(Long id) throws ApiException {
-    Object localVarPostBody = null;
-    // verify the required parameter 'id' is set
-    if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling getP2POffer");
-    }
-    // create path and map variables
-    String localVarPath = "/api/public/offer/{id}"
-      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-
-
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<OfferToSell> localVarReturnType = new GenericType<OfferToSell>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-  }
-  /**
    * Find buy offers
    * 
    * @param currencyForSale  (required)
@@ -199,6 +159,46 @@ public class P2PMarketplaceOffersPublicApi {
     String[] localVarAuthNames = new String[] {  };
 
     GenericType<List<OfferToSell>> localVarReturnType = new GenericType<List<OfferToSell>>() {};
+    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+  }
+  /**
+   * Get offer information
+   * 
+   * @param id  (required)
+   * @return OfferToSell
+   * @throws ApiException if fails to make API call
+   */
+  public OfferToSell getP2POffer(Long id) throws ApiException {
+    Object localVarPostBody = null;
+    // verify the required parameter 'id' is set
+    if (id == null) {
+      throw new ApiException(400, "Missing the required parameter 'id' when calling getP2POffer");
+    }
+    // create path and map variables
+    String localVarPath = "/api/public/offer/{id}"
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<OfferToSell> localVarReturnType = new GenericType<OfferToSell>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
 }

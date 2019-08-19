@@ -31,6 +31,23 @@ public class ExchangeHistoricalDataApiTest {
     private final ExchangeHistoricalDataApi api = new ExchangeHistoricalDataApi();
 
     /**
+     * Retrieve Historical Trades
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getHistoricalExchangeTradesTest() throws ApiException {
+        String market = null;
+        String history = null;
+        Long limit = null;
+        api.getHistoricalExchangeTrades(market, history, limit);
+
+        // TODO: test validations
+    }
+    /**
      * Retrieve Historical Data
      *
      * 
@@ -46,23 +63,6 @@ public class ExchangeHistoricalDataApiTest {
         Long limit = null;
         String fill = null;
         HistoricalData response = api.getHistoricalExchangeData(market, history, grouping, limit, fill);
-
-        // TODO: test validations
-    }
-    /**
-     * Retrieve Historical Trades
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getHistoricalExchangeTradesTest() throws ApiException {
-        String market = null;
-        String history = null;
-        Long limit = null;
-        api.getHistoricalExchangeTrades(market, history, limit);
 
         // TODO: test validations
     }

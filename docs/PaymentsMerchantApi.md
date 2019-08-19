@@ -1,19 +1,19 @@
-# CardsApi
+# PaymentsMerchantApi
 
 All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add**](CardsApi.md#add) | **POST** /api/card | addCard
-[**list**](CardsApi.md#list) | **GET** /api/card | listCards
-[**get**](CardsApi.md#get) | **GET** /api/card/{uuid} | getCard
-[**remove**](CardsApi.md#remove) | **DELETE** /api/card/{uuid} | removeCard
+[**paymentCreate**](PaymentsMerchantApi.md#paymentCreate) | **POST** /api/v1/pay | Create Payment
+[**paymentList**](PaymentsMerchantApi.md#paymentList) | **GET** /api/v1/pay | List Payments
+[**paymentRead**](PaymentsMerchantApi.md#paymentRead) | **GET** /api/v1/pay/{uuid} | Read Payment
+[**paymentCancel**](PaymentsMerchantApi.md#paymentCancel) | **DELETE** /api/v1/pay/{uuid} | Cancel Payment
 
-<a name="add"></a>
-# **add**
-> CardAddResponse add(body)
+<a name="paymentCreate"></a>
+# **paymentCreate**
+> Payment paymentCreate(body)
 
-addCard
+Create Payment
 
 ### Example
 ```java
@@ -22,7 +22,7 @@ addCard
 //import org.coindirect.api.invoker.ApiException;
 //import org.coindirect.api.invoker.Configuration;
 //import org.coindirect.api.invoker.auth.*;
-//import org.coindirect.api.CardsApi;
+//import org.coindirect.api.PaymentsMerchantApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -32,13 +32,13 @@ Hawk.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Hawk.setApiKeyPrefix("Token");
 
-CardsApi apiInstance = new CardsApi();
-CardAddRequest body = new CardAddRequest(); // CardAddRequest | 
+PaymentsMerchantApi apiInstance = new PaymentsMerchantApi();
+PayRequest body = new PayRequest(); // PayRequest | 
 try {
-    CardAddResponse result = apiInstance.add(body);
+    Payment result = apiInstance.paymentCreate(body);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling CardsApi#add");
+    System.err.println("Exception when calling PaymentsMerchantApi#paymentCreate");
     e.printStackTrace();
 }
 ```
@@ -47,11 +47,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CardAddRequest**](CardAddRequest.md)|  | [optional]
+ **body** | [**PayRequest**](PayRequest.md)|  | [optional]
 
 ### Return type
 
-[**CardAddResponse**](CardAddResponse.md)
+[**Payment**](Payment.md)
 
 ### Authorization
 
@@ -62,11 +62,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="list"></a>
-# **list**
-> Card list(offset, max)
+<a name="paymentList"></a>
+# **paymentList**
+> List&lt;Payment&gt; paymentList(merchantId)
 
-listCards
+List Payments
 
 ### Example
 ```java
@@ -75,7 +75,7 @@ listCards
 //import org.coindirect.api.invoker.ApiException;
 //import org.coindirect.api.invoker.Configuration;
 //import org.coindirect.api.invoker.auth.*;
-//import org.coindirect.api.CardsApi;
+//import org.coindirect.api.PaymentsMerchantApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -85,14 +85,13 @@ Hawk.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Hawk.setApiKeyPrefix("Token");
 
-CardsApi apiInstance = new CardsApi();
-Integer offset = 56; // Integer | start offset
-Integer max = 56; // Integer | max results
+PaymentsMerchantApi apiInstance = new PaymentsMerchantApi();
+String merchantId = "merchantId_example"; // String | 
 try {
-    Card result = apiInstance.list(offset, max);
+    List<Payment> result = apiInstance.paymentList(merchantId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling CardsApi#list");
+    System.err.println("Exception when calling PaymentsMerchantApi#paymentList");
     e.printStackTrace();
 }
 ```
@@ -101,12 +100,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **Integer**| start offset | [optional]
- **max** | **Integer**| max results | [optional]
+ **merchantId** | **String**|  | [optional]
 
 ### Return type
 
-[**Card**](Card.md)
+[**List&lt;Payment&gt;**](Payment.md)
 
 ### Authorization
 
@@ -117,36 +115,27 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="get"></a>
-# **get**
-> Card get(uuid)
+<a name="paymentRead"></a>
+# **paymentRead**
+> Payment paymentRead(uuid, reference)
 
-getCard
+Read Payment
 
 ### Example
 ```java
 // Import classes:
-//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
-//import org.coindirect.api.invoker.Configuration;
-//import org.coindirect.api.invoker.auth.*;
-//import org.coindirect.api.CardsApi;
+//import org.coindirect.api.PaymentsMerchantApi;
 
-ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-// Configure API key authorization: Hawk
-ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
-Hawk.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Hawk.setApiKeyPrefix("Token");
-
-CardsApi apiInstance = new CardsApi();
+PaymentsMerchantApi apiInstance = new PaymentsMerchantApi();
 String uuid = "uuid_example"; // String | 
+String reference = "reference_example"; // String | 
 try {
-    Card result = apiInstance.get(uuid);
+    Payment result = apiInstance.paymentRead(uuid, reference);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling CardsApi#get");
+    System.err.println("Exception when calling PaymentsMerchantApi#paymentRead");
     e.printStackTrace();
 }
 ```
@@ -156,25 +145,26 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | **String**|  |
+ **reference** | **String**|  | [optional]
 
 ### Return type
 
-[**Card**](Card.md)
+[**Payment**](Payment.md)
 
 ### Authorization
 
-[Hawk](../README.md#Hawk)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="remove"></a>
-# **remove**
-> remove(uuid)
+<a name="paymentCancel"></a>
+# **paymentCancel**
+> paymentCancel(uuid)
 
-removeCard
+Cancel Payment
 
 ### Example
 ```java
@@ -183,7 +173,7 @@ removeCard
 //import org.coindirect.api.invoker.ApiException;
 //import org.coindirect.api.invoker.Configuration;
 //import org.coindirect.api.invoker.auth.*;
-//import org.coindirect.api.CardsApi;
+//import org.coindirect.api.PaymentsMerchantApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -193,12 +183,12 @@ Hawk.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //Hawk.setApiKeyPrefix("Token");
 
-CardsApi apiInstance = new CardsApi();
+PaymentsMerchantApi apiInstance = new PaymentsMerchantApi();
 String uuid = "uuid_example"; // String | 
 try {
-    apiInstance.remove(uuid);
+    apiInstance.paymentCancel(uuid);
 } catch (ApiException e) {
-    System.err.println("Exception when calling CardsApi#remove");
+    System.err.println("Exception when calling PaymentsMerchantApi#paymentCancel");
     e.printStackTrace();
 }
 ```

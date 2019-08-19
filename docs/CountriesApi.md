@@ -4,136 +4,11 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**detectCountryByIp**](CountriesApi.md#detectCountryByIp) | **GET** /api/country/detect | Detect Country by IP
-[**getCountry**](CountriesApi.md#getCountry) | **GET** /api/country/{id} | Read Country
-[**getCountryByCode**](CountriesApi.md#getCountryByCode) | **GET** /api/country/codes/{code} | Read Country by Code
 [**listCountries**](CountriesApi.md#listCountries) | **GET** /api/country | List Countries
 [**listCountryCodes**](CountriesApi.md#listCountryCodes) | **GET** /api/country/codes | List Country Codes
-
-<a name="detectCountryByIp"></a>
-# **detectCountryByIp**
-> Country detectCountryByIp()
-
-Detect Country by IP
-
-### Example
-```java
-// Import classes:
-//import org.coindirect.api.invoker.ApiException;
-//import org.coindirect.api.CountriesApi;
-
-
-CountriesApi apiInstance = new CountriesApi();
-try {
-    Country result = apiInstance.detectCountryByIp();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CountriesApi#detectCountryByIp");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**Country**](Country.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getCountry"></a>
-# **getCountry**
-> Country getCountry(id)
-
-Read Country
-
-### Example
-```java
-// Import classes:
-//import org.coindirect.api.invoker.ApiException;
-//import org.coindirect.api.CountriesApi;
-
-
-CountriesApi apiInstance = new CountriesApi();
-Long id = 789L; // Long | 
-try {
-    Country result = apiInstance.getCountry(id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CountriesApi#getCountry");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Long**|  |
-
-### Return type
-
-[**Country**](Country.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getCountryByCode"></a>
-# **getCountryByCode**
-> Country getCountryByCode(code)
-
-Read Country by Code
-
-### Example
-```java
-// Import classes:
-//import org.coindirect.api.invoker.ApiException;
-//import org.coindirect.api.CountriesApi;
-
-
-CountriesApi apiInstance = new CountriesApi();
-String code = "code_example"; // String | 
-try {
-    Country result = apiInstance.getCountryByCode(code);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CountriesApi#getCountryByCode");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **code** | **String**|  |
-
-### Return type
-
-[**Country**](Country.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
+[**readCountryByCode**](CountriesApi.md#readCountryByCode) | **GET** /api/country/codes/{code} | Read Country by Code
+[**detectCountryByIp**](CountriesApi.md#detectCountryByIp) | **GET** /api/country/detect | Detect Country by IP
+[**readCountry**](CountriesApi.md#readCountry) | **GET** /api/country/{id} | Read Country
 
 <a name="listCountries"></a>
 # **listCountries**
@@ -219,6 +94,131 @@ Name | Type | Description  | Notes
 ### Return type
 
 **List&lt;String&gt;**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="readCountryByCode"></a>
+# **readCountryByCode**
+> Country readCountryByCode(code)
+
+Read Country by Code
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.CountriesApi;
+
+
+CountriesApi apiInstance = new CountriesApi();
+String code = "code_example"; // String | 
+try {
+    Country result = apiInstance.readCountryByCode(code);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CountriesApi#readCountryByCode");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **code** | **String**|  |
+
+### Return type
+
+[**Country**](Country.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="detectCountryByIp"></a>
+# **detectCountryByIp**
+> Country detectCountryByIp()
+
+Detect Country by IP
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.CountriesApi;
+
+
+CountriesApi apiInstance = new CountriesApi();
+try {
+    Country result = apiInstance.detectCountryByIp();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CountriesApi#detectCountryByIp");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**Country**](Country.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="readCountry"></a>
+# **readCountry**
+> Country readCountry(id)
+
+Read Country
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.CountriesApi;
+
+
+CountriesApi apiInstance = new CountriesApi();
+Long id = 789L; // Long | 
+try {
+    Country result = apiInstance.readCountry(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CountriesApi#readCountry");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Long**|  |
+
+### Return type
+
+[**Country**](Country.md)
 
 ### Authorization
 

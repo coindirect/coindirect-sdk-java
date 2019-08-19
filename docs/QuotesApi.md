@@ -4,34 +4,45 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**acceptQuote**](QuotesApi.md#acceptQuote) | **PUT** /api/v1/quote/accept/{uuid} | Accept a quote
-[**listQuotes**](QuotesApi.md#listQuotes) | **GET** /api/v1/quote | List quotes
-[**readQuote**](QuotesApi.md#readQuote) | **GET** /api/v1/quote/{uuid} | Read a quote
-[**readTransactionLimits**](QuotesApi.md#readTransactionLimits) | **GET** /api/v1/limit | Get transaction limits
-[**requestNewQuotePaymentInstructions**](QuotesApi.md#requestNewQuotePaymentInstructions) | **PUT** /api/v1/quote/payment/{uuid} | Request new payment instructions
-[**requestQuote**](QuotesApi.md#requestQuote) | **POST** /api/v1/quote | Request a quote
+[**quoteCreate**](QuotesApi.md#quoteCreate) | **POST** /api/v1/quote | Create Quote
+[**transactionLimitRead**](QuotesApi.md#transactionLimitRead) | **GET** /api/v1/limit | Read Transaction Limits
+[**quoteList**](QuotesApi.md#quoteList) | **GET** /api/v1/quote | List Quotes
+[**quoteAccept**](QuotesApi.md#quoteAccept) | **PUT** /api/v1/quote/accept/{uuid} | Accept Quote
+[**quoteCreateNewPaymentInstruction**](QuotesApi.md#quoteCreateNewPaymentInstruction) | **PUT** /api/v1/quote/payment/{uuid} | Create New Payment Instruction
+[**quoteRead**](QuotesApi.md#quoteRead) | **GET** /api/v1/quote/{uuid} | Read Quote
 
-<a name="acceptQuote"></a>
-# **acceptQuote**
-> AcceptedQuote acceptQuote(uuid, body)
+<a name="quoteCreate"></a>
+# **quoteCreate**
+> Quote quoteCreate(body, estimate, direction)
 
-Accept a quote
+Create Quote
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.QuotesApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 QuotesApi apiInstance = new QuotesApi();
-String uuid = "uuid_example"; // String | 
-PaymentMetadata body = new PaymentMetadata(); // PaymentMetadata | 
+QuoteRequest body = new QuoteRequest(); // QuoteRequest | 
+Boolean estimate = true; // Boolean | 
+String direction = "direction_example"; // String | 
 try {
-    AcceptedQuote result = apiInstance.acceptQuote(uuid, body);
+    Quote result = apiInstance.quoteCreate(body, estimate, direction);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling QuotesApi#acceptQuote");
+    System.err.println("Exception when calling QuotesApi#quoteCreate");
     e.printStackTrace();
 }
 ```
@@ -40,51 +51,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **String**|  |
- **body** | [**PaymentMetadata**](PaymentMetadata.md)|  | [optional]
-
-### Return type
-
-[**AcceptedQuote**](AcceptedQuote.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="listQuotes"></a>
-# **listQuotes**
-> Quote listQuotes(merchantId)
-
-List quotes
-
-### Example
-```java
-// Import classes:
-//import org.coindirect.api.invoker.ApiException;
-//import org.coindirect.api.QuotesApi;
-
-
-QuotesApi apiInstance = new QuotesApi();
-String merchantId = "merchantId_example"; // String | 
-try {
-    Quote result = apiInstance.listQuotes(merchantId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling QuotesApi#listQuotes");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **merchantId** | **String**|  | [optional]
+ **body** | [**QuoteRequest**](QuoteRequest.md)|  | [optional]
+ **estimate** | **Boolean**|  | [optional]
+ **direction** | **String**|  | [optional]
 
 ### Return type
 
@@ -92,61 +61,18 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="readQuote"></a>
-# **readQuote**
-> AcceptedQuote readQuote(uuid)
+<a name="transactionLimitRead"></a>
+# **transactionLimitRead**
+> Limits transactionLimitRead(country, currency, direction, method)
 
-Read a quote
-
-### Example
-```java
-// Import classes:
-//import org.coindirect.api.invoker.ApiException;
-//import org.coindirect.api.QuotesApi;
-
-
-QuotesApi apiInstance = new QuotesApi();
-String uuid = "uuid_example"; // String | 
-try {
-    AcceptedQuote result = apiInstance.readQuote(uuid);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling QuotesApi#readQuote");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | **String**|  |
-
-### Return type
-
-[**AcceptedQuote**](AcceptedQuote.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="readTransactionLimits"></a>
-# **readTransactionLimits**
-> Limits readTransactionLimits(country, currency, direction, method)
-
-Get transaction limits
+Read Transaction Limits
 
 ### Example
 ```java
@@ -161,10 +87,10 @@ String currency = "currency_example"; // String |
 String direction = "direction_example"; // String | 
 String method = "method_example"; // String | 
 try {
-    Limits result = apiInstance.readTransactionLimits(country, currency, direction, method);
+    Limits result = apiInstance.transactionLimitRead(country, currency, direction, method);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling QuotesApi#readTransactionLimits");
+    System.err.println("Exception when calling QuotesApi#transactionLimitRead");
     e.printStackTrace();
 }
 ```
@@ -191,27 +117,90 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="requestNewQuotePaymentInstructions"></a>
-# **requestNewQuotePaymentInstructions**
-> AcceptedQuote requestNewQuotePaymentInstructions(uuid, body)
+<a name="quoteList"></a>
+# **quoteList**
+> Quote quoteList(merchantId)
 
-Request new payment instructions
+List Quotes
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.QuotesApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
+
+QuotesApi apiInstance = new QuotesApi();
+String merchantId = "merchantId_example"; // String | 
+try {
+    Quote result = apiInstance.quoteList(merchantId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QuotesApi#quoteList");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **merchantId** | **String**|  | [optional]
+
+### Return type
+
+[**Quote**](Quote.md)
+
+### Authorization
+
+[Hawk](../README.md#Hawk)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="quoteAccept"></a>
+# **quoteAccept**
+> AcceptedQuote quoteAccept(uuid, body)
+
+Accept Quote
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiClient;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
+//import org.coindirect.api.QuotesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 QuotesApi apiInstance = new QuotesApi();
 String uuid = "uuid_example"; // String | 
 PaymentMetadata body = new PaymentMetadata(); // PaymentMetadata | 
 try {
-    AcceptedQuote result = apiInstance.requestNewQuotePaymentInstructions(uuid, body);
+    AcceptedQuote result = apiInstance.quoteAccept(uuid, body);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling QuotesApi#requestNewQuotePaymentInstructions");
+    System.err.println("Exception when calling QuotesApi#quoteAccept");
     e.printStackTrace();
 }
 ```
@@ -229,35 +218,44 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="requestQuote"></a>
-# **requestQuote**
-> Quote requestQuote(body, estimate, direction)
+<a name="quoteCreateNewPaymentInstruction"></a>
+# **quoteCreateNewPaymentInstruction**
+> AcceptedQuote quoteCreateNewPaymentInstruction(uuid, body)
 
-Request a quote
+Create New Payment Instruction
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.QuotesApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 QuotesApi apiInstance = new QuotesApi();
-QuoteRequest body = new QuoteRequest(); // QuoteRequest | 
-Boolean estimate = true; // Boolean | 
-String direction = "direction_example"; // String | 
+String uuid = "uuid_example"; // String | 
+PaymentMetadata body = new PaymentMetadata(); // PaymentMetadata | 
 try {
-    Quote result = apiInstance.requestQuote(body, estimate, direction);
+    AcceptedQuote result = apiInstance.quoteCreateNewPaymentInstruction(uuid, body);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling QuotesApi#requestQuote");
+    System.err.println("Exception when calling QuotesApi#quoteCreateNewPaymentInstruction");
     e.printStackTrace();
 }
 ```
@@ -266,20 +264,72 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**QuoteRequest**](QuoteRequest.md)|  | [optional]
- **estimate** | **Boolean**|  | [optional]
- **direction** | **String**|  | [optional]
+ **uuid** | **String**|  |
+ **body** | [**PaymentMetadata**](PaymentMetadata.md)|  | [optional]
 
 ### Return type
 
-[**Quote**](Quote.md)
+[**AcceptedQuote**](AcceptedQuote.md)
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="quoteRead"></a>
+# **quoteRead**
+> AcceptedQuote quoteRead(uuid)
+
+Read Quote
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiClient;
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
+//import org.coindirect.api.QuotesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
+
+QuotesApi apiInstance = new QuotesApi();
+String uuid = "uuid_example"; // String | 
+try {
+    AcceptedQuote result = apiInstance.quoteRead(uuid);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling QuotesApi#quoteRead");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **String**|  |
+
+### Return type
+
+[**AcceptedQuote**](AcceptedQuote.md)
+
+### Authorization
+
+[Hawk](../README.md#Hawk)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

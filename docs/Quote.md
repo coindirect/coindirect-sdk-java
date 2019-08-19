@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 **price** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **quoteStatus** | [**QuoteStatusEnum**](#QuoteStatusEnum) |  |  [optional]
 **paymentStatus** | [**PaymentStatusEnum**](#PaymentStatusEnum) |  |  [optional]
-**acceptanceExpiryDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
-**paymentExpiryDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
-**paymentReceiptDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**acceptanceExpiryDate** | **Long** |  |  [optional]
+**paymentExpiryDate** | **Long** |  |  [optional]
+**paymentReceiptDate** | **Long** |  |  [optional]
 **payInMethod** | [**PayInMethod**](PayInMethod.md) |  |  [optional]
 **payOutMethod** | [**PayOutMethod**](PayOutMethod.md) |  |  [optional]
 **uuid** | **String** |  |  [optional]
@@ -29,8 +29,8 @@ Name | Type | Description | Notes
 **amountInGross** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **amountInNet** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **fees** | [**Fees**](Fees.md) |  |  [optional]
-**dateCreated** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
-**lastUpdated** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**dateCreated** | **Long** |  |  [optional]
+**lastUpdated** | **Long** |  |  [optional]
 
 <a name="QuoteStatusEnum"></a>
 ## Enum: QuoteStatusEnum

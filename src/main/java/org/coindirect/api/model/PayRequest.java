@@ -37,9 +37,6 @@ public class PayRequest {
   @JsonProperty("currency")
   private String currency = null;
 
-  @JsonProperty("callbackUrl")
-  private String callbackUrl = null;
-
   @JsonProperty("returnUrl")
   private String returnUrl = null;
 
@@ -107,7 +104,7 @@ public class PayRequest {
    * Get expiryMinutes
    * @return expiryMinutes
   **/
-  @Schema(description = "")
+  @Schema(example = "1440", description = "")
   public Integer getExpiryMinutes() {
     return expiryMinutes;
   }
@@ -125,7 +122,7 @@ public class PayRequest {
    * Get amount
    * @return amount
   **/
-  @Schema(description = "")
+  @Schema(example = "100.23", description = "")
   public BigDecimal getAmount() {
     return amount;
   }
@@ -143,31 +140,13 @@ public class PayRequest {
    * Get currency
    * @return currency
   **/
-  @Schema(description = "")
+  @Schema(example = "EUR", required = true, description = "")
   public String getCurrency() {
     return currency;
   }
 
   public void setCurrency(String currency) {
     this.currency = currency;
-  }
-
-  public PayRequest callbackUrl(String callbackUrl) {
-    this.callbackUrl = callbackUrl;
-    return this;
-  }
-
-   /**
-   * Get callbackUrl
-   * @return callbackUrl
-  **/
-  @Schema(description = "")
-  public String getCallbackUrl() {
-    return callbackUrl;
-  }
-
-  public void setCallbackUrl(String callbackUrl) {
-    this.callbackUrl = callbackUrl;
   }
 
   public PayRequest returnUrl(String returnUrl) {
@@ -179,7 +158,7 @@ public class PayRequest {
    * Get returnUrl
    * @return returnUrl
   **/
-  @Schema(description = "")
+  @Schema(example = "https://my-shop.com/payment-complete?ref=xyz", description = "")
   public String getReturnUrl() {
     return returnUrl;
   }
@@ -197,7 +176,7 @@ public class PayRequest {
    * Get reference
    * @return reference
   **/
-  @Schema(description = "")
+  @Schema(required = true, description = "")
   public String getReference() {
     return reference;
   }
@@ -238,7 +217,6 @@ public class PayRequest {
         Objects.equals(this.expiryMinutes, payRequest.expiryMinutes) &&
         Objects.equals(this.amount, payRequest.amount) &&
         Objects.equals(this.currency, payRequest.currency) &&
-        Objects.equals(this.callbackUrl, payRequest.callbackUrl) &&
         Objects.equals(this.returnUrl, payRequest.returnUrl) &&
         Objects.equals(this.reference, payRequest.reference) &&
         Objects.equals(this.type, payRequest.type);
@@ -246,7 +224,7 @@ public class PayRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(merchantId, expiryMinutes, amount, currency, callbackUrl, returnUrl, reference, type);
+    return Objects.hash(merchantId, expiryMinutes, amount, currency, returnUrl, reference, type);
   }
 
 
@@ -259,7 +237,6 @@ public class PayRequest {
     sb.append("    expiryMinutes: ").append(toIndentedString(expiryMinutes)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
-    sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
     sb.append("    returnUrl: ").append(toIndentedString(returnUrl)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");

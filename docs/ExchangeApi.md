@@ -4,51 +4,8 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getExchangeOrderBook**](ExchangeApi.md#getExchangeOrderBook) | **GET** /api/v1/exchange/market/book | Get Order Book For Market
 [**listExchangeMarkets**](ExchangeApi.md#listExchangeMarkets) | **GET** /api/v1/exchange/market | List Markets
-
-<a name="getExchangeOrderBook"></a>
-# **getExchangeOrderBook**
-> OrderBook getExchangeOrderBook(symbol)
-
-Get Order Book For Market
-
-### Example
-```java
-// Import classes:
-//import org.coindirect.api.invoker.ApiException;
-//import org.coindirect.api.ExchangeApi;
-
-
-ExchangeApi apiInstance = new ExchangeApi();
-String symbol = "symbol_example"; // String | 
-try {
-    OrderBook result = apiInstance.getExchangeOrderBook(symbol);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ExchangeApi#getExchangeOrderBook");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **symbol** | **String**|  | [optional]
-
-### Return type
-
-[**OrderBook**](OrderBook.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
+[**getExchangeOrderBook**](ExchangeApi.md#getExchangeOrderBook) | **GET** /api/v1/exchange/market/book | Get Order Book For Market
 
 <a name="listExchangeMarkets"></a>
 # **listExchangeMarkets**
@@ -85,6 +42,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;Market&gt;**](Market.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getExchangeOrderBook"></a>
+# **getExchangeOrderBook**
+> OrderBook getExchangeOrderBook(symbol)
+
+Get Order Book For Market
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.ExchangeApi;
+
+
+ExchangeApi apiInstance = new ExchangeApi();
+String symbol = "symbol_example"; // String | 
+try {
+    OrderBook result = apiInstance.getExchangeOrderBook(symbol);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExchangeApi#getExchangeOrderBook");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **symbol** | **String**|  | [optional]
+
+### Return type
+
+[**OrderBook**](OrderBook.md)
 
 ### Authorization
 

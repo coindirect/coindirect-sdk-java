@@ -31,21 +31,6 @@ public class LanguagesApiTest {
     private final LanguagesApi api = new LanguagesApi();
 
     /**
-     * Read Language
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getLanguageTest() throws ApiException {
-        Long id = null;
-        Language response = api.getLanguage(id);
-
-        // TODO: test validations
-    }
-    /**
      * List Languages
      *
      * 
@@ -58,6 +43,21 @@ public class LanguagesApiTest {
         Integer offset = null;
         Integer max = null;
         List<Language> response = api.listLanguages(offset, max);
+
+        // TODO: test validations
+    }
+    /**
+     * Read Language
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void readLanguageTest() throws ApiException {
+        Long id = null;
+        Language response = api.readLanguage(id);
 
         // TODO: test validations
     }

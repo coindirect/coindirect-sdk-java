@@ -75,11 +75,11 @@ public class ApiClient {
     this.dateFormat = new RFC3339DateFormat();
 
     // Set default User-Agent.
-    setUserAgent("Coindirect/Java 1.0.1");
+    setUserAgent("Coindirect/Java 1.0.2");
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<String, Authentication>();
-    authentications.put("bearer", new ApiKeyAuth("header", "Authorization"));
+    authentications.put("Hawk", new ApiKeyAuth("header", "Authorization"));
     // Prevent the authentications from being modified.
     authentications = Collections.unmodifiableMap(authentications);
   }
@@ -672,7 +672,7 @@ public class ApiClient {
     }
 
     Invocation.Builder invocationBuilder = target.request();
-
+    
     if (accept != null) {
     	invocationBuilder = invocationBuilder.accept(accept);
     }
@@ -793,8 +793,6 @@ public class ApiClient {
    * Update query and header parameters based on authentication settings.
    *
    * @param authNames The authentications to apply
-   * @param queryParams The query parameters
-   * @param headerParams The headers
    */
   protected void updateParamsForAuth(String[] authNames, List<Pair> queryParams, Map<String, String> headerParams) {
     for (String authName : authNames) {

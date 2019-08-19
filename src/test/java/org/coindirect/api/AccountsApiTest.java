@@ -53,7 +53,7 @@ public class AccountsApiTest {
         // TODO: test validations
     }
     /**
-     * Read Account Preference
+     * Get affiliate balances
      *
      * 
      *
@@ -61,52 +61,8 @@ public class AccountsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getAccountPreferenceTest() throws ApiException {
-        String name = null;
-        AccountPreference response = api.getAccountPreference(name);
-
-        // TODO: test validations
-    }
-    /**
-     * Check progress of account setup
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getAccountProgressTest() throws ApiException {
-        AccountProgress response = api.getAccountProgress();
-
-        // TODO: test validations
-    }
-    /**
-     * Get WebSocket Channel
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getAccountWebsocketChannelTest() throws ApiException {
-        WrappedPrimitive response = api.getAccountWebsocketChannel();
-
-        // TODO: test validations
-    }
-    /**
-     * Get affiliate code
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getAffiliateCodeTest() throws ApiException {
-        String type = null;
-        WrappedPrimitive response = api.getAffiliateCode(type);
+    public void listAffiliateBalancesTest() throws ApiException {
+        List<Wallet> response = api.listAffiliateBalances();
 
         // TODO: test validations
     }
@@ -126,7 +82,7 @@ public class AccountsApiTest {
         // TODO: test validations
     }
     /**
-     * List uploaded documents for an account
+     * Get affiliate code
      *
      * 
      *
@@ -134,38 +90,9 @@ public class AccountsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listAccountDocumentsTest() throws ApiException {
-        List<AccountDocument> response = api.listAccountDocuments();
-
-        // TODO: test validations
-    }
-    /**
-     * List Account Preferences
-     *
-     * This will return a key/value object of the preferences that have been stored for this account.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listAccountPreferencesTest() throws ApiException {
-        Integer offset = null;
-        Integer max = null;
-        Map<String, Object> response = api.listAccountPreferences(offset, max);
-
-        // TODO: test validations
-    }
-    /**
-     * Get affiliate balances
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listAffiliateBalancesTest() throws ApiException {
-        List<Wallet> response = api.listAffiliateBalances();
+    public void getAffiliateCodeTest() throws ApiException {
+        String type = null;
+        WrappedPrimitive response = api.getAffiliateCode(type);
 
         // TODO: test validations
     }
@@ -200,6 +127,65 @@ public class AccountsApiTest {
         // TODO: test validations
     }
     /**
+     * Get WebSocket Channel
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getAccountWebsocketChannelTest() throws ApiException {
+        WrappedPrimitive response = api.getAccountWebsocketChannel();
+
+        // TODO: test validations
+    }
+    /**
+     * List uploaded documents for an account
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listAccountDocumentsTest() throws ApiException {
+        List<AccountDocument> response = api.listAccountDocuments();
+
+        // TODO: test validations
+    }
+    /**
+     * List Account Preferences
+     *
+     * This will return a key/value object of the preferences that have been stored for this account.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listAccountPreferencesTest() throws ApiException {
+        Integer offset = null;
+        Integer max = null;
+        Map<String, Object> response = api.listAccountPreferences(offset, max);
+
+        // TODO: test validations
+    }
+    /**
+     * Read Account Preference
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getAccountPreferenceTest() throws ApiException {
+        String name = null;
+        AccountPreference response = api.getAccountPreference(name);
+
+        // TODO: test validations
+    }
+    /**
      * Update Account Preference
      *
      * 
@@ -212,6 +198,20 @@ public class AccountsApiTest {
         String name = null;
         AccountPreference body = null;
         AccountPreference response = api.updateAccountPreference(name, body);
+
+        // TODO: test validations
+    }
+    /**
+     * Check progress of account setup
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getAccountProgressTest() throws ApiException {
+        AccountProgress response = api.getAccountProgress();
 
         // TODO: test validations
     }

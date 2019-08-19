@@ -15,9 +15,19 @@ Get P2P Vendor
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.P2PVendorInformationApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 P2PVendorInformationApi apiInstance = new P2PVendorInformationApi();
 Long id = 789L; // Long | 
@@ -42,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 

@@ -49,36 +49,6 @@ public class P2PMarketplaceOffersVendorsApiTest {
         // TODO: test validations
     }
     /**
-     * Create Offer to Sell
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void createP2PSellOfferTest() throws ApiException {
-        Offer body = null;
-        Offer response = api.createP2PSellOffer(body);
-
-        // TODO: test validations
-    }
-    /**
-     * Delete Offer
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void deleteP2POfferTest() throws ApiException {
-        Long id = null;
-        api.deleteP2POffer(id);
-
-        // TODO: test validations
-    }
-    /**
      * Execution Equation
      *
      * 
@@ -94,7 +64,7 @@ public class P2PMarketplaceOffersVendorsApiTest {
         // TODO: test validations
     }
     /**
-     * Read an Offer
+     * Create Offer to Sell
      *
      * 
      *
@@ -102,23 +72,9 @@ public class P2PMarketplaceOffersVendorsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getP2POfferTest() throws ApiException {
-        Long id = null;
-        Offer response = api.getP2POffer(id);
-
-        // TODO: test validations
-    }
-    /**
-     * List Exchanges for Equations
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listP2PExchangesTest() throws ApiException {
-        List<Exchange> response = api.listP2PExchanges();
+    public void createP2PSellOfferTest() throws ApiException {
+        Offer body = null;
+        Offer response = api.createP2PSellOffer(body);
 
         // TODO: test validations
     }
@@ -139,6 +95,20 @@ public class P2PMarketplaceOffersVendorsApiTest {
         // TODO: test validations
     }
     /**
+     * List Exchanges for Equations
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listP2PExchangesTest() throws ApiException {
+        List<Exchange> response = api.listP2PExchanges();
+
+        // TODO: test validations
+    }
+    /**
      * List Variables for Equations
      *
      * 
@@ -149,6 +119,21 @@ public class P2PMarketplaceOffersVendorsApiTest {
     @Test
     public void listP2PVariablesTest() throws ApiException {
         List<String> response = api.listP2PVariables();
+
+        // TODO: test validations
+    }
+    /**
+     * Read an Offer
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getP2POfferTest() throws ApiException {
+        Long id = null;
+        Offer response = api.getP2POffer(id);
 
         // TODO: test validations
     }
@@ -165,6 +150,21 @@ public class P2PMarketplaceOffersVendorsApiTest {
         Long id = null;
         Offer body = null;
         Offer response = api.updateP2POffer(id, body);
+
+        // TODO: test validations
+    }
+    /**
+     * Delete Offer
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void deleteP2POfferTest() throws ApiException {
+        Long id = null;
+        api.deleteP2POffer(id);
 
         // TODO: test validations
     }

@@ -34,12 +34,12 @@ public class IdentityApi {
   }
 
   /**
-   * Request Identity Verification
+   * Start Identity Verification
    * 
    * @return AmlCheckResponse
    * @throws ApiException if fails to make API call
    */
-  public AmlCheckResponse identityVerificationRequest() throws ApiException {
+  public AmlCheckResponse identityVerificationStart() throws ApiException {
     Object localVarPostBody = null;
     // create path and map variables
     String localVarPath = "/api/v1/identity";
@@ -62,13 +62,13 @@ public class IdentityApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "Hawk" };
 
     GenericType<AmlCheckResponse> localVarReturnType = new GenericType<AmlCheckResponse>() {};
     return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
-   * Notify of completion
+   * Notify of Start
    * 
    * @throws ApiException if fails to make API call
    */
@@ -95,7 +95,7 @@ public class IdentityApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "Hawk" };
 
     apiClient.invokeAPI(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
   }

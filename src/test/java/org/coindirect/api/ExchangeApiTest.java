@@ -32,21 +32,6 @@ public class ExchangeApiTest {
     private final ExchangeApi api = new ExchangeApi();
 
     /**
-     * Get Order Book For Market
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getExchangeOrderBookTest() throws ApiException {
-        String symbol = null;
-        OrderBook response = api.getExchangeOrderBook(symbol);
-
-        // TODO: test validations
-    }
-    /**
      * List Markets
      *
      * 
@@ -59,6 +44,21 @@ public class ExchangeApiTest {
         Integer offset = null;
         Integer max = null;
         List<Market> response = api.listExchangeMarkets(offset, max);
+
+        // TODO: test validations
+    }
+    /**
+     * Get Order Book For Market
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getExchangeOrderBookTest() throws ApiException {
+        String symbol = null;
+        OrderBook response = api.getExchangeOrderBook(symbol);
 
         // TODO: test validations
     }

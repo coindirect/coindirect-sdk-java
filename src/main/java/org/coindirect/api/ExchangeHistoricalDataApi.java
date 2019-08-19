@@ -34,6 +34,52 @@ public class ExchangeHistoricalDataApi {
   }
 
   /**
+   * Retrieve Historical Trades
+   * 
+   * @param market  (required)
+   * @param history  (required)
+   * @param limit  (optional)
+   * @throws ApiException if fails to make API call
+   */
+  public void getHistoricalExchangeTrades(String market, String history, Long limit) throws ApiException {
+    Object localVarPostBody = null;
+    // verify the required parameter 'market' is set
+    if (market == null) {
+      throw new ApiException(400, "Missing the required parameter 'market' when calling getHistoricalExchangeTrades");
+    }
+    // verify the required parameter 'history' is set
+    if (history == null) {
+      throw new ApiException(400, "Missing the required parameter 'history' when calling getHistoricalExchangeTrades");
+    }
+    // create path and map variables
+    String localVarPath = "/api/v1/exchange/historical/trades/{market}/{history}"
+      .replaceAll("\\{" + "market" + "\\}", apiClient.escapeString(market.toString()))
+      .replaceAll("\\{" + "history" + "\\}", apiClient.escapeString(history.toString()));
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
+
+
+
+    final String[] localVarAccepts = {
+      
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
+  }
+  /**
    * Retrieve Historical Data
    * 
    * @param market  (required)
@@ -88,51 +134,5 @@ public class ExchangeHistoricalDataApi {
 
     GenericType<HistoricalData> localVarReturnType = new GenericType<HistoricalData>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-  }
-  /**
-   * Retrieve Historical Trades
-   * 
-   * @param market  (required)
-   * @param history  (required)
-   * @param limit  (optional)
-   * @throws ApiException if fails to make API call
-   */
-  public void getHistoricalExchangeTrades(String market, String history, Long limit) throws ApiException {
-    Object localVarPostBody = null;
-    // verify the required parameter 'market' is set
-    if (market == null) {
-      throw new ApiException(400, "Missing the required parameter 'market' when calling getHistoricalExchangeTrades");
-    }
-    // verify the required parameter 'history' is set
-    if (history == null) {
-      throw new ApiException(400, "Missing the required parameter 'history' when calling getHistoricalExchangeTrades");
-    }
-    // create path and map variables
-    String localVarPath = "/api/v1/exchange/historical/trades/{market}/{history}"
-      .replaceAll("\\{" + "market" + "\\}", apiClient.escapeString(market.toString()))
-      .replaceAll("\\{" + "history" + "\\}", apiClient.escapeString(history.toString()));
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
-
-
-
-    final String[] localVarAccepts = {
-      
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, null);
   }
 }

@@ -31,7 +31,7 @@ public class ReportsApiTest {
     private final ReportsApi api = new ReportsApi();
 
     /**
-     * Get Report
+     * Read Report
      *
      * 
      *

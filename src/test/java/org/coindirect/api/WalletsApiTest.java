@@ -39,6 +39,36 @@ public class WalletsApiTest {
     private final WalletsApi api = new WalletsApi();
 
     /**
+     * Create Wallet
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void walletCreateTest() throws ApiException {
+        WalletWallet body = null;
+        Wallet response = api.walletCreate(body);
+
+        // TODO: test validations
+    }
+    /**
+     * Read Deposit Address
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void walletAddressReadTest() throws ApiException {
+        Long id = null;
+        api.walletAddressRead(id);
+
+        // TODO: test validations
+    }
+    /**
      * Create Transfer Request
      *
      * 
@@ -54,7 +84,7 @@ public class WalletsApiTest {
         // TODO: test validations
     }
     /**
-     * Create Wallet
+     * Pre-validate Withdrawal
      *
      * 
      *
@@ -62,59 +92,15 @@ public class WalletsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void createWalletTest() throws ApiException {
-        WalletWallet body = null;
-        Wallet response = api.createWallet(body);
-
-        // TODO: test validations
-    }
-    /**
-     * Get convertible currencies
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getConvertibleCurrenciesTest() throws ApiException {
-        String code = null;
-        List<Currency> response = api.getConvertibleCurrencies(code);
-
-        // TODO: test validations
-    }
-    /**
-     * Estimate Transfer Request Output
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getTransferRequestOutputEstimateTest() throws ApiException {
-        TransferRequest body = null;
-        WrappedPrimitive response = api.getTransferRequestOutputEstimate(body);
-
-        // TODO: test validations
-    }
-    /**
-     * Get transferable currencies
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getTransferableCurrenciesTest() throws ApiException {
+    public void walletWithdrawValidateTest() throws ApiException {
         Long id = null;
-        List<Currency> response = api.getTransferableCurrencies(id);
+        Withdrawal body = null;
+        Errors response = api.walletWithdrawValidate(id, body);
 
         // TODO: test validations
     }
     /**
-     * Read Wallet
+     * Withdraw from Wallet
      *
      * 
      *
@@ -122,14 +108,15 @@ public class WalletsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getWalletTest() throws ApiException {
+    public void walletWithdrawTest() throws ApiException {
         Long id = null;
-        Wallet response = api.getWallet(id);
+        Withdrawal body = null;
+        WithdrawalRequest response = api.walletWithdraw(id, body);
 
         // TODO: test validations
     }
     /**
-     * Get Deposit Address
+     * List Wallets
      *
      * 
      *
@@ -137,53 +124,39 @@ public class WalletsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getWalletDepositAddressTest() throws ApiException {
+    public void walletListTest() throws ApiException {
+        Integer offset = null;
+        Integer max = null;
+        List<Wallet> response = api.walletList(offset, max);
+
+        // TODO: test validations
+    }
+    /**
+     * List Wallet Balances
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void walletBalanceListTest() throws ApiException {
+        List<Wallet> response = api.walletBalanceList();
+
+        // TODO: test validations
+    }
+    /**
+     * List Funding Options
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void walletListFundingOptionTest() throws ApiException {
         Long id = null;
-        api.getWalletDepositAddress(id);
-
-        // TODO: test validations
-    }
-    /**
-     * Get Funding Options
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getWalletFundingOptionsTest() throws ApiException {
-        Long id = null;
-        List<WalletFundingOption> response = api.getWalletFundingOptions(id);
-
-        // TODO: test validations
-    }
-    /**
-     * Read Withdrawal Request
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getWithdrawalRequestTest() throws ApiException {
-        Long id = null;
-        WithdrawalRequest response = api.getWithdrawalRequest(id);
-
-        // TODO: test validations
-    }
-    /**
-     * List All Wallet Balances
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listAllBalancesTest() throws ApiException {
-        List<Wallet> response = api.listAllBalances();
+        List<WalletFundingOption> response = api.walletListFundingOption(id);
 
         // TODO: test validations
     }
@@ -204,7 +177,7 @@ public class WalletsApiTest {
         // TODO: test validations
     }
     /**
-     * List Wallets
+     * Estimate Transfer Request Output
      *
      * 
      *
@@ -212,10 +185,9 @@ public class WalletsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listWalletsTest() throws ApiException {
-        Integer offset = null;
-        Integer max = null;
-        List<Wallet> response = api.listWallets(offset, max);
+    public void getTransferRequestOutputEstimateTest() throws ApiException {
+        TransferRequest body = null;
+        WrappedPrimitive response = api.getTransferRequestOutputEstimate(body);
 
         // TODO: test validations
     }
@@ -236,7 +208,7 @@ public class WalletsApiTest {
         // TODO: test validations
     }
     /**
-     * Withdraw from Wallet
+     * Read Withdrawal Request
      *
      * 
      *
@@ -244,15 +216,14 @@ public class WalletsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void withdrawFromWalletTest() throws ApiException {
+    public void getWithdrawalRequestTest() throws ApiException {
         Long id = null;
-        Withdrawal body = null;
-        WithdrawalRequest response = api.withdrawFromWallet(id, body);
+        WithdrawalRequest response = api.getWithdrawalRequest(id);
 
         // TODO: test validations
     }
     /**
-     * Pre-validate Withdrawal
+     * convertibleCurrencyList
      *
      * 
      *
@@ -260,10 +231,39 @@ public class WalletsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void withdrawValidateTest() throws ApiException {
+    public void convertibleCurrencyListTest() throws ApiException {
+        String code = null;
+        List<Currency> response = api.convertibleCurrencyList(code);
+
+        // TODO: test validations
+    }
+    /**
+     * Read Wallet
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void walletReadTest() throws ApiException {
         Long id = null;
-        Withdrawal body = null;
-        Errors response = api.withdrawValidate(id, body);
+        Wallet response = api.walletRead(id);
+
+        // TODO: test validations
+    }
+    /**
+     * List Transferable Currencies
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void transferableCurrencyListTest() throws ApiException {
+        Long id = null;
+        List<Currency> response = api.transferableCurrencyList(id);
 
         // TODO: test validations
     }

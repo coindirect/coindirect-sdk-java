@@ -13,29 +13,14 @@
 package org.coindirect.api;
 
 import org.coindirect.api.invoker.ApiException;
-import org.coindirect.api.model.AcceptedQuote;
 import org.coindirect.api.model.AccessToken;
 import org.coindirect.api.model.AccountDocument;
 import org.coindirect.api.model.AccountInformation;
-import java.math.BigDecimal;
-import org.coindirect.api.model.Country;
-import org.coindirect.api.model.Currency;
-import org.coindirect.api.model.CurrencyRate;
 import org.coindirect.api.model.Errors;
-import org.coindirect.api.model.Limits;
 import org.coindirect.api.model.Merchant;
-import org.coindirect.api.model.PayDetailRequest;
-import org.coindirect.api.model.PayInMethod;
-import org.coindirect.api.model.PayOutMethod;
-import org.coindirect.api.model.PayRequest;
-import org.coindirect.api.model.Payment;
-import org.coindirect.api.model.PaymentMetadata;
 import org.coindirect.api.model.PinAuthenticationRequest;
 import org.coindirect.api.model.PublicMerchant;
-import org.coindirect.api.model.Quote;
-import org.coindirect.api.model.QuoteRequest;
 import org.coindirect.api.model.UserRegistrationRequest;
-import org.coindirect.api.model.WrappedPrimitive;
 import org.coindirect.api.model.WrappedPrimitiveString;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -54,85 +39,6 @@ public class BusinessApiTest {
     private final BusinessApi api = new BusinessApi();
 
     /**
-     * Accept payment
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void acceptPaymentTest() throws ApiException {
-        String uuid = null;
-        PaymentMetadata body = null;
-        Payment response = api.acceptPayment(uuid, body);
-
-        // TODO: test validations
-    }
-    /**
-     * Accept a quote
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void acceptQuoteTest() throws ApiException {
-        String uuid = null;
-        PaymentMetadata body = null;
-        AcceptedQuote response = api.acceptQuote(uuid, body);
-
-        // TODO: test validations
-    }
-    /**
-     * Cancel payment
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cancelPaymentTest() throws ApiException {
-        String uuid = null;
-        api.cancelPayment(uuid);
-
-        // TODO: test validations
-    }
-    /**
-     * Login with pin
-     *
-     * The pin is usable only once, if data is not correctly stored, you will need to issue a new pin
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void completePinAuthenticationTest() throws ApiException {
-        WrappedPrimitiveString body = null;
-        AccessToken response = api.completePinAuthentication(body);
-
-        // TODO: test validations
-    }
-    /**
-     * Convert Currency Value
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void convertCurrencyTest() throws ApiException {
-        String fromCode = null;
-        String toCode = null;
-        BigDecimal amount = null;
-        WrappedPrimitive response = api.convertCurrency(fromCode, toCode, amount);
-
-        // TODO: test validations
-    }
-    /**
      * Create Merchant ID
      *
      * 
@@ -141,14 +47,14 @@ public class BusinessApiTest {
      *          if the Api call fails
      */
     @Test
-    public void createMerchantIdTest() throws ApiException {
+    public void merchantIdCreateTest() throws ApiException {
         Merchant body = null;
-        Merchant response = api.createMerchantId(body);
+        Merchant response = api.merchantIdCreate(body);
 
         // TODO: test validations
     }
     /**
-     * Detect Country by IP
+     * Create Account Document
      *
      * 
      *
@@ -156,13 +62,14 @@ public class BusinessApiTest {
      *          if the Api call fails
      */
     @Test
-    public void detectCountryByIpTest() throws ApiException {
-        Country response = api.detectCountryByIp();
+    public void merchantUserDocumentCreateTest() throws ApiException {
+        AccountDocument body = null;
+        AccountDocument response = api.merchantUserDocumentCreate(body);
 
         // TODO: test validations
     }
     /**
-     * Read Country
+     * Start Pin Authentication
      *
      * 
      *
@@ -170,235 +77,9 @@ public class BusinessApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getCountryTest() throws ApiException {
-        Long id = null;
-        Country response = api.getCountry(id);
-
-        // TODO: test validations
-    }
-    /**
-     * Read Country by Code
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getCountryByCodeTest() throws ApiException {
-        String code = null;
-        Country response = api.getCountryByCode(code);
-
-        // TODO: test validations
-    }
-    /**
-     * Read Currency
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getCurrencyTest() throws ApiException {
-        Long id = null;
-        Currency response = api.getCurrency(id);
-
-        // TODO: test validations
-    }
-    /**
-     * Read Currency Metadata
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getCurrencyMetadataTest() throws ApiException {
-        String code = null;
-        Currency response = api.getCurrencyMetadata(code);
-
-        // TODO: test validations
-    }
-    /**
-     * Get Values for Currency
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getValuesForCurrencyTest() throws ApiException {
-        String baseCurrency = null;
-        Boolean all = null;
-        List<CurrencyRate> response = api.getValuesForCurrency(baseCurrency, all);
-
-        // TODO: test validations
-    }
-    /**
-     * List Countries
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listCountriesTest() throws ApiException {
-        Boolean enabled = null;
-        Integer offset = null;
-        Integer max = null;
-        List<Country> response = api.listCountries(enabled, offset, max);
-
-        // TODO: test validations
-    }
-    /**
-     * List Country Codes
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listCountryCodesTest() throws ApiException {
-        Boolean enabled = null;
-        Integer offset = null;
-        Integer max = null;
-        List<String> response = api.listCountryCodes(enabled, offset, max);
-
-        // TODO: test validations
-    }
-    /**
-     * List Crypto Currencies
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listCurrenciesCryptoTest() throws ApiException {
-        Boolean allowDeposits = null;
-        Boolean all = null;
-        Integer offset = null;
-        Integer max = null;
-        List<Currency> response = api.listCurrenciesCrypto(allowDeposits, all, offset, max);
-
-        // TODO: test validations
-    }
-    /**
-     * List Fiat Currencies
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listCurrenciesFiatTest() throws ApiException {
-        Boolean usable = null;
-        Boolean all = null;
-        Integer offset = null;
-        Integer max = null;
-        List<Currency> response = api.listCurrenciesFiat(usable, all, offset, max);
-
-        // TODO: test validations
-    }
-    /**
-     * List Merchant IDs
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listMerchantIdsTest() throws ApiException {
-        List<PublicMerchant> response = api.listMerchantIds();
-
-        // TODO: test validations
-    }
-    /**
-     * Read payments
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listPaymentsTest() throws ApiException {
-        String merchantId = null;
-        List<Payment> response = api.listPayments(merchantId);
-
-        // TODO: test validations
-    }
-    /**
-     * List quotes
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listQuotesTest() throws ApiException {
-        String merchantId = null;
-        Quote response = api.listQuotes(merchantId);
-
-        // TODO: test validations
-    }
-    /**
-     * List supported pay in methods
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listSupportedPayInMethodsTest() throws ApiException {
-        String country = null;
-        String currency = null;
-        String uuid = null;
-        String merchant = null;
-        List<PayInMethod> response = api.listSupportedPayInMethods(country, currency, uuid, merchant);
-
-        // TODO: test validations
-    }
-    /**
-     * List supported pay out methods
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listSupportedPayOutMethodsTest() throws ApiException {
-        String country = null;
-        String currency = null;
-        String uuid = null;
-        String merchant = null;
-        List<PayOutMethod> response = api.listSupportedPayOutMethods(country, currency, uuid, merchant);
-
-        // TODO: test validations
-    }
-    /**
-     * Lock payment
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void lockPaymentTest() throws ApiException {
-        String uuid = null;
-        Payment response = api.lockPayment(uuid);
+    public void pinAuthenticationStartTest() throws ApiException {
+        PinAuthenticationRequest body = null;
+        AccessToken response = api.pinAuthenticationStart(body);
 
         // TODO: test validations
     }
@@ -418,7 +99,7 @@ public class BusinessApiTest {
         // TODO: test validations
     }
     /**
-     * Upload a document for an account
+     * List Merchant IDs
      *
      * 
      *
@@ -426,14 +107,13 @@ public class BusinessApiTest {
      *          if the Api call fails
      */
     @Test
-    public void merchantCreateUserDocumentTest() throws ApiException {
-        AccountDocument body = null;
-        AccountDocument response = api.merchantCreateUserDocument(body);
+    public void merchantIdListTest() throws ApiException {
+        List<PublicMerchant> response = api.merchantIdList();
 
         // TODO: test validations
     }
     /**
-     * List uploaded documents for an account
+     * List Account Documents
      *
      * 
      *
@@ -441,42 +121,28 @@ public class BusinessApiTest {
      *          if the Api call fails
      */
     @Test
-    public void merchantListUserDocumentsTest() throws ApiException {
-        List<AccountDocument> response = api.merchantListUserDocuments();
+    public void merchantUserDocumentListTest() throws ApiException {
+        List<AccountDocument> response = api.merchantUserDocumentList();
 
         // TODO: test validations
     }
     /**
-     * Get account information
+     * Complete Pin Authentication
      *
-     * 
+     * The pin is usable only once, if data is not correctly stored, you will need to issue a new pin
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void merchantReadAccountInformationTest() throws ApiException {
-        api.merchantReadAccountInformation();
+    public void pinAuthenticationCompleteTest() throws ApiException {
+        WrappedPrimitiveString body = null;
+        AccessToken response = api.pinAuthenticationComplete(body);
 
         // TODO: test validations
     }
     /**
-     * Update account information
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void merchantUpdateAccountInformationTest() throws ApiException {
-        AccountInformation body = null;
-        api.merchantUpdateAccountInformation(body);
-
-        // TODO: test validations
-    }
-    /**
-     * Set password
+     * Account Set Password
      *
      * 
      *
@@ -491,7 +157,7 @@ public class BusinessApiTest {
         // TODO: test validations
     }
     /**
-     * Read merchant by id
+     * Read Account Information
      *
      * 
      *
@@ -499,137 +165,38 @@ public class BusinessApiTest {
      *          if the Api call fails
      */
     @Test
-    public void readMerchantByIdTest() throws ApiException {
+    public void merchantAccountInformationReadTest() throws ApiException {
+        api.merchantAccountInformationRead();
+
+        // TODO: test validations
+    }
+    /**
+     * Update Account Information
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void merchantAccountInformationUpdateTest() throws ApiException {
+        AccountInformation body = null;
+        api.merchantAccountInformationUpdate(body);
+
+        // TODO: test validations
+    }
+    /**
+     * Read Merchant by ID
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void merchantReadByIdTest() throws ApiException {
         String id = null;
-        PublicMerchant response = api.readMerchantById(id);
-
-        // TODO: test validations
-    }
-    /**
-     * Read payment information
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void readPaymentTest() throws ApiException {
-        String uuid = null;
-        String reference = null;
-        Payment response = api.readPayment(uuid, reference);
-
-        // TODO: test validations
-    }
-    /**
-     * Read a quote
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void readQuoteTest() throws ApiException {
-        String uuid = null;
-        AcceptedQuote response = api.readQuote(uuid);
-
-        // TODO: test validations
-    }
-    /**
-     * Get transaction limits
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void readTransactionLimitsTest() throws ApiException {
-        String country = null;
-        String currency = null;
-        String direction = null;
-        String method = null;
-        Limits response = api.readTransactionLimits(country, currency, direction, method);
-
-        // TODO: test validations
-    }
-    /**
-     * Request new payment instructions
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void requestNewQuotePaymentInstructionsTest() throws ApiException {
-        String uuid = null;
-        PaymentMetadata body = null;
-        AcceptedQuote response = api.requestNewQuotePaymentInstructions(uuid, body);
-
-        // TODO: test validations
-    }
-    /**
-     * Request a new payment
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void requestPaymentTest() throws ApiException {
-        PayRequest body = null;
-        Payment response = api.requestPayment(body);
-
-        // TODO: test validations
-    }
-    /**
-     * Request a quote
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void requestQuoteTest() throws ApiException {
-        QuoteRequest body = null;
-        Boolean estimate = null;
-        String direction = null;
-        Quote response = api.requestQuote(body, estimate, direction);
-
-        // TODO: test validations
-    }
-    /**
-     * Settle payment
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void settlePaymentWithQuoteTest() throws ApiException {
-        String uuid = null;
-        Quote body = null;
-        Payment response = api.settlePaymentWithQuote(uuid, body);
-
-        // TODO: test validations
-    }
-    /**
-     * Start pin authentication
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void startPinAuthenticationTest() throws ApiException {
-        PinAuthenticationRequest body = null;
-        AccessToken response = api.startPinAuthentication(body);
+        PublicMerchant response = api.merchantReadById(id);
 
         // TODO: test validations
     }
@@ -642,26 +209,10 @@ public class BusinessApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updateMerchantIdTest() throws ApiException {
+    public void merchantIdUpdateTest() throws ApiException {
         String id = null;
         Merchant body = null;
-        Merchant response = api.updateMerchantId(id, body);
-
-        // TODO: test validations
-    }
-    /**
-     * Update payment details
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void updatePaymentTest() throws ApiException {
-        String uuid = null;
-        PayDetailRequest body = null;
-        Payment response = api.updatePayment(uuid, body);
+        Merchant response = api.merchantIdUpdate(id, body);
 
         // TODO: test validations
     }

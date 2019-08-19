@@ -35,7 +35,7 @@ public class P2PMarketplaceOrdersVendorsApiTest {
     private final P2PMarketplaceOrdersVendorsApi api = new P2PMarketplaceOrdersVendorsApi();
 
     /**
-     * Cancel Order
+     * Pay for order
      *
      * 
      *
@@ -43,15 +43,15 @@ public class P2PMarketplaceOrdersVendorsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void vendorCancelP2POrderTest() throws ApiException {
+    public void vendorPayP2POrderTest() throws ApiException {
         Long id = null;
-        Authorization body = null;
-        Order response = api.vendorCancelP2POrder(id, body);
+        PaymentOption body = null;
+        PaymentResult response = api.vendorPayP2POrder(id, body);
 
         // TODO: test validations
     }
     /**
-     * Export Orders CSV
+     * Upload Order Documentation
      *
      * 
      *
@@ -59,15 +59,15 @@ public class P2PMarketplaceOrdersVendorsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void vendorExportP2POrdersTest() throws ApiException {
-        String fromDate = null;
-        String toDate = null;
-        api.vendorExportP2POrders(fromDate, toDate);
+    public void vendorUploadP2POrderDocumentTest() throws ApiException {
+        Long id = null;
+        OrderDocument body = null;
+        api.vendorUploadP2POrderDocument(id, body);
 
         // TODO: test validations
     }
     /**
-     * Get order
+     * Mark an order as paid (seller)
      *
      * 
      *
@@ -75,24 +75,9 @@ public class P2PMarketplaceOrdersVendorsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void vendorGetP2POrderTest() throws ApiException {
+    public void vendorMarkP2POrderAsPaidSellerTest() throws ApiException {
         Long id = null;
-        Order response = api.vendorGetP2POrder(id);
-
-        // TODO: test validations
-    }
-    /**
-     * Get documents for Order
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void vendorGetP2POrderDocumentTest() throws ApiException {
-        Long id = null;
-        List<OrderDocument> response = api.vendorGetP2POrderDocument(id);
+        Order response = api.vendorMarkP2POrderAsPaidSeller(id);
 
         // TODO: test validations
     }
@@ -113,7 +98,7 @@ public class P2PMarketplaceOrdersVendorsApiTest {
         // TODO: test validations
     }
     /**
-     * List Pending Orders
+     * Export Orders CSV
      *
      * 
      *
@@ -121,10 +106,10 @@ public class P2PMarketplaceOrdersVendorsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void vendorListP2PPendingOrdersTest() throws ApiException {
-        Integer offset = null;
-        Integer max = null;
-        List<Order> response = api.vendorListP2PPendingOrders(offset, max);
+    public void vendorExportP2POrdersTest() throws ApiException {
+        String fromDate = null;
+        String toDate = null;
+        api.vendorExportP2POrders(fromDate, toDate);
 
         // TODO: test validations
     }
@@ -144,7 +129,7 @@ public class P2PMarketplaceOrdersVendorsApiTest {
         // TODO: test validations
     }
     /**
-     * Mark an order as paid (seller)
+     * List Pending Orders
      *
      * 
      *
@@ -152,14 +137,15 @@ public class P2PMarketplaceOrdersVendorsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void vendorMarkP2POrderAsPaidSellerTest() throws ApiException {
-        Long id = null;
-        Order response = api.vendorMarkP2POrderAsPaidSeller(id);
+    public void vendorListP2PPendingOrdersTest() throws ApiException {
+        Integer offset = null;
+        Integer max = null;
+        List<Order> response = api.vendorListP2PPendingOrders(offset, max);
 
         // TODO: test validations
     }
     /**
-     * Pay for order
+     * Get documents for Order
      *
      * 
      *
@@ -167,10 +153,24 @@ public class P2PMarketplaceOrdersVendorsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void vendorPayP2POrderTest() throws ApiException {
+    public void vendorGetP2POrderDocumentTest() throws ApiException {
         Long id = null;
-        PaymentOption body = null;
-        PaymentResult response = api.vendorPayP2POrder(id, body);
+        List<OrderDocument> response = api.vendorGetP2POrderDocument(id);
+
+        // TODO: test validations
+    }
+    /**
+     * Get order
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void vendorGetP2POrderTest() throws ApiException {
+        Long id = null;
+        Order response = api.vendorGetP2POrder(id);
 
         // TODO: test validations
     }
@@ -191,7 +191,7 @@ public class P2PMarketplaceOrdersVendorsApiTest {
         // TODO: test validations
     }
     /**
-     * Upload Order Documentation
+     * Cancel Order
      *
      * 
      *
@@ -199,10 +199,10 @@ public class P2PMarketplaceOrdersVendorsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void vendorUploadP2POrderDocumentTest() throws ApiException {
+    public void vendorCancelP2POrderTest() throws ApiException {
         Long id = null;
-        OrderDocument body = null;
-        api.vendorUploadP2POrderDocument(id, body);
+        Authorization body = null;
+        Order response = api.vendorCancelP2POrder(id, body);
 
         // TODO: test validations
     }

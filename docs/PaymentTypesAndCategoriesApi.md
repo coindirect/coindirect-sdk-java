@@ -4,16 +4,55 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**listOptionsForPaymentMethodType**](PaymentTypesAndCategoriesApi.md#listOptionsForPaymentMethodType) | **GET** /api/public/payment/type/options/{id} | List option for Payment Method Type
-[**listPaymentMethodCategories**](PaymentTypesAndCategoriesApi.md#listPaymentMethodCategories) | **GET** /api/public/payment/categories | List Payment Method Categories
-[**listPaymentMethodTypes**](PaymentTypesAndCategoriesApi.md#listPaymentMethodTypes) | **GET** /api/public/payment/types | List Payment Method Types
-[**listPaymentMethodTypesByCategory**](PaymentTypesAndCategoriesApi.md#listPaymentMethodTypesByCategory) | **GET** /api/public/payment/types/{id} | List Payment Method Types for Category
+[**paymentMethodCategoryList**](PaymentTypesAndCategoriesApi.md#paymentMethodCategoryList) | **GET** /api/public/payment/categories | List Payment Method Categories
+[**paymentMethodTypeListOption**](PaymentTypesAndCategoriesApi.md#paymentMethodTypeListOption) | **GET** /api/public/payment/type/options/{id} | List Option for Payment Method Type
+[**paymentMethodTypeList**](PaymentTypesAndCategoriesApi.md#paymentMethodTypeList) | **GET** /api/public/payment/types | List Payment Method Types
+[**paymentMethodTypeListByCategory**](PaymentTypesAndCategoriesApi.md#paymentMethodTypeListByCategory) | **GET** /api/public/payment/types/{id} | List Payment Method Types for Category
 
-<a name="listOptionsForPaymentMethodType"></a>
-# **listOptionsForPaymentMethodType**
-> List&lt;GenericOption&gt; listOptionsForPaymentMethodType(id)
+<a name="paymentMethodCategoryList"></a>
+# **paymentMethodCategoryList**
+> List&lt;PaymentMethodCategory&gt; paymentMethodCategoryList()
 
-List option for Payment Method Type
+List Payment Method Categories
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.PaymentTypesAndCategoriesApi;
+
+
+PaymentTypesAndCategoriesApi apiInstance = new PaymentTypesAndCategoriesApi();
+try {
+    List<PaymentMethodCategory> result = apiInstance.paymentMethodCategoryList();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PaymentTypesAndCategoriesApi#paymentMethodCategoryList");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**List&lt;PaymentMethodCategory&gt;**](PaymentMethodCategory.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="paymentMethodTypeListOption"></a>
+# **paymentMethodTypeListOption**
+> List&lt;GenericOption&gt; paymentMethodTypeListOption(id)
+
+List Option for Payment Method Type
 
 ### Example
 ```java
@@ -25,10 +64,10 @@ List option for Payment Method Type
 PaymentTypesAndCategoriesApi apiInstance = new PaymentTypesAndCategoriesApi();
 Long id = 789L; // Long | 
 try {
-    List<GenericOption> result = apiInstance.listOptionsForPaymentMethodType(id);
+    List<GenericOption> result = apiInstance.paymentMethodTypeListOption(id);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PaymentTypesAndCategoriesApi#listOptionsForPaymentMethodType");
+    System.err.println("Exception when calling PaymentTypesAndCategoriesApi#paymentMethodTypeListOption");
     e.printStackTrace();
 }
 ```
@@ -52,48 +91,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="listPaymentMethodCategories"></a>
-# **listPaymentMethodCategories**
-> List&lt;PaymentMethodCategory&gt; listPaymentMethodCategories()
-
-List Payment Method Categories
-
-### Example
-```java
-// Import classes:
-//import org.coindirect.api.invoker.ApiException;
-//import org.coindirect.api.PaymentTypesAndCategoriesApi;
-
-
-PaymentTypesAndCategoriesApi apiInstance = new PaymentTypesAndCategoriesApi();
-try {
-    List<PaymentMethodCategory> result = apiInstance.listPaymentMethodCategories();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PaymentTypesAndCategoriesApi#listPaymentMethodCategories");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List&lt;PaymentMethodCategory&gt;**](PaymentMethodCategory.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="listPaymentMethodTypes"></a>
-# **listPaymentMethodTypes**
-> List&lt;PaymentMethodType&gt; listPaymentMethodTypes(countryCode)
+<a name="paymentMethodTypeList"></a>
+# **paymentMethodTypeList**
+> List&lt;PaymentMethodType&gt; paymentMethodTypeList(countryCode)
 
 List Payment Method Types
 
@@ -107,10 +107,10 @@ List Payment Method Types
 PaymentTypesAndCategoriesApi apiInstance = new PaymentTypesAndCategoriesApi();
 String countryCode = "countryCode_example"; // String | 
 try {
-    List<PaymentMethodType> result = apiInstance.listPaymentMethodTypes(countryCode);
+    List<PaymentMethodType> result = apiInstance.paymentMethodTypeList(countryCode);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PaymentTypesAndCategoriesApi#listPaymentMethodTypes");
+    System.err.println("Exception when calling PaymentTypesAndCategoriesApi#paymentMethodTypeList");
     e.printStackTrace();
 }
 ```
@@ -134,9 +134,9 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="listPaymentMethodTypesByCategory"></a>
-# **listPaymentMethodTypesByCategory**
-> List&lt;PaymentMethodType&gt; listPaymentMethodTypesByCategory(id, countryCode)
+<a name="paymentMethodTypeListByCategory"></a>
+# **paymentMethodTypeListByCategory**
+> List&lt;PaymentMethodType&gt; paymentMethodTypeListByCategory(id, countryCode)
 
 List Payment Method Types for Category
 
@@ -151,10 +151,10 @@ PaymentTypesAndCategoriesApi apiInstance = new PaymentTypesAndCategoriesApi();
 Long id = 789L; // Long | 
 String countryCode = "countryCode_example"; // String | 
 try {
-    List<PaymentMethodType> result = apiInstance.listPaymentMethodTypesByCategory(id, countryCode);
+    List<PaymentMethodType> result = apiInstance.paymentMethodTypeListByCategory(id, countryCode);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PaymentTypesAndCategoriesApi#listPaymentMethodTypesByCategory");
+    System.err.println("Exception when calling PaymentTypesAndCategoriesApi#paymentMethodTypeListByCategory");
     e.printStackTrace();
 }
 ```

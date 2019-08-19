@@ -13,10 +13,8 @@
 package org.coindirect.api;
 
 import org.coindirect.api.invoker.ApiException;
-import org.coindirect.api.model.Card;
-import org.coindirect.api.model.CardAddRequest;
-import org.coindirect.api.model.CardAddResponse;
-import org.coindirect.api.model.Errors;
+import org.coindirect.api.model.PayRequest;
+import org.coindirect.api.model.Payment;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -26,15 +24,15 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for CardsApi
+ * API tests for PaymentsMerchantApi
  */
 @Ignore
-public class CardsApiTest {
+public class PaymentsMerchantApiTest {
 
-    private final CardsApi api = new CardsApi();
+    private final PaymentsMerchantApi api = new PaymentsMerchantApi();
 
     /**
-     * addCard
+     * Create Payment
      *
      * 
      *
@@ -42,14 +40,14 @@ public class CardsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addTest() throws ApiException {
-        CardAddRequest body = null;
-        CardAddResponse response = api.add(body);
+    public void paymentCreateTest() throws ApiException {
+        PayRequest body = null;
+        Payment response = api.paymentCreate(body);
 
         // TODO: test validations
     }
     /**
-     * listCards
+     * List Payments
      *
      * 
      *
@@ -57,15 +55,14 @@ public class CardsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listTest() throws ApiException {
-        Integer offset = null;
-        Integer max = null;
-        Card response = api.list(offset, max);
+    public void paymentListTest() throws ApiException {
+        String merchantId = null;
+        List<Payment> response = api.paymentList(merchantId);
 
         // TODO: test validations
     }
     /**
-     * getCard
+     * Read Payment
      *
      * 
      *
@@ -73,14 +70,15 @@ public class CardsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getTest() throws ApiException {
+    public void paymentReadTest() throws ApiException {
         String uuid = null;
-        Card response = api.get(uuid);
+        String reference = null;
+        Payment response = api.paymentRead(uuid, reference);
 
         // TODO: test validations
     }
     /**
-     * removeCard
+     * Cancel Payment
      *
      * 
      *
@@ -88,9 +86,9 @@ public class CardsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void removeTest() throws ApiException {
+    public void paymentCancelTest() throws ApiException {
         String uuid = null;
-        api.remove(uuid);
+        api.paymentCancel(uuid);
 
         // TODO: test validations
     }

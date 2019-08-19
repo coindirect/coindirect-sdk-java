@@ -33,21 +33,6 @@ public class P2PVendorApplicationsApiTest {
     private final P2PVendorApplicationsApi api = new P2PVendorApplicationsApi();
 
     /**
-     * Cancel Application
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void cancelP2PVendorApplicationTest() throws ApiException {
-        Long id = null;
-        api.cancelP2PVendorApplication(id);
-
-        // TODO: test validations
-    }
-    /**
      * Apply to be a vendor
      *
      * 
@@ -63,7 +48,7 @@ public class P2PVendorApplicationsApiTest {
         // TODO: test validations
     }
     /**
-     * Retrieve Application
+     * Upload an application document
      *
      * 
      *
@@ -71,9 +56,10 @@ public class P2PVendorApplicationsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getP2PVendorApplicationTest() throws ApiException {
-        Long id = null;
-        PartnerApplication response = api.getP2PVendorApplication(id);
+    public void uploadP2PVendorApplicationDocumentTest() throws ApiException {
+        Long applicationId = null;
+        PartnerApplicationDocument body = null;
+        PartnerApplicationDocument response = api.uploadP2PVendorApplicationDocument(applicationId, body);
 
         // TODO: test validations
     }
@@ -94,7 +80,7 @@ public class P2PVendorApplicationsApiTest {
         // TODO: test validations
     }
     /**
-     * Upload an application document
+     * Retrieve Application
      *
      * 
      *
@@ -102,10 +88,24 @@ public class P2PVendorApplicationsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void uploadP2PVendorApplicationDocumentTest() throws ApiException {
-        Long applicationId = null;
-        PartnerApplicationDocument body = null;
-        PartnerApplicationDocument response = api.uploadP2PVendorApplicationDocument(applicationId, body);
+    public void getP2PVendorApplicationTest() throws ApiException {
+        Long id = null;
+        PartnerApplication response = api.getP2PVendorApplication(id);
+
+        // TODO: test validations
+    }
+    /**
+     * Cancel Application
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cancelP2PVendorApplicationTest() throws ApiException {
+        Long id = null;
+        api.cancelP2PVendorApplication(id);
 
         // TODO: test validations
     }

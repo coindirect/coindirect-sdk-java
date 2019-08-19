@@ -36,17 +36,51 @@ public class PaymentTypesAndCategoriesApi {
   }
 
   /**
-   * List option for Payment Method Type
+   * List Payment Method Categories
+   * 
+   * @return List&lt;PaymentMethodCategory&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public List<PaymentMethodCategory> paymentMethodCategoryList() throws ApiException {
+    Object localVarPostBody = null;
+    // create path and map variables
+    String localVarPath = "/api/public/payment/categories";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<List<PaymentMethodCategory>> localVarReturnType = new GenericType<List<PaymentMethodCategory>>() {};
+    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+  }
+  /**
+   * List Option for Payment Method Type
    * 
    * @param id  (required)
    * @return List&lt;GenericOption&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<GenericOption> listOptionsForPaymentMethodType(Long id) throws ApiException {
+  public List<GenericOption> paymentMethodTypeListOption(Long id) throws ApiException {
     Object localVarPostBody = null;
     // verify the required parameter 'id' is set
     if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling listOptionsForPaymentMethodType");
+      throw new ApiException(400, "Missing the required parameter 'id' when calling paymentMethodTypeListOption");
     }
     // create path and map variables
     String localVarPath = "/api/public/payment/type/options/{id}"
@@ -76,47 +110,13 @@ public class PaymentTypesAndCategoriesApi {
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
   }
   /**
-   * List Payment Method Categories
-   * 
-   * @return List&lt;PaymentMethodCategory&gt;
-   * @throws ApiException if fails to make API call
-   */
-  public List<PaymentMethodCategory> listPaymentMethodCategories() throws ApiException {
-    Object localVarPostBody = null;
-    // create path and map variables
-    String localVarPath = "/api/public/payment/categories";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-
-
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<List<PaymentMethodCategory>> localVarReturnType = new GenericType<List<PaymentMethodCategory>>() {};
-    return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-  }
-  /**
    * List Payment Method Types
    * 
    * @param countryCode  (optional)
    * @return List&lt;PaymentMethodType&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<PaymentMethodType> listPaymentMethodTypes(String countryCode) throws ApiException {
+  public List<PaymentMethodType> paymentMethodTypeList(String countryCode) throws ApiException {
     Object localVarPostBody = null;
     // create path and map variables
     String localVarPath = "/api/public/payment/types";
@@ -153,11 +153,11 @@ public class PaymentTypesAndCategoriesApi {
    * @return List&lt;PaymentMethodType&gt;
    * @throws ApiException if fails to make API call
    */
-  public List<PaymentMethodType> listPaymentMethodTypesByCategory(Long id, String countryCode) throws ApiException {
+  public List<PaymentMethodType> paymentMethodTypeListByCategory(Long id, String countryCode) throws ApiException {
     Object localVarPostBody = null;
     // verify the required parameter 'id' is set
     if (id == null) {
-      throw new ApiException(400, "Missing the required parameter 'id' when calling listPaymentMethodTypesByCategory");
+      throw new ApiException(400, "Missing the required parameter 'id' when calling paymentMethodTypeListByCategory");
     }
     // create path and map variables
     String localVarPath = "/api/public/payment/types/{id}"

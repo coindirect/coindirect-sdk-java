@@ -32,7 +32,7 @@ public class TransactionsApiTest {
     private final TransactionsApi api = new TransactionsApi();
 
     /**
-     * Read Transaction Type
+     * List Transactions
      *
      * 
      *
@@ -40,9 +40,10 @@ public class TransactionsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getResourceTest() throws ApiException {
-        Long id = null;
-        TransactionType response = api.getResource(id);
+    public void listTransactionsTest() throws ApiException {
+        Integer offset = null;
+        Integer max = null;
+        List<Transaction> response = api.listTransactions(offset, max);
 
         // TODO: test validations
     }
@@ -78,7 +79,7 @@ public class TransactionsApiTest {
         // TODO: test validations
     }
     /**
-     * List Transactions
+     * Read Transaction Type
      *
      * 
      *
@@ -86,10 +87,9 @@ public class TransactionsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listTransactionsTest() throws ApiException {
-        Integer offset = null;
-        Integer max = null;
-        List<Transaction> response = api.listTransactions(offset, max);
+    public void getResourceTest() throws ApiException {
+        Long id = null;
+        TransactionType response = api.getResource(id);
 
         // TODO: test validations
     }

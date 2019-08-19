@@ -18,7 +18,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.coindirect.api.model.PayInstruction;
@@ -39,10 +38,10 @@ public class Payment {
   private String uuid = null;
 
   @JsonProperty("dateCreated")
-  private OffsetDateTime dateCreated = null;
+  private Long dateCreated = null;
 
   @JsonProperty("expiryDate")
-  private OffsetDateTime expiryDate = null;
+  private Long expiryDate = null;
 
   /**
    * Gets or Sets type
@@ -183,7 +182,7 @@ public class Payment {
     this.uuid = uuid;
   }
 
-  public Payment dateCreated(OffsetDateTime dateCreated) {
+  public Payment dateCreated(Long dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
@@ -192,16 +191,16 @@ public class Payment {
    * Get dateCreated
    * @return dateCreated
   **/
-  @Schema(description = "")
-  public OffsetDateTime getDateCreated() {
+  @Schema(example = "1566198657000", description = "")
+  public Long getDateCreated() {
     return dateCreated;
   }
 
-  public void setDateCreated(OffsetDateTime dateCreated) {
+  public void setDateCreated(Long dateCreated) {
     this.dateCreated = dateCreated;
   }
 
-  public Payment expiryDate(OffsetDateTime expiryDate) {
+  public Payment expiryDate(Long expiryDate) {
     this.expiryDate = expiryDate;
     return this;
   }
@@ -210,12 +209,12 @@ public class Payment {
    * Get expiryDate
    * @return expiryDate
   **/
-  @Schema(description = "")
-  public OffsetDateTime getExpiryDate() {
+  @Schema(example = "1566198657000", description = "")
+  public Long getExpiryDate() {
     return expiryDate;
   }
 
-  public void setExpiryDate(OffsetDateTime expiryDate) {
+  public void setExpiryDate(Long expiryDate) {
     this.expiryDate = expiryDate;
   }
 

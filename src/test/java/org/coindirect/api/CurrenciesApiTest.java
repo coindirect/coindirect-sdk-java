@@ -51,7 +51,7 @@ public class CurrenciesApiTest {
         // TODO: test validations
     }
     /**
-     * Read Currency
+     * List Crypto Currencies
      *
      * 
      *
@@ -59,9 +59,30 @@ public class CurrenciesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getCurrencyTest() throws ApiException {
-        Long id = null;
-        Currency response = api.getCurrency(id);
+    public void listCurrenciesCryptoTest() throws ApiException {
+        Boolean allowDeposits = null;
+        Boolean all = null;
+        Integer offset = null;
+        Integer max = null;
+        List<Currency> response = api.listCurrenciesCrypto(allowDeposits, all, offset, max);
+
+        // TODO: test validations
+    }
+    /**
+     * List Fiat Currencies
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listCurrenciesFiatTest() throws ApiException {
+        Boolean usable = null;
+        Boolean all = null;
+        Integer offset = null;
+        Integer max = null;
+        List<Currency> response = api.listCurrenciesFiat(usable, all, offset, max);
 
         // TODO: test validations
     }
@@ -97,7 +118,7 @@ public class CurrenciesApiTest {
         // TODO: test validations
     }
     /**
-     * List Crypto Currencies
+     * Read Currency
      *
      * 
      *
@@ -105,30 +126,9 @@ public class CurrenciesApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listCurrenciesCryptoTest() throws ApiException {
-        Boolean allowDeposits = null;
-        Boolean all = null;
-        Integer offset = null;
-        Integer max = null;
-        List<Currency> response = api.listCurrenciesCrypto(allowDeposits, all, offset, max);
-
-        // TODO: test validations
-    }
-    /**
-     * List Fiat Currencies
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listCurrenciesFiatTest() throws ApiException {
-        Boolean usable = null;
-        Boolean all = null;
-        Integer offset = null;
-        Integer max = null;
-        List<Currency> response = api.listCurrenciesFiat(usable, all, offset, max);
+    public void getCurrencyTest() throws ApiException {
+        Long id = null;
+        Currency response = api.getCurrency(id);
 
         // TODO: test validations
     }

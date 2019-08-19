@@ -32,7 +32,7 @@ public class P2PMarketplaceOrdersChatsApiTest {
     private final P2PMarketplaceOrdersChatsApi api = new P2PMarketplaceOrdersChatsApi();
 
     /**
-     * Retrieve URL for message attachment
+     * Send message for order
      *
      * 
      *
@@ -40,10 +40,10 @@ public class P2PMarketplaceOrdersChatsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getP2POrderMessageAttachmentURLTest() throws ApiException {
+    public void sendP2POrderMessageTest() throws ApiException {
         Long id = null;
-        Long fileId = null;
-        WrappedPrimitive response = api.getP2POrderMessageAttachmentURL(id, fileId);
+        ChatMessage body = null;
+        api.sendP2POrderMessage(id, body);
 
         // TODO: test validations
     }
@@ -64,7 +64,7 @@ public class P2PMarketplaceOrdersChatsApiTest {
         // TODO: test validations
     }
     /**
-     * Send message for order
+     * Retrieve URL for message attachment
      *
      * 
      *
@@ -72,10 +72,10 @@ public class P2PMarketplaceOrdersChatsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void sendP2POrderMessageTest() throws ApiException {
+    public void getP2POrderMessageAttachmentURLTest() throws ApiException {
         Long id = null;
-        ChatMessage body = null;
-        api.sendP2POrderMessage(id, body);
+        Long fileId = null;
+        WrappedPrimitive response = api.getP2POrderMessageAttachmentURL(id, fileId);
 
         // TODO: test validations
     }

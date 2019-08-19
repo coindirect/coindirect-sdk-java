@@ -4,20 +4,30 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getReport**](ReportsApi.md#getReport) | **GET** /api/report | Get Report
+[**getReport**](ReportsApi.md#getReport) | **GET** /api/report | Read Report
 
 <a name="getReport"></a>
 # **getReport**
 > List&lt;EventAggregate&gt; getReport(code, offset, format)
 
-Get Report
+Read Report
 
 ### Example
 ```java
 // Import classes:
+//import org.coindirect.api.invoker.ApiClient;
 //import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.invoker.Configuration;
+//import org.coindirect.api.invoker.auth.*;
 //import org.coindirect.api.ReportsApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Hawk
+ApiKeyAuth Hawk = (ApiKeyAuth) defaultClient.getAuthentication("Hawk");
+Hawk.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Hawk.setApiKeyPrefix("Token");
 
 ReportsApi apiInstance = new ReportsApi();
 String code = "code_example"; // String | 
@@ -46,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Hawk](../README.md#Hawk)
 
 ### HTTP request headers
 

@@ -13,11 +13,8 @@
 package org.coindirect.api;
 
 import org.coindirect.api.invoker.ApiException;
-import org.coindirect.api.model.Errors;
-import org.coindirect.api.model.GenericOption;
-import org.coindirect.api.model.PaymentMethod;
-import org.coindirect.api.model.PaymentMethodCategory;
-import org.coindirect.api.model.PaymentMethodType;
+import org.coindirect.api.model.PayInMethod;
+import org.coindirect.api.model.PayOutMethod;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -35,189 +32,38 @@ public class PaymentMethodsApiTest {
     private final PaymentMethodsApi api = new PaymentMethodsApi();
 
     /**
-     * Create Payment Method
+     * List Pay In Methods
      *
-     * 
+     * Available pay out methods will be listed based on the parameters provided
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void createPaymentMethodTest() throws ApiException {
-        PaymentMethod body = null;
-        PaymentMethod response = api.createPaymentMethod(body);
+    public void payInMethodListTest() throws ApiException {
+        String country = null;
+        String currency = null;
+        String uuid = null;
+        String merchant = null;
+        List<PayInMethod> response = api.payInMethodList(country, currency, uuid, merchant);
 
         // TODO: test validations
     }
     /**
-     * Delete Payment Method
+     * List Pay Out Methods
      *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void deletePaymentMethodTest() throws ApiException {
-        Long id = null;
-        api.deletePaymentMethod(id);
-
-        // TODO: test validations
-    }
-    /**
-     * Retrieve Payment Method
-     *
-     * 
+     * Available pay out methods will be listed based on the parameters provided
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void getPaymentMethodTest() throws ApiException {
-        Long id = null;
-        PaymentMethod response = api.getPaymentMethod(id);
-
-        // TODO: test validations
-    }
-    /**
-     * Read Payment Method Category
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getPaymentMethodCategoryTest() throws ApiException {
-        Long id = null;
-        PaymentMethodCategory response = api.getPaymentMethodCategory(id);
-
-        // TODO: test validations
-    }
-    /**
-     * Read Payment Method Type
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getPaymentMethodTypeTest() throws ApiException {
-        Long id = null;
-        PaymentMethodType response = api.getPaymentMethodType(id);
-
-        // TODO: test validations
-    }
-    /**
-     * List Dependant options for Payment Method Type on field
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listNestedOptionsForPaymentMethodTypeTest() throws ApiException {
-        Long id = null;
-        String code = null;
-        String value = null;
-        List<GenericOption> response = api.listNestedOptionsForPaymentMethodType(id, code, value);
-
-        // TODO: test validations
-    }
-    /**
-     * List Options for Payment Method Type
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listOptionsForPaymentMethodTypeTest() throws ApiException {
-        Long id = null;
-        List<GenericOption> response = api.listOptionsForPaymentMethodType(id);
-
-        // TODO: test validations
-    }
-    /**
-     * List Payment Method Categories
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listPaymentMethodCategoriesTest() throws ApiException {
-        Integer offset = null;
-        Integer max = null;
-        List<PaymentMethodCategory> response = api.listPaymentMethodCategories(offset, max);
-
-        // TODO: test validations
-    }
-    /**
-     * List Payment Method Types
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listPaymentMethodTypesTest() throws ApiException {
-        Integer offset = null;
-        Integer max = null;
-        List<PaymentMethodType> response = api.listPaymentMethodTypes(offset, max);
-
-        // TODO: test validations
-    }
-    /**
-     * List Payment Methods
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listPaymentMethodsTest() throws ApiException {
-        String currencyCode = null;
-        Integer offset = null;
-        Integer max = null;
-        List<PaymentMethod> response = api.listPaymentMethods(currencyCode, offset, max);
-
-        // TODO: test validations
-    }
-    /**
-     * List Search options for Payment Method Type
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listSearchOptionsForPaymentMethodTypeTest() throws ApiException {
-        Long id = null;
-        List<GenericOption> response = api.listSearchOptionsForPaymentMethodType(id);
-
-        // TODO: test validations
-    }
-    /**
-     * Update Payment Method
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void updatePaymentMethodTest() throws ApiException {
-        Long id = null;
-        PaymentMethod body = null;
-        PaymentMethod response = api.updatePaymentMethod(id, body);
+    public void payOutMethodListTest() throws ApiException {
+        String country = null;
+        String currency = null;
+        String uuid = null;
+        String merchant = null;
+        List<PayOutMethod> response = api.payOutMethodList(country, currency, uuid, merchant);
 
         // TODO: test validations
     }

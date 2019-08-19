@@ -34,7 +34,7 @@ public class ReportsApi {
   }
 
   /**
-   * Get Report
+   * Read Report
    * 
    * @param code  (optional)
    * @param offset  (optional)
@@ -68,7 +68,7 @@ public class ReportsApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "Hawk" };
 
     GenericType<List<EventAggregate>> localVarReturnType = new GenericType<List<EventAggregate>>() {};
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);

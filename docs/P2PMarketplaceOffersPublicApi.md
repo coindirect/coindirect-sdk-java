@@ -4,52 +4,9 @@ All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getP2POffer**](P2PMarketplaceOffersPublicApi.md#getP2POffer) | **GET** /api/public/offer/{id} | Get offer information
 [**listP2PBuyOffers**](P2PMarketplaceOffersPublicApi.md#listP2PBuyOffers) | **GET** /api/public/offer/buy/{currencyForSale}/{currencyAccepted} | Find buy offers
 [**listP2PSellOffers**](P2PMarketplaceOffersPublicApi.md#listP2PSellOffers) | **GET** /api/public/offer/sell/{currencyForSale}/{currencyAccepted} | List sell offers
-
-<a name="getP2POffer"></a>
-# **getP2POffer**
-> OfferToSell getP2POffer(id)
-
-Get offer information
-
-### Example
-```java
-// Import classes:
-//import org.coindirect.api.invoker.ApiException;
-//import org.coindirect.api.P2PMarketplaceOffersPublicApi;
-
-
-P2PMarketplaceOffersPublicApi apiInstance = new P2PMarketplaceOffersPublicApi();
-Long id = 789L; // Long | 
-try {
-    OfferToSell result = apiInstance.getP2POffer(id);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling P2PMarketplaceOffersPublicApi#getP2POffer");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Long**|  |
-
-### Return type
-
-[**OfferToSell**](OfferToSell.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
+[**getP2POffer**](P2PMarketplaceOffersPublicApi.md#getP2POffer) | **GET** /api/public/offer/{id} | Get offer information
 
 <a name="listP2PBuyOffers"></a>
 # **listP2PBuyOffers**
@@ -165,6 +122,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;OfferToSell&gt;**](OfferToSell.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getP2POffer"></a>
+# **getP2POffer**
+> OfferToSell getP2POffer(id)
+
+Get offer information
+
+### Example
+```java
+// Import classes:
+//import org.coindirect.api.invoker.ApiException;
+//import org.coindirect.api.P2PMarketplaceOffersPublicApi;
+
+
+P2PMarketplaceOffersPublicApi apiInstance = new P2PMarketplaceOffersPublicApi();
+Long id = 789L; // Long | 
+try {
+    OfferToSell result = apiInstance.getP2POffer(id);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling P2PMarketplaceOffersPublicApi#getP2POffer");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Long**|  |
+
+### Return type
+
+[**OfferToSell**](OfferToSell.md)
 
 ### Authorization
 

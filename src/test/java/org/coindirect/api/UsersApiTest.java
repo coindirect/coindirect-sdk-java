@@ -41,81 +41,6 @@ public class UsersApiTest {
     private final UsersApi api = new UsersApi();
 
     /**
-     * Forgot Password Request
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void beginForgotPasswordTest() throws ApiException {
-        UserForgotPasswordRequest body = null;
-        api.beginForgotPassword(body);
-
-        // TODO: test validations
-    }
-    /**
-     * Begin Two Factor Setup
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void beginTwoFactorSetupTest() throws ApiException {
-        WrappedString body = null;
-        WrappedString response = api.beginTwoFactorSetup(body);
-
-        // TODO: test validations
-    }
-    /**
-     * Forgot Password Confirm Reset
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void confirmForgotPasswordTest() throws ApiException {
-        UserForgotPasswordRequest body = null;
-        api.confirmForgotPassword(body);
-
-        // TODO: test validations
-    }
-    /**
-     * Confirm new user registration
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void confirmNewUserTest() throws ApiException {
-        WrappedString body = null;
-        api.confirmNewUser(body);
-
-        // TODO: test validations
-    }
-    /**
-     * Confirm Two Factor Code
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void confirmTwoFactorSetupTest() throws ApiException {
-        WrappedString body = null;
-        api.confirmTwoFactorSetup(body);
-
-        // TODO: test validations
-    }
-    /**
      * Create API Key
      *
      * 
@@ -124,14 +49,14 @@ public class UsersApiTest {
      *          if the Api call fails
      */
     @Test
-    public void createApiKeyTest() throws ApiException {
+    public void apiKeyCreateTest() throws ApiException {
         AuthenticationTokenRequest body = null;
-        api.createApiKey(body);
+        api.apiKeyCreate(body);
 
         // TODO: test validations
     }
     /**
-     * Delete/Revoke API Key
+     * Create ID Verification Document
      *
      * 
      *
@@ -139,14 +64,14 @@ public class UsersApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteApiKeyTest() throws ApiException {
-        String token = null;
-        api.deleteApiKey(token);
+    public void createIdVerificationDocumentTest() throws ApiException {
+        EncodedFile body = null;
+        api.createIdVerificationDocument(body);
 
         // TODO: test validations
     }
     /**
-     * Get current user profile
+     * Forgot Password Confirm
      *
      * 
      *
@@ -154,13 +79,14 @@ public class UsersApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getProfileTest() throws ApiException {
-        UserProfile response = api.getProfile();
+    public void forgotPasswordConfirmTest() throws ApiException {
+        UserForgotPasswordRequest body = null;
+        api.forgotPasswordConfirm(body);
 
         // TODO: test validations
     }
     /**
-     * Check Two Factor Status
+     * Forgot Password Request
      *
      * 
      *
@@ -168,41 +94,14 @@ public class UsersApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getTwoFactorStatusTest() throws ApiException {
-        Boolean response = api.getTwoFactorStatus();
+    public void forgotPasswordRequestTest() throws ApiException {
+        UserForgotPasswordRequest body = null;
+        api.forgotPasswordRequest(body);
 
         // TODO: test validations
     }
     /**
-     * Get WebSocket Channel
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getUserWebsocketChannelTest() throws ApiException {
-        WrappedPrimitive response = api.getUserWebsocketChannel();
-
-        // TODO: test validations
-    }
-    /**
-     * List API Keys
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listApiKeysTest() throws ApiException {
-        List<AuthenticationToken> response = api.listApiKeys();
-
-        // TODO: test validations
-    }
-    /**
-     * Register a new user
+     * Register New User
      *
      * 
      *
@@ -217,7 +116,7 @@ public class UsersApiTest {
         // TODO: test validations
     }
     /**
-     * Reissue Temporary Token
+     * Confirm New User
      *
      * 
      *
@@ -225,13 +124,14 @@ public class UsersApiTest {
      *          if the Api call fails
      */
     @Test
-    public void reissueApiTokenTest() throws ApiException {
-        api.reissueApiToken();
+    public void confirmNewUserTest() throws ApiException {
+        WrappedString body = null;
+        api.confirmNewUser(body);
 
         // TODO: test validations
     }
     /**
-     * Resend verification email
+     * Resend Verification
      *
      * 
      *
@@ -246,7 +146,7 @@ public class UsersApiTest {
         // TODO: test validations
     }
     /**
-     * Update user password
+     * Confirm Two Factor Code
      *
      * 
      *
@@ -254,9 +154,53 @@ public class UsersApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updatePasswordTest() throws ApiException {
-        UserPasswordChangeRequest body = null;
-        api.updatePassword(body);
+    public void twoFactorConfirmTest() throws ApiException {
+        WrappedString body = null;
+        api.twoFactorConfirm(body);
+
+        // TODO: test validations
+    }
+    /**
+     * Start Two Factor Setup
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void twoFactorStartTest() throws ApiException {
+        WrappedString body = null;
+        WrappedString response = api.twoFactorStart(body);
+
+        // TODO: test validations
+    }
+    /**
+     * List API Keys
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void apiKeyListTest() throws ApiException {
+        List<AuthenticationToken> response = api.apiKeyList();
+
+        // TODO: test validations
+    }
+    /**
+     * Revoke API Key
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void apiKeyRevokeTest() throws ApiException {
+        String token = null;
+        api.apiKeyRevoke(token);
 
         // TODO: test validations
     }
@@ -269,14 +213,14 @@ public class UsersApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updateProfileTest() throws ApiException {
+    public void updateUserProfileTest() throws ApiException {
         User body = null;
-        User response = api.updateProfile(body);
+        User response = api.updateUserProfile(body);
 
         // TODO: test validations
     }
     /**
-     * Update profile image
+     * Read WebSocket Channel
      *
      * 
      *
@@ -284,14 +228,28 @@ public class UsersApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updateProfileImageTest() throws ApiException {
+    public void readUserWebsocketChannelTest() throws ApiException {
+        WrappedPrimitive response = api.readUserWebsocketChannel();
+
+        // TODO: test validations
+    }
+    /**
+     * Update User Profile Image
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateUserProfileImageTest() throws ApiException {
         EncodedFile body = null;
-        api.updateProfileImage(body);
+        api.updateUserProfileImage(body);
 
         // TODO: test validations
     }
     /**
-     * Update current user profile
+     * Update User Password
      *
      * 
      *
@@ -299,14 +257,43 @@ public class UsersApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updateProfile_0Test() throws ApiException {
+    public void updateUserPasswordTest() throws ApiException {
+        UserPasswordChangeRequest body = null;
+        api.updateUserPassword(body);
+
+        // TODO: test validations
+    }
+    /**
+     * Read User Profile
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void readUserProfileTest() throws ApiException {
+        UserProfile response = api.readUserProfile();
+
+        // TODO: test validations
+    }
+    /**
+     * Update User Profile
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateUserProfile_0Test() throws ApiException {
         UserProfile body = null;
-        UserProfile response = api.updateProfile_0(body);
+        UserProfile response = api.updateUserProfile_0(body);
 
         // TODO: test validations
     }
     /**
-     * Upload ID verification document
+     * Read Two Factor Status
      *
      * 
      *
@@ -314,9 +301,8 @@ public class UsersApiTest {
      *          if the Api call fails
      */
     @Test
-    public void uploadIdVerificationDocumentTest() throws ApiException {
-        EncodedFile body = null;
-        api.uploadIdVerificationDocument(body);
+    public void twoFactorStatusReadTest() throws ApiException {
+        Boolean response = api.twoFactorStatusRead();
 
         // TODO: test validations
     }
